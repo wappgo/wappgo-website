@@ -1,0 +1,8 @@
+.cyber-feature-container {
+    background-image: url(../public/assets/cyber-globe-bg.png);
+    background-repeat: no-repeat;
+    background-position: 6% 92%;
+    @media (max-width: 768px){
+        background-position: right bottom;
+    }
+}

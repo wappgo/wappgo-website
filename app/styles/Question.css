@@ -1,0 +1,6 @@
+.question-container {
+    background-image: url("../public//assets//question-bg.png");
+    @media (max-width: 900px){
+        background-image: none;
+    }
+}

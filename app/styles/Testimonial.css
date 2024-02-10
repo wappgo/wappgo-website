@@ -1,0 +1,8 @@
+.clients-container {
+  background-image: url("../public/assets/Cone-02.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  @media (max-width: 1024px){
+    background-image: none;
+  }
+}

@@ -1,0 +1,11 @@
+.innovation-service-container {
+  background-image: url(../public//assets/service-bg.png);
+  background-repeat: no-repeat;
+  background-position: 100% -15%;
+  @media (max-width: 1440px) {
+    background-position: right top;
+  }
+  @media (max-width: 1024px) {
+    background-size: 20%;
+  }
+}

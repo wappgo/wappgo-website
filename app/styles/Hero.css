@@ -1,0 +1,7 @@
+.hero-container {
+  background-image: url("../public//assets/hero-globe.png");
+  background-repeat: no-repeat;
+  @media (max-width: 767px){
+    background-image: none;
+  }
+}

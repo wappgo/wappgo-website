@@ -1,0 +1,13 @@
+.vision-container {
+  background-color: #121417;
+  background-image: url("../public/assets/Metacap.svg"), url("../public/assets/Cone_01.png");
+  background-repeat: no-repeat;
+  background-position: 114% -150px, -20px bottom;
+  @media (max-width: 1200px) {
+    background-image:  url('../public//assets//vision-md-f1.png'),url("../public//assets/vision-md-bg.png");
+  }
+  @media (max-width: 580px){
+    background-image:  url('../public//assets//vision-sm1-bg.png'),url("../public//assets/vision-sm2-bg.png");
+    background-position: right top, left bottom;
+  }
+}
