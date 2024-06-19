@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 const AboutGlobe = () => {
   return (
     <main className="about-globe-container">

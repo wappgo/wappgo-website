@@ -1,4 +1,5 @@
 import Image from "next/image";
+import "../app/styles/bg.css"
 const AboutHero = () => {
   return (
     // <main className="about-hero-container">

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import "../styles/Hero.css";
+import Link from "next/link";
 const Hero = ({ HeroStyle, HeroTexts }) => {
   return (
     <main
@@ -90,10 +91,13 @@ export const CyberHeroLogo = () => {
 export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
   return (
     <div className="btn-icon-container">
-      <button className="start-btn">
-        {HeroTexts ? HeroTexts.btnText : "Let's Get Started"}
-        <img src="/assets/btn-icon.svg" />
-      </button>
+      <Link href="/Consultation">
+        <button className="start-btn " >
+          {HeroTexts ? HeroTexts.btnText : "Get Consultation"}
+          <img src="/assets/btn-icon.svg" />
+        </button>
+      </Link>
+      <img src="/assets\Animation - 1718616128029.json" alt="" />
       <div className="or" style={{ color: HeroStyle && HeroStyle.orColor }}>
         or
       </div>

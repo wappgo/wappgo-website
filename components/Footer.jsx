@@ -33,13 +33,13 @@ const Footer = () => {
                     +0731-4240330
                   </p>
                 </div>
-                <div className="col-lg-5">
+                <div className="col-lg-4">
                   <p className="text-white phone-icon">
                     <img src="/assets/phone.svg" />
                     (+91) 70005-81635
                   </p>
                 </div>
-                <div className="col-lg-3">
+                <div className="col-lg-4">
                   <p className="text-white phone-icon">
                     <img src="/assets/email.svg" />
                     info@wappgo.com
@@ -57,6 +57,8 @@ const Footer = () => {
             <li className='footer-items-route' onClick={() => router.push("/about")} >About us</li>
             <li className='footer-items-route' onClick={() => router.push("/contact")}>Contact us</li>
             <li className='footer-items-route'>Features</li>
+            <li className='footer-items-route' onClick={() => router.push("/Consultation")}>Get-Consultation</li>
+
           </ul>
         </div>
         <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 mt-3">

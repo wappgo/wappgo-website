@@ -11,29 +11,33 @@ const Navbar = ({ NavStyle, Route }) => {
   const [isIndustriesVisible, setIndustriesVisible] = useState(false);
   const [showNavSlider, setShowNavSlider] = useState(false);
   const [currentPage, setCurrentPage] = useState(false)
-  const ModalRef = useRef(null);
-  const IndustriesRef = useRef(null);
+  const modalRef = useRef(null);
+  const industriesRef = useRef(null);
+  const containerRef = useRef(null);
 
   const router = useRouter();
   const pathname = usePathname()
+
   const handleShow = () => {
-    ModalRef.current = setTimeout(() => {
-      setServiceVisible(!isServiceVisible);
-      setIndustriesVisible(false);
-    }, 300);
+    setServiceVisible(true);
+    setIndustriesVisible(false);
   };
 
   const handleShowIndustries = () => {
-    IndustriesRef.current = setTimeout(() => {
-      setIndustriesVisible(!isIndustriesVisible);
-      setServiceVisible(false);
-    }, 300);
+    setIndustriesVisible(true);
+    setServiceVisible(false);
   };
-
   const handleNavSlider = () => {
     setShowNavSlider(true);
   };
-
+  const hideServices = () => {
+    setServiceVisible(false);
+    setIndustriesVisible(false);
+  };
+  const handleHide = () => {
+    setServiceVisible(false);
+    setIndustriesVisible(false);
+  };
   const roateiconStyle = {
     transition: "all 0.3s ease-in-out",
     color: isServiceVisible && "#1925FF",
@@ -42,6 +46,7 @@ const Navbar = ({ NavStyle, Route }) => {
     height: "20px",
   };
 
+  
   const handleCurrentPage = () => {
     if(pathname == "/information-technology"){
       router.push("/") 
@@ -50,6 +55,26 @@ const Navbar = ({ NavStyle, Route }) => {
     }
 
 }
+
+useEffect(() => {
+  // Function to handle clicks outside of Services and Industries divs
+  const handleClickOutside = (event) => {
+    if (
+      containerRef.current &&
+      !containerRef.current.contains(event.target)
+    ) {
+      handleHide();
+    }
+  };
+
+  // Add event listener to the document body
+  document.addEventListener("mousedown", handleClickOutside);
+
+  // Cleanup function to remove event listener when component unmounts
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
   return (
     <>
       <main style={{backgroundColor: NavStyle && NavStyle.backgroundColor}} className="navbar-container">
@@ -68,14 +93,15 @@ const Navbar = ({ NavStyle, Route }) => {
 
         <div style={{color: NavStyle && NavStyle.color}} className="navbar-items">
           <li
+          onMouseEnter={handleShow}
             style={{ color: isServiceVisible && "#1925FF" }}
-            onClick={handleShow}
+            // onClick={handleShow}
           >
             Services
             <FaChevronDown style={roateiconStyle} />
           </li>
           <li
-            onClick={handleShowIndustries}
+            onMouseEnter={handleShowIndustries}
             style={{ color: isIndustriesVisible && "#1925FF" }}
           >
             Industries
@@ -97,8 +123,10 @@ const Navbar = ({ NavStyle, Route }) => {
           </li>
         </div>
       </main>
-      {isServiceVisible && <Services NavStyle={true}/>}
-      {isIndustriesVisible && <Industries NavStyle={true}/>}
+      <div ref={containerRef}>
+        {isServiceVisible && <Services NavStyle={true}  hideServices={hideServices} />}
+        {isIndustriesVisible && <Industries NavStyle={true} hideServices={hideServices} />}
+      </div>
       {showNavSlider && (
         <Slider
           showNavSlider={showNavSlider}
@@ -330,9 +358,9 @@ export const Slider = ({ NavStyle, showNavSlider, setShowNavSlider }) => {
   );
 };
 
-export const Services = () => {
+export const Services = ({hideServices}) => {
   return (
-    <main className="services-container">
+    <main className="services-container" onMouseLeave={hideServices}>
       <div className="services-items">
         <h4>Innovation</h4>
         <Link
@@ -436,9 +464,9 @@ export const Services = () => {
   );
 };
 
-export const Industries = ({ show }) => {
+export const Industries = ({hideServices}) => {
   return (
-    <main className="industries-container">
+    <main className="industries-container" onMouseLeave={hideServices}>
       <div className="industries-items">
         <Link href="/services/innovation/agile-software-development" className="link-route">Social Media</Link>
         <Link href="/services/innovation/agile-software-development" className="link-route">Chat Systems</Link>
