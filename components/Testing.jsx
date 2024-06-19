@@ -44,7 +44,7 @@ const Testing = ({ NavStyle }) => {
           <img src="/assets/ham-burger.png" />
         </div>
 
-        <ul className="navbar-items">
+        <ul className="navbar-items ">
           <li
             style={{ color: isServiceVisible && "#1925FF" }}
             onClick={handleShow}

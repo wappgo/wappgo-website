@@ -91,7 +91,7 @@ useEffect(() => {
           <img  src={NavStyle ? "/assets/cyber-hamburger.svg" :"/assets/ham-burger.png"} />
         </div>
 
-        <div style={{color: NavStyle && NavStyle.color}} className="navbar-items">
+        <div style={{color: NavStyle && NavStyle.color}} className="navbar-items ">
           <li
           onMouseEnter={handleShow}
             style={{ color: isServiceVisible && "#1925FF" }}

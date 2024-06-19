@@ -39,7 +39,7 @@ const Partners = () => {
           modules={[Autoplay]}
         >
           <SwiperSlide>
-            <img src="/assets/Nuxt.png" />
+            <img src="/assets\nuxt.png" />
           </SwiperSlide>
           <SwiperSlide>
             <img src="/assets/miro.svg" />
