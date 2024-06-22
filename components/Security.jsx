@@ -102,7 +102,15 @@ const Security = () => {
         <div className="col-lg-1"></div>
         <div className="col-lg-5">
           <div className="security-container-img">
-            <img src="/assets/security-image.png" className="img-fluid" />
+            {/* <img src="/assets/security-image.png" className="img-fluid" /> */}
+            <div class="wappgolandingrow">
+                {/* <Lottie
+                  isClickToPauseDisabled={true}
+                  options={defaultOptions2}
+                  />  */}
+               <lottie-player src="W_animation.json" background="transparent" speed="1" class="wappgoimage" loop autoplay></lottie-player>
+             
+            </div>
           </div>
         </div>
       </section>

@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation,Autoplay } from "swiper/modules";
 
 const Blogs = () => {
   return (
@@ -35,7 +35,8 @@ const Blogs = () => {
           prevEl: ".swiper-button-prev",
         }}
         loop={true}
-        modules={[Pagination, Navigation]}
+        autoplay={{ delay: 3000 }} // Autoplay with 3 seconds delay       
+        modules={[Pagination, Navigation,Autoplay]}
         className="swiper-container"
       >
         <SwiperSlide>

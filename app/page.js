@@ -21,17 +21,20 @@ const CyberSecurity = () => {
   const NavStyle = {
     backgroundColor: "#121417",
     color: "white",
-    border: "1px solid #121417"
+    border: "1px solid #121417",
+  
+
   };
   const HeroStyle = {
     backgroundColor: "#121417",
     textColor: "white",
-    subHeadingColor: "rgba(255, 255, 255, 0.30)",
+    subHeadingColor: "rgb(213 214 214)",
     masterText: "#1925FF",
     orColor: "#9D9EB6",
     iconsBg: "rgba(255, 255, 255, 0.07)",
     border: "1px solid rgba(230, 231, 233, 0.05)"
   };
+
   const HeroTexts = {
     heading: "Battling Cyber Threats: Vigilance in the Digital Frontier's",
     desc: "Trusted by startups, enterprises, and government, Wappgo empowers with robust vulnerability discovery, fortified systems, and business safeguarding.",

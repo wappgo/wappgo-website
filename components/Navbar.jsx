@@ -5,8 +5,10 @@ import { FaChevronDown, FaAngleRight } from "react-icons/fa6";
 import { RxCross1 } from "react-icons/rx";
 import { useRouter } from "next/navigation";
 import { usePathname } from 'next/navigation';
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import Link from "next/link";
-const Navbar = ({ NavStyle, Route }) => {
+const Navbar = ({ NavStyle, Route, }) => {
   const [isServiceVisible, setServiceVisible] = useState(false);
   const [isIndustriesVisible, setIndustriesVisible] = useState(false);
   const [showNavSlider, setShowNavSlider] = useState(false);
@@ -17,8 +19,9 @@ const Navbar = ({ NavStyle, Route }) => {
 
   const router = useRouter();
   const pathname = usePathname()
-
+  const tl = gsap.timeline()
   const handleShow = () => {
+   
     setServiceVisible(true);
     setIndustriesVisible(false);
   };
@@ -46,56 +49,64 @@ const Navbar = ({ NavStyle, Route }) => {
     height: "20px",
   };
 
-  
+
   const handleCurrentPage = () => {
-    if(pathname == "/information-technology"){
-      router.push("/") 
+    if (pathname == "/information-technology") {
+      router.push("/")
     } else {
       router.push("/information-technology");
     }
 
-}
+  }
+  useGSAP(() => {
+    tl.from(".toggleimg", {
+      x: 8,
+      duration: 0.9,
+      opacity: 0.5
+    })
 
-useEffect(() => {
-  // Function to handle clicks outside of Services and Industries divs
-  const handleClickOutside = (event) => {
-    if (
-      containerRef.current &&
-      !containerRef.current.contains(event.target)
-    ) {
-      handleHide();
-    }
-  };
 
-  // Add event listener to the document body
-  document.addEventListener("mousedown", handleClickOutside);
+  })
+  useEffect(() => {
+    // Function to handle clicks outside of Services and Industries divs
+    const handleClickOutside = (event) => {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target)
+      ) {
+        handleHide();
+      }
+    };
 
-  // Cleanup function to remove event listener when component unmounts
-  return () => {
-    document.removeEventListener("mousedown", handleClickOutside);
-  };
-}, []);
+    // Add event listener to the document body
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup function to remove event listener when component unmounts
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <>
-      <main style={{backgroundColor: NavStyle && NavStyle.backgroundColor}} className="navbar-container">
+      <main style={{ backgroundColor: NavStyle && NavStyle.backgroundColor }} className="navbar-container">
         <article>
           <img
-          style={{cursor: "pointer"}}
-          onClick={() => router.push("/")}
+            style={{ cursor: "pointer" }}
+            onClick={() => router.push("/")}
             src={
-              NavStyle ? "/assets/cyber-wappgo-logo.png" : "/assets/logo.png"
+              NavStyle ? "/assets/Group 1 (1).svg" : "/assets/Group 1.svg"
             }
           />
         </article>
         <div onClick={handleNavSlider} className="menu-btn">
-          <img  src={NavStyle ? "/assets/cyber-hamburger.svg" :"/assets/ham-burger.png"} />
+          <img src={NavStyle ? "/assets/cyber-hamburger.svg" : "/assets/ham-burger.png"} />
         </div>
 
-        <div style={{color: NavStyle && NavStyle.color}} className="navbar-items ">
+        <div style={{ color: NavStyle && NavStyle.color }} className="navbar-items ">
           <li
-          onMouseEnter={handleShow}
+            onMouseEnter={handleShow}
             style={{ color: isServiceVisible && "#1925FF" }}
-            // onClick={handleShow}
+          // onClick={handleShow}
           >
             Services
             <FaChevronDown style={roateiconStyle} />
@@ -112,8 +123,9 @@ useEffect(() => {
           <li className="togglingitem">
             <span>CYBER</span>
             <img
-            className="toggleimg"
-            onClick={() => handleCurrentPage()}
+
+              className="toggleimg"
+              onClick={() => handleCurrentPage()}
               height={20}
               src={
                 NavStyle ? "/assets/dark-mode.svg" : "/assets/light-mode.svg"
@@ -124,7 +136,7 @@ useEffect(() => {
         </div>
       </main>
       <div ref={containerRef}>
-        {isServiceVisible && <Services NavStyle={true}  hideServices={hideServices} />}
+        {isServiceVisible && <Services NavStyle={true} hideServices={hideServices} />}
         {isIndustriesVisible && <Industries NavStyle={true} hideServices={hideServices} />}
       </div>
       {showNavSlider && (
@@ -358,9 +370,9 @@ export const Slider = ({ NavStyle, showNavSlider, setShowNavSlider }) => {
   );
 };
 
-export const Services = ({hideServices}) => {
+export const Services = ({ hideServices }) => {
   return (
-    <main className="services-container" onMouseLeave={hideServices}>
+    <main className="services-container " onMouseLeave={hideServices}>
       <div className="services-items">
         <h4>Innovation</h4>
         <Link
@@ -464,7 +476,7 @@ export const Services = ({hideServices}) => {
   );
 };
 
-export const Industries = ({hideServices}) => {
+export const Industries = ({ hideServices }) => {
   return (
     <main className="industries-container" onMouseLeave={hideServices}>
       <div className="industries-items">

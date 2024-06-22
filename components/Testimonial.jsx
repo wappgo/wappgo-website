@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Pagination,Autoplay } from "swiper/modules";
 
 const Testimonial = () => {
   return (
@@ -20,7 +20,9 @@ const Testimonial = () => {
               clickable: true,
             }}
             loop={true}
-            modules={[Pagination]}
+            // modules={[Pagination]}
+            autoplay={{ delay: 3000 }} // Autoplay with 3 seconds delay
+            modules={[Pagination, Autoplay]}
           >
             <SwiperSlide>
               <article className="review-logo-container">

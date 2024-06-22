@@ -1,16 +1,49 @@
+"use client"
+
 import Image from "next/image";
 import "../styles/Hero.css";
+import "../styles/CyberHero.css";
 import Link from "next/link";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useEffect } from "react";
 const Hero = ({ HeroStyle, HeroTexts }) => {
+  var tl = gsap.timeline()
+
+  
+  useGSAP(() => {
+    if(HeroStyle){
+      tl.from(".hero-items-wrapper", {
+        y:100,
+        opacity:0,
+        duration:0.8
+      })
+    }
+    else{
+      tl.from(".hero-items-wrapper", {
+        y:100,
+        opacity:0,
+        duration:0.8
+      })
+    }
+    
+  
+  })
   return (
+
     <main
       style={{
         backgroundColor: HeroStyle && HeroStyle.backgroundColor,
-        backgroundImage: HeroStyle && "none",
+        backgroundImage: HeroStyle && "",
+        transition: "all 4s ease-in-out"
+
       }}
-      className="row hero-container"
+      className={`row ${HeroStyle ? 'cyber-container1' : 'hero-container'}`}
+
     >
+
       <article className="row hero-items-wrapper">
+
         <div className="col-lg-12 hero-items">
           <div className="row">
             <div className="col-lg-9">
@@ -49,13 +82,14 @@ const Hero = ({ HeroStyle, HeroTexts }) => {
         <div className="round-text-container">
           {HeroTexts ? "" : <HeroLogo />}
         </div>
-        {HeroStyle && (
+        {/* {HeroStyle && (
           <div className="cyber-image-container">
             <img className="img-fluid" src="/assets/cyber-hero-img.png" />
           </div>
-        )}
+        )} */}
       </article>
     </main>
+
   );
 };
 
@@ -91,7 +125,7 @@ export const CyberHeroLogo = () => {
 export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
   return (
     <div className="btn-icon-container">
-      <Link href="/Consultation">
+      <Link href="/Consultation" style={{ textDecoration: "none" }}>
         <button className="start-btn " >
           {HeroTexts ? HeroTexts.btnText : "Get Consultation"}
           <img src="/assets/btn-icon.svg" />
