@@ -1,6 +1,9 @@
+
 import Image from "next/image";
 import "../app/styles/bg.css"
+
 const AboutHero = () => {
+
   return (
     // <main className="about-hero-container">
     //   <article>
@@ -18,7 +21,7 @@ const AboutHero = () => {
     //     <img src="/assets/about-hero-img.png" />
     //   </div>
     // </main>
-    <div className="row about-hero-container">
+    <div className="row  about-hero-container">
       <article className="col-lg-8">
         <h4 className="about-title">About Us</h4>
         <h2 className="about-heading">
