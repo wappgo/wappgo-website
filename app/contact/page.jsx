@@ -1,6 +1,6 @@
 import AnimateText from '../../components/AnimateText'
 import Announcement from '../../components/Announcement'
-import ContactForm from '../../components/Contact-Form'
+// import ContactForm from '../../components/Contact-Form'
 import ContactHero from '../../components/Contact-Hero'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
@@ -13,7 +13,7 @@ const Contact = () => {
         <Navbar/>
         <ContactHero/>
         <AnimateText/>
-        <ContactForm/>
+        {/* <ContactForm/> */}
         <Footer/>
     </main>
   )

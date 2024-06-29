@@ -1,8 +1,10 @@
+import ContactForm from "./Contact-Form";
+
 const ContactHero = () => {
   return (
 
     <div className="row">
-      <div className="col-lg-7">
+      <div className="col-lg-6">
 
         <div className="contact-hero-container">
 
@@ -20,12 +22,13 @@ const ContactHero = () => {
           </div>
         </div>
       </div>
-      <div className="col-lg-1">
+      {/* <div className="col-lg-1">
 
-      </div>
-      <div className="col-lg-4">
+      </div> */}
+      <div className="col-lg-6">
         <div className="contactheroimg">
-          <img className="img-fluid" src="/assets/innovation-hero-img.png" />
+          {/* <img className="img-fluid" src="/assets/innovation-hero-img.png" /> */}
+          <ContactForm/>
         </div>
 
       </div>

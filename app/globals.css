@@ -2997,7 +2997,8 @@ li {
 
 
 .contact-form-container>h4 {
-  color: #fff;
+  /* color: #fff; */
+  color: #363C46;
   font-family: "Inter";
   font-size: 20px;
   font-style: normal;
@@ -3031,12 +3032,12 @@ li {
 }
 
 .contact-form-container>h2 {
-  color: #fff;
+  color: #363C46;
   font-family: "Manrope";
   font-size: 48px;
   font-style: normal;
   font-weight: 800;
-  line-height: 70px;
+  line-height: 60px;
 
   @media (max-width: 1024px) {
     font-size: 32px;
@@ -3131,7 +3132,7 @@ li {
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  margin-left: 40px;
+  /* margin-left: 40px; */
 
   @media (max-width: 991px) {
     margin-left: 0;
@@ -3140,12 +3141,13 @@ li {
 
 .message-box {
   display: flex;
-  height: 244px;
-  width: 432px;
+  /* height: 244px; */
+  /* width: 432px; */
+  width: 100%;
   padding: 10px 16px;
   align-items: flex-start;
-  background: transparent;
-  margin-left: 40px;
+  background: transparent !important;
+  /* margin-left: 40px; */
 
   @media (max-width: 991px) {
     margin-left: 0;
@@ -3169,12 +3171,13 @@ li {
 }
 
 .message-box:focus {
-  outline: 1px solid blue;
-  border: 1px solid blue;
+  outline: 1px solid blue !important;
+  border: 1px solid blue !important;
+  box-shadow: none !important;
 }
 
 .form-note {
-  color: #e6e7e9;
+  color: #858484;
   font-family: "Inter";
   font-size: 18px;
   font-style: normal;
@@ -3184,7 +3187,7 @@ li {
 }
 
 .form-note>span {
-  color: #e6e7e9;
+  color: #858484;
   text-align: center;
   font-family: "Inter";
   font-size: 18px;
