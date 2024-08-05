@@ -9,18 +9,23 @@ import { Autoplay } from "swiper/modules";
 const Partners = () => {
   return (
     <main className="partners-container">
-      
+
       <div className="brands">
-      <p className="heading">Trusted partners</p>
+        <p className="heading">Trusted partners</p>
         <Swiper
           className="brand-name-container"
           autoplay={{
             delay: 1000,
           }}
           breakpoints={{
-            
+            320: {
+              slidesPerView: 2
+            },
+            375: {
+              slidesPerView: 2
+            },
             425: {
-              slidesPerView: 1
+              slidesPerView: 2
             },
             640: {
               slidesPerView: 3,
@@ -39,29 +44,45 @@ const Partners = () => {
           modules={[Autoplay]}
         >
           <SwiperSlide>
-            <img src="/assets\nuxt.png" />
+            <div className="d-flex justify-content-center">
+              <img src="/assets\nuxt.png" />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/assets/miro.svg" />
+            <div className="d-flex justify-content-center">
+              <img src="/assets/miro.svg" />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
+          <div className="d-flex justify-content-center">
             <img src="/assets/LottieFiles.svg" />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
+          <div className="d-flex justify-content-center">
             <img src="/assets/wise.svg" />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
+          <div className="d-flex justify-content-center">
             <img src="/assets/dribble.svg" />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
+          <div className="d-flex justify-content-center">
             <img src="/assets/kinsta.svg" />
+            </div>
           </SwiperSlide>
 
           <SwiperSlide>
+          <div className="d-flex justify-content-center">
             <img src="/assets/angleList.svg" />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
+          <div className="d-flex justify-content-center">
             <img src="/assets/behance.svg" />
+            </div>
           </SwiperSlide>
         </Swiper>
       </div>

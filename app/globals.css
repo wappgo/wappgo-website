@@ -1900,6 +1900,12 @@ li {
   }
 }
 
+@media (max-width: 767px) {
+  .cyber-feature-container{
+  background-image: none !important;
+  }
+}
+
 .cyber-feature-container>div>h4 {
   color: #fff;
   font-family: "Inter";
