@@ -11,7 +11,7 @@ const Partners = () => {
     <main className="partners-container">
 
       <div className="brands">
-        <p className="heading">Trusted partners</p>
+        {/* <p className="heading">Trusted partners</p> */}
         <Swiper
           className="brand-name-container"
           autoplay={{
@@ -37,7 +37,7 @@ const Partners = () => {
               slidesPerView: 6,
             },
             1280: {
-              slidesPerView: 8,
+              slidesPerView: 7,
             },
           }}
           loop={true}

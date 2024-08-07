@@ -6,7 +6,8 @@ const AnimateText = () => {
   useGSAP(() => {
     gsap.to(".marque", {
       transform: 'translateX(-200%)',
-      duration: 10,
+      duration: 50,
+      delay:1,
       repeat: -1,
       ease: "none"
     })
