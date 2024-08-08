@@ -35,9 +35,6 @@ const AnimateText = () => {
           projects.
         </p>
       </div>
-
-
-
     </main>
   );
 };
