@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BiSearch } from "react-icons/bi";
 import { useGSAP } from "@gsap/react";
+import "../styles/Global.css";
 gsap.registerPlugin(ScrollTrigger);
 const GlobeImage = () => {
   const [text, setText] = useState('BUSINESS');
@@ -11,6 +12,8 @@ const GlobeImage = () => {
   const verticalRef = useRef(null);
   const boxItemsRef = useRef([]);
   const SectionCenterRef = useRef(null);
+  const marqueeRef = useRef(null);
+
   const handleText = () => {
 
     const tl = new gsap.timeline();
@@ -35,15 +38,7 @@ const GlobeImage = () => {
       })
   };
 
-  useGSAP(() => {
-    gsap.to(".marque", {
-      // transform: 'translateX(-200%)',
-      duration: 50,
-      delay: 1,
-      repeat: -1,
-      ease: "none"
-    })
-  })
+
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
@@ -51,6 +46,15 @@ const GlobeImage = () => {
     }, 1000)
     return () => clearTimeout(timeOut)
   }, [text])
+
+  function getXPercent() {
+    const viewportWidth = window.innerWidth;
+    if (viewportWidth < 1280) {
+      return -500; // For smaller screens
+    } else {
+      return -602
+    }
+  }
 
   useEffect(() => {
     const SectionCenter = SectionCenterRef.current;
@@ -65,10 +69,9 @@ const GlobeImage = () => {
       end: 'bottom center',
       scrub: true
     });
-
+    console.log("hello", getXPercent())
     gsap.to(boxItems, {
-      xPercent: -600,
-      ease: "sine.out",
+      xPercent: getXPercent(),
       scrollTrigger: {
         trigger: SectionCenter,
         pin: true,
@@ -83,10 +86,21 @@ const GlobeImage = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const loop = horizontalLoop(".marquee__part", {
+      repeat: -1,
+      paused: false,
+      speed: 0.2
+    });
+
+    return () => {
+      loop.kill();
+    };
+  }, []);
 
 
   return (
-    <div className="mb-5" ref={verticalRef}>
+    <div ref={verticalRef}>
       <div className="row">
         <div className="col-1"><hr className="cardsectionhr1" /></div>
         <div className="col-10">
@@ -100,16 +114,15 @@ const GlobeImage = () => {
       <div ref={element}>
         <h3 className="text-animate">{text}</h3>
       </div>
-
       <div id="horizontal" ref={SectionCenterRef} className="scroll-container">
         <div className="d-flex">
           <div className="firstscrolldiv" ref={el => boxItemsRef.current[0] = el}>
             <div className="cool-link">
               <div className="row paddingmarginzero">
-                <div className="col-lg-7 paddingmarginzero changewidthcol7">
+                <div className="col-lg-7 col-md-12 paddingmarginzero changewidthcol7">
                   <img src="/assets/Web_app.png" className="webappimage" />
                 </div>
-                <div className="col-lg-5 changewidthcol5 paddingmarginzero">
+                <div className="col-lg-5 col-md-12 changewidthcol5 paddingmarginzero">
                   <p className="scrollcardheading">Web Application</p>
                   <p className="scrollcardsubheading">Best fit to implement your idea and let the world know your play. </p>
                   <p className="scrollcardtext"> These applications are accessible via browser, some of them are dynamic which requires server-side processing and some are static which doesn't . Let's build Web Apps. </p>
@@ -607,86 +620,119 @@ const GlobeImage = () => {
               </div>
             </div>
           </div>
-          <div className="secondscrolldiv bg-fivescrolldiv1" ref={el => boxItemsRef.current[7] = el}>
-            <div className="herocon">
-              <img src="/assets/Mask_Group_11.jpg" className="herosection" />
-              <BiSearch className="searchbaricon" />
+          <div className="secondscrolldiv  cool-link2" ref={el => boxItemsRef.current[7] = el}>
+            <div className="container-search">
               <input placeholder="Search for something..." className="searchbar" />
-
-              <div className="scroll-animate">
-                <div className="marque">
+              <div className="scroll-animate" ref={marqueeRef}>
+                <div className="searchcraoselinside">
                   <div className="morquecont">
-                    <div className="">
+                    <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="">
+                    <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="">
+                    <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="">
+                    <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="">
+                    <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="marquee__part">
+                      <div className="firstexamplediv">
+                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="marquee__part">
+                      <div className="firstexamplediv">
+                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="marque">
-                  <div className="row">
-                    <div className="col-3">
+                  <div className="morquecont1">
+                    <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="marquee__part">
+                      <div className="firstexamplediv">
+                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="marquee__part">
+                      <div className="firstexamplediv">
+                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="marquee__part">
+                      <div className="firstexamplediv">
+                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="marque">
-                  <div className="row">
-                    <div className="col-3">
+                  <div className="morquecont2">
+                    <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="marquee__part">
+                      <div className="firstexamplediv">
+                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="marquee__part">
+                      <div className="firstexamplediv">
+                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="marquee__part">
+                      <div className="firstexamplediv">
+                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
@@ -696,8 +742,9 @@ const GlobeImage = () => {
           </div>
         </div>
       </div>
+      
       <div className="techmaindiv">
-        <div className="techmainpadding">
+        <div className="techmainpadding techfordes">
           <div className="row">
             <div className="col-lg-5">
               <p className="everreadyplayheading">
@@ -816,6 +863,61 @@ const GlobeImage = () => {
               </div>
             </div>
           </div>
+          <div>
+            {/* <img src="/assets/Up.svg" className="mt-5 downloadimga" /> */}
+          </div>
+        </div>
+        <div className="techformob">
+          <p className="everreadyplayheading">
+            Ever Ready
+            <br />
+            To Play With
+            <br />
+            Your Favourite
+            <br />
+            Technology Stack...
+          </p>
+          <div className="text-center">
+            <img src="/assets/Web_app.png" className="webappimage" />
+          </div>
+          <div>
+            <div className="smallcard">
+              <div className="commontech1 commontech10 ">
+                <img src="/assets/Airbnb.png" className="techicon188" />
+              </div>
+              <div className="commontech1 commontech11">
+                <img src="/assets/Airbnb.png" className="techicon188" />
+              </div>
+              <div className="commontech1 commontech13">
+                <img src="/assets/Airbnb.png" className="techicon188" />
+              </div>
+            </div>
+            <div className="smallcard">
+              <div className="commontech1 commontech10 ">
+                <img src="/assets/Airbnb.png" className="techicon188" />
+              </div>
+              <div className="commontech1 commontech11">
+                <img src="/assets/Airbnb.png" className="techicon188" />
+              </div>
+              <div className="commontech1 commontech13">
+                <img src="/assets/Airbnb.png" className="techicon188" />
+              </div>
+            </div>
+            <div className="smallcard">
+              <div className="commontech1 commontech10 ">
+                <img src="/assets/Airbnb.png" className="techicon188" />
+              </div>
+              <div className="commontech1 commontech11">
+                <img src="/assets/Airbnb.png" className="techicon188" />
+              </div>
+              <div className="commontech1 commontech13">
+                <img src="/assets/Airbnb.png" className="techicon188" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <img src="/assets/Up.svg" className="mt-5 downloadimga" />
+          </div>
         </div>
       </div>
     </div>
@@ -829,3 +931,68 @@ export default GlobeImage;
 
 {/* <img className="col" src="/assets/globe-section-image.svg" /> */ }
 {/* <video  style={{width:"100%", height:"100%"}} src="/vedios\172170-846731303_small.mp4" autoPlay loop muted/> */ }
+
+
+function horizontalLoop(items, config) {
+  items = gsap.utils.toArray(items);
+  config = config || {};
+  let tl = gsap.timeline({ repeat: config.repeat, paused: config.paused, defaults: { ease: "none" }, onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100) }),
+    length = items.length,
+    startX = items[0].offsetLeft,
+    times = [],
+    widths = [],
+    xPercents = [],
+    curIndex = 0,
+    pixelsPerSecond = (config.speed || 1) * 100,
+    snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1),
+    totalWidth, curX, distanceToStart, distanceToLoop, item, i;
+
+  gsap.set(items, {
+    xPercent: (i, el) => {
+      let w = widths[i] = parseFloat(gsap.getProperty(el, "width", "px"));
+      xPercents[i] = snap(parseFloat(gsap.getProperty(el, "x", "px")) / w * 100 + gsap.getProperty(el, "xPercent"));
+      return xPercents[i];
+    }
+  });
+
+  gsap.set(items, { x: 0 });
+  totalWidth = items[length - 1].offsetLeft + xPercents[length - 1] / 100 * widths[length - 1] - startX + items[length - 1].offsetWidth * gsap.getProperty(items[length - 1], "scaleX") + (parseFloat(config.paddingRight) || 0);
+
+  for (i = 0; i < length; i++) {
+    item = items[i];
+    curX = xPercents[i] / 100 * widths[i];
+    distanceToStart = item.offsetLeft + curX - startX;
+    distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
+    tl.to(item, { xPercent: snap((curX - distanceToLoop) / widths[i] * 100), duration: distanceToLoop / pixelsPerSecond }, 0)
+      .fromTo(item, { xPercent: snap((curX - distanceToLoop + totalWidth) / widths[i] * 100) }, { xPercent: xPercents[i], duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond, immediateRender: false }, distanceToLoop / pixelsPerSecond)
+      .add("label" + i, distanceToStart / pixelsPerSecond);
+    times[i] = distanceToStart / pixelsPerSecond;
+  }
+
+  function toIndex(index, vars) {
+    vars = vars || {};
+    (Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length);
+    let newIndex = gsap.utils.wrap(0, length, index),
+      time = times[newIndex];
+    if (time > tl.time() !== index > curIndex) {
+      vars.modifiers = { time: gsap.utils.wrap(0, tl.duration()) };
+      time += tl.duration() * (index > curIndex ? 1 : -1);
+    }
+    curIndex = newIndex;
+    vars.overwrite = true;
+    return tl.tweenTo(time, vars);
+  }
+
+  tl.next = vars => toIndex(curIndex + 1, vars);
+  tl.previous = vars => toIndex(curIndex - 1, vars);
+  tl.current = () => curIndex;
+  tl.toIndex = (index, vars) => toIndex(index, vars);
+  tl.times = times;
+  tl.progress(1, true).progress(0, true);
+  if (config.reversed) {
+    tl.vars.onReverseComplete();
+    tl.reverse();
+  }
+  return tl;
+}
+

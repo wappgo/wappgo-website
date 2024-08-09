@@ -3619,6 +3619,7 @@ li {
   width: 55vw;
   height: 100%;
 }
+
 .block-list__item {
   white-space: normal;
 }
@@ -3631,6 +3632,7 @@ li {
   padding-right: 1.75vw;
   background-color: #fff;
 }
+
 .cool-link {
   box-shadow: 4px 4px 15px #0000002b;
   border-radius: .51vw;
@@ -3639,6 +3641,7 @@ li {
   width: 44vw;
   background-color: #fff;
 }
+
 .paddingmarginzero {
   padding: 0;
   margin: 0;
@@ -3726,6 +3729,7 @@ li {
   /* align-items: center; */
   text-align: center;
 }
+
 .getstartedwithgobuttonimg {
   width: 1.2vw;
   margin-top: -.4vw;
@@ -3746,11 +3750,13 @@ li {
   width: 2.3vw;
   padding: 0;
 }
-.boutton-chat{
+
+.boutton-chat {
   display: flex;
   justify-content: start;
   padding: 0 65px;
 }
+
 .firstexamplediv {
   box-shadow: 3px 3px 6px #0000002e;
   margin: 0 .4vw 0 0;
@@ -3771,19 +3777,19 @@ li {
   margin-top: 1.1vw;
 }
 
-.scroll-container{
+.scroll-container {
   inset: auto;
-    margin: 0px auto;
-    display: flex;
-    position: relative;
-    box-sizing: content-box;
-    /* width: 138%; */
-    /* min-height: 424px; */
-    /* height: auto; */
-    padding-top: 0px;
-    /* padding-bottom: 848px; */
-    /* height: 100vh; */
-    overflow: hidden;
+  margin: 0px auto;
+  display: flex;
+  position: relative;
+  box-sizing: content-box;
+  /* width: 138%; */
+  /* min-height: 424px; */
+  /* height: auto; */
+  padding-top: 0px;
+  padding-bottom: 0;
+  /* height: 100vh; */
+  overflow: hidden;
 }
 
 .secondscrolldiv {
@@ -3793,24 +3799,31 @@ li {
   padding-right: 1.75vw;
   width: 47.5vw;
   background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 91%, rgba(253, 253, 254, 1) 100%);
-}
-.bg-secondscrolldiv{
-  background-image: linear-gradient(to right, #fdfdfe, #b7bacc) !important;
-}
-.bg-thirdscrolldiv{
-  background-image: linear-gradient(to right, #b7bacc, #707699) !important;
-}
-.bg-fourscrolldiv{
-  background-image: linear-gradient(to right, #707699, #2b3368) !important;
-}
-.bg-fivescrolldiv{
-  background-image: linear-gradient(to right, #2b3368, #2b2068) !important;
-}
-.techmaindiv {
-  background: linear-gradient(to right, rgba(44, 52, 105, 1) 0%, rgba(42, 33, 103, 1) 50%, rgba(54, 16, 112, 1) 100%);
+  margin-left: -1px;
 }
 
-.bg-fivescrolldiv1{
+.bg-secondscrolldiv {
+  background-image: linear-gradient(to right, #fdfdfe, #b7bacc) !important;
+}
+
+.bg-thirdscrolldiv {
+  background-image: linear-gradient(to right, #b7bacc, #707699) !important;
+}
+
+.bg-fourscrolldiv {
+  background-image: linear-gradient(to right, #707699, #2b3368) !important;
+}
+
+.bg-fivescrolldiv {
+  background-image: linear-gradient(to right, #2b3368, #2b2068) !important;
+}
+
+.techmaindiv {
+  background: linear-gradient(to right, rgba(44, 52, 105, 1) 0%, rgba(42, 33, 103, 1) 50%, rgba(54, 16, 112, 1) 100%);
+  /* height: 100vh; */
+}
+
+.bg-fivescrolldiv1 {
   background-image: linear-gradient(to right, #2b2068, #2b2068) !important;
 }
 
@@ -3823,15 +3836,19 @@ li {
   line-height: 1.25;
   font-weight: 700;
 }
+
 .techmainpadding {
   padding-left: 6.2vw;
 }
+
 .techcol1 {
   max-width: 40%;
 }
+
 .techcol2 {
   max-width: 60%;
 }
+
 .commontech {
   background: #fff;
   box-shadow: 5px 5px 15px #00000042;
@@ -3840,14 +3857,17 @@ li {
   border-radius: .55vw;
   position: absolute;
 }
+
 .tech1 {
   margin-left: 2.6vw;
   margin-top: 4vw;
 }
+
 .tech2 {
   margin-left: 19.35vw;
   margin-top: 6vw;
 }
+
 .tech3 {
   margin-left: 34.2vw;
   margin-top: 5vw;
@@ -3857,197 +3877,207 @@ li {
   margin-left: 47vw;
   margin-top: 7vw;
 }
+
 .tech5 {
   margin-left: 1.1vw;
   margin-top: 14vw;
 }
+
 .tech6 {
   margin-left: 10vw;
   margin-top: 10vw;
 }
+
 .tech7 {
   margin-left: 17.5vw;
   margin-top: 15.8vw;
 }
+
 .tech8 {
   margin-left: 28.5vw;
   margin-top: 11vw;
 }
+
 .tech9 {
   margin-left: 40vw;
   margin-top: 14vw;
 }
+
 .tech10 {
   margin-left: 5.4vw;
   margin-top: 21vw;
 }
+
 .tech11 {
   margin-left: 19.5vw;
   margin-top: 23vw;
 }
+
 .tech12 {
   margin-left: 31.5vw;
   margin-top: 19vw;
 }
+
 .tech13 {
   margin-left: 41.5vw;
   margin-top: 25.5vw;
 }
+
 .tech14 {
   margin-left: 0;
   margin-top: 28vw;
 }
+
 .tech15 {
   margin-left: 14.5vw;
   margin-top: 29vw;
 }
+
 .tech16 {
   margin-left: 28vw;
   margin-top: 26.5vw;
 }
+
 .tech17 {
   margin-left: 47.5vw;
   margin-top: 32vw;
 }
+
 .tech18 {
   /* left: 0; */
   margin-left: -.5vw;
   margin-top: 36vw;
 }
+
 .tech19 {
   margin-left: 7.5vw;
   margin-top: 34vw;
 }
+
 .tech20 {
   margin-left: 22vw;
   margin-top: 35vw;
 }
+
 .techicon1 {
   width: 2vw;
   margin-top: 1.2vw;
 }
+
 .techicon2 {
   width: 1.6vw;
   margin-top: 1.2vw;
 }
+
 .techicon3 {
   width: 1.9vw;
   margin-top: 1.2vw;
 }
+
 .techicon4 {
   width: 1.9vw;
   margin-top: 1.2vw;
 }
+
 .techicon5 {
   width: 2.5vw;
   margin-top: 1.2vw;
 }
+
 .techicon6 {
   width: 2.8vw;
   margin-top: 1.2vw;
 }
+
 .techicon7 {
   width: 1.8vw;
   margin-top: 1.2vw;
 }
+
 .techicon8 {
   width: 3vw;
   margin-top: 1.2vw;
 }
+
 .techicon9 {
   width: 2.4vw;
   margin-top: 1.2vw;
 }
+
 .techicon10 {
   width: 2vw;
   margin-top: 1.2vw;
 }
+
 .techicon11 {
   width: 1.8vw;
   margin-top: 1.2vw;
 }
+
 .techicon12 {
   width: 2.5vw;
   margin-top: 1.2vw;
 }
+
 .techicon13 {
   width: 3.5vw;
   margin-top: 1.5vw;
 }
+
 .techicon14 {
   width: 2vw;
   margin-top: 1.1vw;
 }
+
 .techicon15 {
   width: 2vw;
   margin-top: 1.3vw;
 }
+
 .techicon16 {
   width: 2.4vw;
   margin-top: 1.1vw;
 }
+
 .techicon17 {
   width: 2.4vw;
   margin-top: 1.1vw;
 }
+
 .techicon18 {
   width: 1.5vw;
   margin-top: .8vw;
 }
+
 .techicon19 {
   width: 3.2vw;
   margin-top: 1.25vw;
 }
+
 .techicon20 {
   width: 2vw;
   margin-top: 1.1vw;
 }
-.herosection{
+
+.herosection {
   margin-top: 10px;
   height: 750px;
   width: 900px;
 }
-/* .bg-hero{
-  background-image: url('../public//assets/Mask_Group_11.jpg');
-  background-size: cover;
-} */
-.herocon{
-  position: relative;
-}
-.searchbar{
-  height: 3.5vw;
-  width: 100%;
-  position: absolute;
-  top: 18%;
-  left: 20%;
-  background-color: rgba(255,255,255,.22);
-  border: none;
-  border-radius: .5vw 0 0 .5vw;
-  color: #FFF;
-  font-size: 1.2vw;
-  background-image: url('../public/assets/Groups2533.svg');
-  padding: 0 58px;
-}
 
-::placeholder{
+::placeholder {
   color: #FFF !important;
   font-size: 1.2vw;
 }
 
-.searchbaricon{
+.searchbaricon {
   position: absolute;
   top: 20%;
   left: 22%;
   color: #FFF;
   font-size: 30px;
 }
-.scroll-animate{
-  position: absolute;
-  top: 28%;
-  left:46%;
-  color: #FFF;
-  font-size: 30px;
-}
+
 .secondscrolldivbuttom {
   height: 100vh;
   display: flex;
@@ -4056,10 +4086,7 @@ li {
   width: 50.5vw;
   background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 91%, rgba(253, 253, 254, 1) 100%);
 }
+
 .scroll-animate .marque img {
   height: 1vw;
-}
-.morquecont{
-  display: flex;
-  justify-content: space-between;
 }
