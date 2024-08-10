@@ -33,6 +33,7 @@
     font-size: 30px;
     margin-top: 30vh;
     overflow: hidden;
+    position: relative;
 }
 
 .morquecont {
@@ -45,6 +46,10 @@
     display: flex;
     justify-content: space-between;
     gap: 15px;
+}
+
+.btnimg {
+    width: 1.4vw;
 }
 
 .morquecont2 {
@@ -66,12 +71,6 @@
     width: 7vw;
 }
 
-/* @media (max-width: 1280px) {
-    .cool-link2{
-        display: none;
-    }
-  } */
-
 .smallcard {
     display: flex;
     justify-content: space-between;
@@ -89,13 +88,61 @@
     align-items: center;
     /* position: absolute; */
 }
-.techformob{
+
+.techformob {
     display: none;
+}
+
+.mobappimg {
+    width: 15vw;
+    margin-top: 3vw;
+    margin-left: 1vw;
+}
+
+.desktopappimage {
+    width: 12vw;
+    margin-top: 3vw;
+    margin-left: 3vw;
+}
+
+.ecommerceappimage {
+    width: 16vw;
+    margin-top: 3vw;
+    margin-left: 2vw;
+}
+
+.chatappimag {
+    width: 18vw;
+    margin-top: 3vw;
+    margin-left: 2vw;
+}
+
+.card6 {
+    background: linear-gradient(135deg, rgba(28, 107, 244, 1) 0%, rgba(0, 229, 245, 1) 100%) !important;
+}
+
+.scroll-animate::after {
+    background: linear-gradient(to right, #34116d 50%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100%;
+    display: block;
+    position: absolute;
+    width: 7vw;
+    right: -50px;
+    top: 0;
+}
+
+.appexamplecard {
+    display: none;
+}
+.appexamplecarddes{
+    display: flex;
 }
 
 @media (max-width: 1024px) {
     .downloadimga {
         height: 100px;
+        margin-bottom: -12px;
     }
 }
 
@@ -366,12 +413,152 @@
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 767px) {
+    .pin-spacer {
+        padding: 0 !important;
+    }
+
+    .firstscrolldiv {
+        width: 100vw;
+    }
+
+    .cool-link {
+        height: 108vw;
+        width: 80vw;
+    }
+
+    .secondscrolldiv {
+        width: 100vw;
+    }
+
     .changewidthcol7 {
         max-width: 100%;
         width: 100%;
         height: 47vw;
+        text-align: center;
     }
 
+    .webappimage {
+        width: 45vw;
+    }
+
+    .changewidthcol5 {
+        max-width: 100%;
+        padding: 20px 20px;
+    }
+
+    .scrollcardheading {
+        font-size: 5vw;
+    }
+
+    .scrollcardsubheading {
+        font-size: 2.8vw;
+    }
+
+    .scrollcardtext {
+        font-size: 2.8vw;
+        font-weight: 700;
+    }
+
+    .cardexample {
+        font-size: 4vw;
+        font-weight: 700;
+    }
+
+    .vertrectangleproductlogo {
+        height: 4.5vw;
+        margin-top: 2.6vw;
+    }
+
+    .horitrectangleproductlogo {
+        /* height: 6.5dvw; */
+        width: 5.5vw;
+        margin-top: 3.2vw;
+    }
+
+    .firstexamplediv {
+        width: 8.2vw;
+        height: 8.2vw;
+    }
+
+    .boutton-chat {
+        padding: 0 20px;
+    }
+
+    .cardexample {
+        display: none;
+    }
+
+    .getstartedwithgobutton {
+        height: 8vw !important;
+        box-shadow: 3px 3px 6px #0000002e;
+        border-radius: 1.4vw;
+        border: 2px solid #fff;
+        font-family: montserrat, sans-serif;
+        font-size: 3.8vw;
+        padding-top: 1vw;
+        color: #fff;
+        margin-top: 4vw;
+        font-weight: 800;
+        background-color: #080b51;
+        width: 45vw;
+    }
+
+    .getstartedwithgobuttonimg {
+        width: 3.2vw;
+        margin-top: -2.4vw;
+    }
+
+    .callbutton {
+        height: 8vw;
+        box-shadow: 3px 3px 6px #0000002e;
+        border-radius: 1.4vw;
+        border: 2px solid #fff;
+        font-family: montserrat, sans-serif;
+        font-size: 4vw;
+        color: #fff;
+        margin-top: 4vw;
+        background-color: #080b51;
+        width: 9vw;
+        padding: 0;
+    }
+
+    .btnimg {
+        width: 4vw;
+    }
+
+    .mobappimg {
+        width: 30vw;
+    }
+
+    .desktopappimage {
+        width: 28vw;
+    }
+
+    .chatappimag {
+        width: 35vw;
+    }
+
+    .ecommerceappimage {
+        width: 38vw;
+    }
+
+    .smallcard {
+        margin-top: 15px;
+    }
+    .appexamplecard{
+        display: flex;
+    }
+    .appexamplecarddes{
+        display: none;
+    }
+    .everreadyplayheading{
+        font-size: 8vw;
+    }
 }
 
+@media (max-width: 590px) {
+    .cool-link {
+        height: 136vw;
+    }
+}

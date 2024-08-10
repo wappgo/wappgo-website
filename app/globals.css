@@ -3752,8 +3752,8 @@ li {
 }
 
 .boutton-chat {
-  display: flex;
-  justify-content: start;
+  /* display: flex;
+  justify-content: start; */
   padding: 0 65px;
 }
 

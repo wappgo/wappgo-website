@@ -4,6 +4,8 @@ import { useEffect, useState, useRef } from "react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BiSearch } from "react-icons/bi";
 import { useGSAP } from "@gsap/react";
+import Lottie from 'react-lottie';
+import animationData from '../public/mobile.json';
 import "../styles/Global.css";
 gsap.registerPlugin(ScrollTrigger);
 const GlobeImage = () => {
@@ -13,6 +15,16 @@ const GlobeImage = () => {
   const boxItemsRef = useRef([]);
   const SectionCenterRef = useRef(null);
   const marqueeRef = useRef(null);
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
+
 
   const handleText = () => {
 
@@ -52,7 +64,7 @@ const GlobeImage = () => {
     if (viewportWidth < 1280) {
       return -500; // For smaller screens
     } else {
-      return -602
+      return -502
     }
   }
 
@@ -90,7 +102,7 @@ const GlobeImage = () => {
     const loop = horizontalLoop(".marquee__part", {
       repeat: -1,
       paused: false,
-      speed: 0.2
+      speed: 0.3
     });
 
     return () => {
@@ -127,47 +139,79 @@ const GlobeImage = () => {
                   <p className="scrollcardsubheading">Best fit to implement your idea and let the world know your play. </p>
                   <p className="scrollcardtext"> These applications are accessible via browser, some of them are dynamic which requires server-side processing and some are static which doesn't . Let's build Web Apps. </p>
                   <p className="cardexample">Examples:-</p>
-                  <div className="row">
-                    <div className="col-3">
+                  <div className="row appexamplecarddes">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
                         <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
                         <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
                         <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
                         <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="col-3">
+                  <div className="row appexamplecarddes">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
                         <img src="/assets/Pinterest.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
                         <img src="/assets/Google_Drive.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
                         <img src="/assets/Youtube.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
                         <img src="/assets/ESPN.png" className="horitrectangleproductlogo" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="row appexamplecard">
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/assets/Pinterest.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/assets/Google_Drive.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
@@ -179,67 +223,101 @@ const GlobeImage = () => {
                     <img src="/assets/Groupget.svg" className="getstartedwithgobuttonimg mx-2" />
                   </a>
                   <button className="callbutton">
-                    <img src="/assets/noun_call_1078211.svg" width="25px" />
+                    <img src="/assets/noun_call_1078211.svg" className="btnimg" />
                   </button>
                   <button className="callbutton">
-                    <img src="/assets/noun_chat_2518709 .svg" width="25px" />
+                    <img src="/assets/noun_chat_2518709 .svg" className="btnimg" />
                   </button>
                 </div>
               </div>
+
             </div>
           </div>
           <div className="secondscrolldiv" ref={el => boxItemsRef.current[1] = el}>
             <div className="cool-link">
               <div className="row paddingmarginzero">
                 <div className="col-lg-7 paddingmarginzero changewidthcol7">
-                  <img src="/assets/Web_app.png" className="webappimage" />
+                  <img src="/mobapplication/Mobile_application.png" className="mobappimg" />
                 </div>
                 <div className="col-lg-5 changewidthcol5 paddingmarginzero">
-                  <p className="scrollcardheading">Web Application</p>
-                  <p className="scrollcardsubheading">Best fit to implement your idea and let the world know your play. </p>
-                  <p className="scrollcardtext"> These applications are accessible via browser, some of them are dynamic which requires server-side processing and some are static which doesn't . Let's build Web Apps. </p>
+                  <p className="scrollcardheading">Mobile Application</p>
+                  <p className="scrollcardsubheading">Give wings to your idea by serving it directly to the user's phone.  </p>
+                  <p className="scrollcardtext"> Around 80% of mobile users prefer app for their needs. These apps can be native or hybrid with a single codebase for both IOS and Android. Let's build Mobile Applications.  </p>
                   <p className="cardexample">Examples:-</p>
-                  <div className="row">
-                    <div className="col-3">
+                  <div className="row appexamplecarddes">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
+                        <img src="/mobapplication/Instagram.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
+                        <img src="/mobapplication/Zomato.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
+                        <img src="/mobapplication/Tinder.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
+                        <img src="/mobapplication/Dropbox.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="col-3">
+                  <div className="row appexamplecarddes">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Pinterest.png" className="vertrectangleproductlogo" />
+                        <img src="/mobapplication/Spotify.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Google_Drive.png" className="vertrectangleproductlogo" />
+                        <img src="/mobapplication/Netflix.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Youtube.png" className="vertrectangleproductlogo" />
+                        <img src="/mobapplication/Flipboard.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/ESPN.png" className="horitrectangleproductlogo" />
+                        <img src="/mobapplication/Google_Maps.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="row appexamplecard">
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/mobapplication/Instagram.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/mobapplication/Zomato.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/mobapplication/Tinder.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/mobapplication/Dropbox.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/mobapplication/Spotify.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/mobapplication/Netflix.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
@@ -251,67 +329,100 @@ const GlobeImage = () => {
                     <img src="/assets/Groupget.svg" className="getstartedwithgobuttonimg mx-2" />
                   </a>
                   <button className="callbutton">
-                    <img src="/assets/noun_call_1078211.svg" width="25px" />
+                    <img src="/assets/noun_call_1078211.svg" className="btnimg" />
                   </button>
                   <button className="callbutton">
-                    <img src="/assets/noun_chat_2518709 .svg" width="25px" />
+                    <img src="/assets/noun_chat_2518709 .svg" className="btnimg" />
                   </button>
                 </div>
               </div>
             </div>
           </div>
-          <div className="secondscrolldiv" ref={el => boxItemsRef.current[2] = el}>
+          <div className="secondscrolldiv bg-secondscrolldiv" ref={el => boxItemsRef.current[2] = el}>
             <div className="cool-link">
               <div className="row paddingmarginzero">
                 <div className="col-lg-7 paddingmarginzero changewidthcol7">
-                  <img src="/assets/Web_app.png" className="webappimage" />
+                  <img src="/desktopapplication/Desktop_application.png" className="desktopappimage" />
                 </div>
                 <div className="col-lg-5 changewidthcol5 paddingmarginzero">
-                  <p className="scrollcardheading">Web Application</p>
-                  <p className="scrollcardsubheading">Best fit to implement your idea and let the world know your play. </p>
-                  <p className="scrollcardtext"> These applications are accessible via browser, some of them are dynamic which requires server-side processing and some are static which doesn't . Let's build Web Apps. </p>
+                  <p className="scrollcardheading">Desktop Application</p>
+                  <p className="scrollcardsubheading">Enhance user experience by delivering installable software & applications right into your PC </p>
+                  <p className="scrollcardtext"> Remove browser hassle and their dependency. These Apps are installed once & exists until you uninstall them, having in-app manual & auto update features. </p>
                   <p className="cardexample">Examples:-</p>
-                  <div className="row">
-                    <div className="col-3">
+                  <div className="row appexamplecarddes">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
+                        <img src="/desktopapplication/Slack.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
+                        <img src="/desktopapplication/Zoho.png" className="horitrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
+                        <img src="/desktopapplication/Skype.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
+                        <img src="/desktopapplication/Asana.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="col-3">
+                  <div className="row appexamplecarddes">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Pinterest.png" className="vertrectangleproductlogo" />
+                        <img src="/desktopapplication/Vlc.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Google_Drive.png" className="vertrectangleproductlogo" />
+                        <img src="/desktopapplication/Whatsapp.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Youtube.png" className="vertrectangleproductlogo" />
+                        <img src="/desktopapplication/Amazon_Music.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/ESPN.png" className="horitrectangleproductlogo" />
+                        <img src="/desktopapplication/Duolingo.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="row appexamplecard">
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/desktopapplication/Slack.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/desktopapplication/Zoho.png" className="horitrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/desktopapplication/Skype.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/desktopapplication/Asana.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/desktopapplication/Vlc.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/desktopapplication/Whatsapp.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
@@ -323,67 +434,100 @@ const GlobeImage = () => {
                     <img src="/assets/Groupget.svg" className="getstartedwithgobuttonimg mx-2" />
                   </a>
                   <button className="callbutton">
-                    <img src="/assets/noun_call_1078211.svg" width="25px" />
+                    <img src="/assets/noun_call_1078211.svg" className="btnimg" />
                   </button>
                   <button className="callbutton">
-                    <img src="/assets/noun_chat_2518709 .svg" width="25px" />
+                    <img src="/assets/noun_chat_2518709 .svg" className="btnimg" />
                   </button>
                 </div>
               </div>
             </div>
           </div>
-          <div className="secondscrolldiv  bg-secondscrolldiv" ref={el => boxItemsRef.current[3] = el}>
+          <div className="secondscrolldiv   bg-thirdscrolldiv" ref={el => boxItemsRef.current[3] = el}>
             <div className="cool-link">
               <div className="row paddingmarginzero">
                 <div className="col-lg-7 paddingmarginzero changewidthcol7">
-                  <img src="/assets/Web_app.png" className="webappimage" />
+                  <img src="/ecommerceapp/Ecommerce.png" className="ecommerceappimage" />
                 </div>
                 <div className="col-lg-5 changewidthcol5 paddingmarginzero">
-                  <p className="scrollcardheading">Web Application</p>
-                  <p className="scrollcardsubheading">Best fit to implement your idea and let the world know your play. </p>
-                  <p className="scrollcardtext"> These applications are accessible via browser, some of them are dynamic which requires server-side processing and some are static which doesn't . Let's build Web Apps. </p>
+                  <p className="scrollcardheading">E-commerce</p>
+                  <p className="scrollcardsubheading">Set up your very own giant marketplace. </p>
+                  <p className="scrollcardtext">An online shopping platform that is accessible from anywhere around the world. Order Management, Delivery options, Online payment collection, etc. Make your dream come true and become an entrepreneur. </p>
                   <p className="cardexample">Examples:-</p>
-                  <div className="row">
-                    <div className="col-3">
+                  <div className="row appexamplecarddes">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
+                        <img src="/ecommerceapp/Amazon.png" className="horitrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
+                        <img src="/ecommerceapp/Flipkart.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
+                        <img src="/ecommerceapp/Olx.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
+                        <img src="/ecommerceapp/Netmeds.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="col-3">
+                  <div className="row appexamplecarddes">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Pinterest.png" className="vertrectangleproductlogo" />
+                        <img src="/ecommerceapp/Shein.png" className="horitrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Google_Drive.png" className="vertrectangleproductlogo" />
+                        <img src="/ecommerceapp/Zara.png" className="horitrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Youtube.png" className="vertrectangleproductlogo" />
+                        <img src="/ecommerceapp/Offerup.png" className="horitrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/ESPN.png" className="horitrectangleproductlogo" />
+                        <img src="/ecommerceapp/Ebay.png" className="horitrectangleproductlogo" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="row appexamplecard">
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/ecommerceapp/Amazon.png" className="horitrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/ecommerceapp/Flipkart.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/ecommerceapp/Olx.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/ecommerceapp/Netmeds.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/ecommerceapp/Shein.png" className="horitrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/ecommerceapp/Zara.png" className="horitrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
@@ -395,67 +539,100 @@ const GlobeImage = () => {
                     <img src="/assets/Groupget.svg" className="getstartedwithgobuttonimg mx-2" />
                   </a>
                   <button className="callbutton">
-                    <img src="/assets/noun_call_1078211.svg" width="25px" />
+                    <img src="/assets/noun_call_1078211.svg" className="btnimg" />
                   </button>
                   <button className="callbutton">
-                    <img src="/assets/noun_chat_2518709 .svg" width="25px" />
+                    <img src="/assets/noun_chat_2518709 .svg" className="btnimg" />
                   </button>
                 </div>
               </div>
             </div>
           </div>
-          <div className="secondscrolldiv  bg-thirdscrolldiv" ref={el => boxItemsRef.current[4] = el}>
+          <div className="secondscrolldiv  bg-fourscrolldiv" ref={el => boxItemsRef.current[4] = el}>
             <div className="cool-link">
               <div className="row paddingmarginzero">
                 <div className="col-lg-7 paddingmarginzero changewidthcol7">
-                  <img src="/assets/Web_app.png" className="webappimage" />
+                  <img src="/aiapplication/aiapp.png" className="webappimage" />
                 </div>
                 <div className="col-lg-5 changewidthcol5 paddingmarginzero">
-                  <p className="scrollcardheading">Web Application</p>
-                  <p className="scrollcardsubheading">Best fit to implement your idea and let the world know your play. </p>
-                  <p className="scrollcardtext"> These applications are accessible via browser, some of them are dynamic which requires server-side processing and some are static which doesn't . Let's build Web Apps. </p>
+                  <p className="scrollcardheading">A.I & M.L.</p>
+                  <p className="scrollcardsubheading">Why work more when you can ask the machine to dance?. </p>
+                  <p className="scrollcardtext"> Give brains to your machine and let them handle your work. Imagine this as a program that can perform different operations based on the things they learn. </p>
                   <p className="cardexample">Examples:-</p>
-                  <div className="row">
-                    <div className="col-3">
+                  <div className="row appexamplecarddes">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
+                        <img src="/aiapplication/Face_Recognition.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
+                        <img src="/aiapplication/Computer_Vision.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
+                        <img src="/aiapplication/Lenskart.png" className="horitrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
+                        <img src="/aiapplication/Neural_Network.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="col-3">
+                  <div className="row appexamplecarddes">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Pinterest.png" className="vertrectangleproductlogo" />
+                        <img src="/aiapplication/Tensorflow.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Google_Drive.png" className="vertrectangleproductlogo" />
+                        <img src="/aiapplication/Wolfram_Alpha.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/Youtube.png" className="vertrectangleproductlogo" />
+                        <img src="/aiapplication/The_Weather_Channel.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                       <div className="firstexamplediv">
-                        <img src="/assets/ESPN.png" className="horitrectangleproductlogo" />
+                        <img src="/aiapplication/Amazon_Alexa.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="row appexamplecard">
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/aiapplication/Face_Recognition.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/aiapplication/Computer_Vision.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/aiapplication/Lenskart.png" className="horitrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/aiapplication/Neural_Network.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/aiapplication/Tensorflow.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv">
+                        <img src="/aiapplication/Wolfram_Alpha.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
@@ -467,70 +644,104 @@ const GlobeImage = () => {
                     <img src="/assets/Groupget.svg" className="getstartedwithgobuttonimg mx-2" />
                   </a>
                   <button className="callbutton">
-                    <img src="/assets/noun_call_1078211.svg" width="25px" />
+                    <img src="/assets/noun_call_1078211.svg" className="btnimg" />
                   </button>
                   <button className="callbutton">
-                    <img src="/assets/noun_chat_2518709 .svg" width="25px" />
+                    <img src="/assets/noun_chat_2518709 .svg" className="btnimg" />
                   </button>
                 </div>
               </div>
             </div>
           </div>
-          <div className="secondscrolldiv bg-fourscrolldiv" ref={el => boxItemsRef.current[5] = el}>
+          <div className="secondscrolldiv  bg-fivescrolldiv" ref={el => boxItemsRef.current[5] = el}>
             <div className="cool-link">
               <div className="row paddingmarginzero">
                 <div className="col-lg-7 paddingmarginzero changewidthcol7">
-                  <img src="/assets/Web_app.png" className="webappimage" />
+                  <img src="/chatapplication/chatbots.png" className="chatappimag" />
                 </div>
                 <div className="col-lg-5 changewidthcol5 paddingmarginzero">
-                  <p className="scrollcardheading">Web Application</p>
-                  <p className="scrollcardsubheading">Best fit to implement your idea and let the world know your play. </p>
-                  <p className="scrollcardtext"> These applications are accessible via browser, some of them are dynamic which requires server-side processing and some are static which doesn't . Let's build Web Apps. </p>
+                  <p className="scrollcardheading">Chat Bots</p>
+                  <p className="scrollcardsubheading">Give your product its very own intelligence! </p>
+                  <p className="scrollcardtext"> Enhance your products by adding automation. Let the Chatbot handle the requests & increase the productivity of your business. Avoid multiple clicks and selections just start interacting with ChatBot. </p>
                   <p className="cardexample">Examples:-</p>
-                  <div className="row">
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
+                  <div className="row appexamplecarddes">
+                    <div className="col-lg-3">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/Food.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
+                    <div className="col-lg-3">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/E_Learning.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
+                    <div className="col-lg-3">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/Travel.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Pinterest.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Google_Drive.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Youtube.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/ESPN.png" className="horitrectangleproductlogo" />
+                    <div className="col-lg-3">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/Health.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
+                  <div className="row appexamplecarddes">
+                    <div className="col-lg-3">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/Entertainment.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-lg-3">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/Restaurant_Booking.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-lg-3">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/Shopping.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-lg-3">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/Custom_Solutions.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="row appexamplecard">
+                    <div className="col-2">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/Food.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/E_Learning.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/Travel.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/Health.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/Entertainment.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/Restaurant_Booking.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
               <div className="boutton-chat">
@@ -539,88 +750,16 @@ const GlobeImage = () => {
                     <img src="/assets/Groupget.svg" className="getstartedwithgobuttonimg mx-2" />
                   </a>
                   <button className="callbutton">
-                    <img src="/assets/noun_call_1078211.svg" width="25px" />
+                    <img src="/assets/noun_call_1078211.svg" className="btnimg" />
                   </button>
                   <button className="callbutton">
-                    <img src="/assets/noun_chat_2518709 .svg" width="25px" />
+                    <img src="/assets/noun_chat_2518709 .svg" className="btnimg" />
                   </button>
                 </div>
               </div>
             </div>
           </div>
-          <div className="secondscrolldiv bg-fivescrolldiv" ref={el => boxItemsRef.current[6] = el}>
-            <div className="cool-link">
-              <div className="row paddingmarginzero">
-                <div className="col-lg-7 paddingmarginzero changewidthcol7">
-                  <img src="/assets/Web_app.png" className="webappimage" />
-                </div>
-                <div className="col-lg-5 changewidthcol5 paddingmarginzero">
-                  <p className="scrollcardheading">Web Application</p>
-                  <p className="scrollcardsubheading">Best fit to implement your idea and let the world know your play. </p>
-                  <p className="scrollcardtext"> These applications are accessible via browser, some of them are dynamic which requires server-side processing and some are static which doesn't . Let's build Web Apps. </p>
-                  <p className="cardexample">Examples:-</p>
-                  <div className="row">
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Pinterest.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Google_Drive.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Youtube.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/ESPN.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="boutton-chat">
-                <div>
-                  <a className="getstartedwithgobutton">Get a Quote
-                    <img src="/assets/Groupget.svg" className="getstartedwithgobuttonimg mx-2" />
-                  </a>
-                  <button className="callbutton">
-                    <img src="/assets/noun_call_1078211.svg" width="25px" />
-                  </button>
-                  <button className="callbutton">
-                    <img src="/assets/noun_chat_2518709 .svg" width="25px" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="secondscrolldiv  cool-link2" ref={el => boxItemsRef.current[7] = el}>
+          <div className="secondscrolldiv  cool-link2" ref={el => boxItemsRef.current[6] = el}>
             <div className="container-search">
               <input placeholder="Search for something..." className="searchbar" />
               <div className="scroll-animate" ref={marqueeRef}>
@@ -648,91 +787,91 @@ const GlobeImage = () => {
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
+                        <img src="/assets/Google_Drive.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
+                        <img src="/assets/Pinterest.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
+                        <img src="/mobapplication/Instagram.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
                   <div className="morquecont1">
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
+                        <img src="/mobapplication/Google_Maps.png" className="vertrectangleproductlogo mx-2" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
+                        <img src="/desktopapplication/Slack.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
+                        <img src="/desktopapplication/Zoho.png" className="horitrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
+                        <img src="/desktopapplication/Skype.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
+                        <img src="/desktopapplication/Duolingo.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
+                        <img src="/desktopapplication/Amazon_Music.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
+                        <img src="/desktopapplication/Whatsapp.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
                   <div className="morquecont2">
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
+                        <img src="/ecommerceapp/Amazon.png" className="horitrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
+                        <img src="/ecommerceapp/Flipkart.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
+                        <img src="/ecommerceapp/Olx.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
+                        <img src="/ecommerceapp/Netmeds.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
+                        <img src="/aiapplication/Face_Recognition.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
+                        <img src="/aiapplication/Computer_Vision.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
+                        <img src="/aiapplication/Amazon_Alexa.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
@@ -742,7 +881,7 @@ const GlobeImage = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="techmaindiv">
         <div className="techmainpadding techfordes">
           <div className="row">
@@ -756,115 +895,116 @@ const GlobeImage = () => {
                 <br />
                 Technology Stack...
               </p>
-              <div>
-                <img src="/assets/Web_app.png" className="webappimage" />
+              <div className="text-center">
+                <Lottie options={defaultOptions} height={400} width={400} className="lottieImag"/>;
               </div>
             </div>
             <div className="col-lg-7 techcol2">
               <div className="commontech tech1">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon1" />
+                  <img src="/techimg/wordpress-icon.svg" className="techicon1" />
                 </center>
               </div>
               <div className="commontech tech2">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon2" />
+                  <img src="/techimg/flutterio-icon.webp" className="techicon2" />
                 </center>
               </div>
               <div className="commontech tech3">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon3" />
+                  <img src="/techimg/angular-icon.webp" className="techicon3" />
                 </center>
               </div>
               <div className="commontech tech4">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon4" />
+                  <img src="/techimg/dartlang-icon.webp" className="techicon4" />
                 </center>
               </div>
               <div className="commontech tech5">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon1" />
+                  <img src="/techimg/google_cloud-icon.webp" className="techicon1" />
                 </center>
               </div>
               <div className="commontech tech6">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon1" />
+                  <img src="/techimg/laravel-icon.webp" className="techicon1" />
                 </center>
               </div>
               <div className="commontech tech7">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon7" />
+                  <img src="/techimg/node-node-js-seeklogo.com.webp" className="techicon7" />
                 </center>
               </div>
               <div className="commontech tech8">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon1" />
+                  <img src="/techimg/kotlinlang-icon.webp" className="techicon1" />
                 </center>
               </div>
               <div className="commontech tech9">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon9" />
+                  <img src="/techimg/microsoft_azure-icon.webp" className="techicon9" />
                 </center>
               </div>
               <div className="commontech tech10">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon10" />
+                  <img src="/techimg/swift-icon.svg" className="techicon10" />
                 </center>
               </div>
               <div className="commontech tech11">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon11" />
+                  <img src="/techimg/vuejs-seeklogo.com.svg" className="techicon11" />
                 </center>
               </div>
               <div className="commontech tech12">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon12" />
+                  <img src="/techimg/golang-official.webp" className="techicon12" />
                 </center>
               </div>
               <div className="commontech tech13">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon1" />
+                  <img src="/techimg/electronjs-icon.webp" className="techicon1" />
                 </center>
               </div>
               <div className="commontech tech14">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon14" />
+                  <img src="/techimg/graphql-icon.webp" className="techicon14" />
                 </center>
               </div>
               <div className="commontech tech15">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon15" />
+                  <img src="/techimg/Path_7239.svg" className="techicon15" />
                 </center>
               </div>
               <div className="commontech tech16">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon16" />
+                  <img src="/techimg/python-icon.svg" className="techicon16" />
                 </center>
               </div>
               <div className="commontech tech17">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon1" />
+                  <img src="/techimg/graphql-icon.webp" className="techicon1" />
                 </center>
               </div>
               <div className="commontech tech18">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon18" />
+                  <img src="/techimg/java-vertical.webp" className="techicon18" />
                 </center>
               </div>
               <div className="commontech tech19">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon1" />
+                  <img src="/techimg/reactjs-icon.svg" className="techicon1" />
                 </center>
               </div>
               <div className="commontech tech20">
                 <center>
-                  <img src="/assets/Airbnb.png" className="techicon20" />
+                  <img src="/techimg/Layer%202.svg" className="techicon20" />
                 </center>
               </div>
+
             </div>
           </div>
           <div>
-            {/* <img src="/assets/Up.svg" className="mt-5 downloadimga" /> */}
+            <img src="/assets/Up.svg" className="mt-5 downloadimga" width="100%" />
           </div>
         </div>
         <div className="techformob">
@@ -878,45 +1018,45 @@ const GlobeImage = () => {
             Technology Stack...
           </p>
           <div className="text-center">
-            <img src="/assets/Web_app.png" className="webappimage" />
+          <Lottie options={defaultOptions} height={600} width={500} />;
           </div>
           <div>
             <div className="smallcard">
               <div className="commontech1 commontech10 ">
-                <img src="/assets/Airbnb.png" className="techicon188" />
+                <img src="/techimg/wordpress-icon.svg" className="techicon188" />
               </div>
               <div className="commontech1 commontech11">
-                <img src="/assets/Airbnb.png" className="techicon188" />
+                <img src="/techimg/flutterio-icon.webp" className="techicon188" />
               </div>
               <div className="commontech1 commontech13">
-                <img src="/assets/Airbnb.png" className="techicon188" />
+                <img src="/techimg/angular-icon.webp" className="techicon188" />
               </div>
             </div>
             <div className="smallcard">
               <div className="commontech1 commontech10 ">
-                <img src="/assets/Airbnb.png" className="techicon188" />
+                <img src="/techimg/dartlang-icon.webp" className="techicon188" />
               </div>
               <div className="commontech1 commontech11">
-                <img src="/assets/Airbnb.png" className="techicon188" />
+                <img src="/techimg/google_cloud-icon.webp" className="techicon188" />
               </div>
               <div className="commontech1 commontech13">
-                <img src="/assets/Airbnb.png" className="techicon188" />
+                <img src="/techimg/laravel-icon.webp" className="techicon188" />
               </div>
             </div>
             <div className="smallcard">
               <div className="commontech1 commontech10 ">
-                <img src="/assets/Airbnb.png" className="techicon188" />
+                <img src="/techimg/kotlinlang-icon.webp" className="techicon188" />
               </div>
               <div className="commontech1 commontech11">
-                <img src="/assets/Airbnb.png" className="techicon188" />
+                <img src="/techimg/node-node-js-seeklogo.com.webp" className="techicon188" />
               </div>
               <div className="commontech1 commontech13">
-                <img src="/assets/Airbnb.png" className="techicon188" />
+                <img src="/techimg/microsoft_azure-icon.webp" className="techicon188" />
               </div>
             </div>
           </div>
           <div>
-            <img src="/assets/Up.svg" className="mt-5 downloadimga" />
+            <img src="/assets/Up.svg" className="mt-5 downloadimga" width="100%" />
           </div>
         </div>
       </div>
@@ -995,4 +1135,5 @@ function horizontalLoop(items, config) {
   }
   return tl;
 }
+
 
