@@ -3655,7 +3655,7 @@ li {
   max-width: 44%;
 }
 
-.webappimage {
+.webappimage,.aiappimage {
   width: 21vw;
   margin-top: 3vw;
   margin-left: 1vw;
@@ -3768,6 +3768,18 @@ li {
   width: 2.9vw;
   text-align: center;
   height: 2.9vw;
+}
+.firstexampledivactive{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  height: 2.9vw;
+  width: 2.9vw;
+  opacity: 1 !important;
+  transform: scale(2) !important;
+  z-index: 10;
+  box-shadow: 3px 3px 6px #0000002e;
 }
 
 .horitrectangleproductlogo {

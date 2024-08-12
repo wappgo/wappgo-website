@@ -1,12 +1,13 @@
 "use client"
 import gsap from "gsap";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BiSearch } from "react-icons/bi";
 import { useGSAP } from "@gsap/react";
 import Lottie from 'react-lottie';
 import animationData from '../public/mobile.json';
 import "../styles/Global.css";
+import { PiCaretRightBold } from "react-icons/pi";
 gsap.registerPlugin(ScrollTrigger);
 const GlobeImage = () => {
   const [text, setText] = useState('BUSINESS');
@@ -15,7 +16,7 @@ const GlobeImage = () => {
   const boxItemsRef = useRef([]);
   const SectionCenterRef = useRef(null);
   const marqueeRef = useRef(null);
-
+  const loopRef = useRef(null);
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -49,8 +50,6 @@ const GlobeImage = () => {
         }
       })
   };
-
-
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
@@ -99,17 +98,32 @@ const GlobeImage = () => {
   }, []);
 
   useEffect(() => {
-    const loop = horizontalLoop(".marquee__part", {
+    loopRef.current = horizontalLoop(".marquee__part", {
       repeat: -1,
       paused: false,
       speed: 0.3
     });
 
     return () => {
-      loop.kill();
+      loopRef.current.kill();
     };
   }, []);
 
+  const handleMouseEnter = () => {
+    if (loopRef.current) {
+      loopRef.current.pause();
+    }
+  };
+  const handleMouseLeave = () => {
+    loopRef.current = horizontalLoop(".marquee__part", {
+      repeat: -1,
+      paused: false,
+      speed: 0.3
+    });
+    return () => {
+      loopRef.current.kill();
+    };
+  }
 
   return (
     <div ref={verticalRef}>
@@ -552,7 +566,7 @@ const GlobeImage = () => {
             <div className="cool-link">
               <div className="row paddingmarginzero">
                 <div className="col-lg-7 paddingmarginzero changewidthcol7">
-                  <img src="/aiapplication/aiapp.png" className="webappimage" />
+                  <img src="/aiapplication/aiapp.png" className="aiappimage" />
                 </div>
                 <div className="col-lg-5 changewidthcol5 paddingmarginzero">
                   <p className="scrollcardheading">A.I & M.L.</p>
@@ -762,17 +776,24 @@ const GlobeImage = () => {
           <div className="secondscrolldiv  cool-link2" ref={el => boxItemsRef.current[6] = el}>
             <div className="container-search">
               <input placeholder="Search for something..." className="searchbar" />
-              <div className="scroll-animate" ref={marqueeRef}>
+              <div className="scroll-animate" ref={marqueeRef} onMouseEnter={() => handleMouseEnter()}
+                onMouseLeave={() => handleMouseLeave()}
+              >
                 <div className="searchcraoselinside">
                   <div className="morquecont">
                     <div className="marquee__part">
-                      <div className="firstexamplediv">
+                      <div className="firstexamplediv mx-2">
                         <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="marquee__part">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/E_Learning.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
@@ -797,19 +818,34 @@ const GlobeImage = () => {
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
-                        <img src="/mobapplication/Instagram.png" className="vertrectangleproductlogo" />
+                        <img src="/assets/Pinterest.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="marquee__part">
+                      <div className="firstexamplediv card6">
+                        <img src="/chatapplication/Food.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="marquee__part">
+                      <div className="firstexamplediv">
+                        <img src="aiapplication/Tensorflow.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                   </div>
                   <div className="morquecont1">
                     <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Google_Maps.png" className="vertrectangleproductlogo mx-2" />
+                      <div className="firstexamplediv mx-3">
+                        <img src="/mobapplication/Google_Maps.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/desktopapplication/Slack.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
+                    <div className="marquee__part">
+                      <div className="firstexamplediv">
+                        <img src="/aiapplication/Wolfram_Alpha.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
                     <div className="marquee__part">
@@ -837,10 +873,15 @@ const GlobeImage = () => {
                         <img src="/desktopapplication/Whatsapp.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
+                    <div className="marquee__part">
+                      <div className="firstexamplediv">
+                        <img src="/desktopapplication/Vlc.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
                   </div>
                   <div className="morquecont2">
                     <div className="marquee__part">
-                      <div className="firstexamplediv">
+                      <div className="firstexamplediv mx-2">
                         <img src="/ecommerceapp/Amazon.png" className="horitrectangleproductlogo" />
                       </div>
                     </div>
@@ -849,6 +890,7 @@ const GlobeImage = () => {
                         <img src="/ecommerceapp/Flipkart.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
+
                     <div className="marquee__part">
                       <div className="firstexamplediv">
                         <img src="/ecommerceapp/Olx.png" className="vertrectangleproductlogo" />
@@ -874,8 +916,18 @@ const GlobeImage = () => {
                         <img src="/aiapplication/Amazon_Alexa.png" className="vertrectangleproductlogo" />
                       </div>
                     </div>
+                    <div className="marquee__part">
+                      <div className="firstexamplediv">
+                        <img src="/mobapplication/Netflix.png" className="vertrectangleproductlogo" />
+                      </div>
+                    </div>
                   </div>
                 </div>
+              </div>
+              <div>
+                <a className="extrabutton">
+                  <PiCaretRightBold />
+                </a>
               </div>
             </div>
           </div>
@@ -896,7 +948,7 @@ const GlobeImage = () => {
                 Technology Stack...
               </p>
               <div className="text-center">
-                <Lottie options={defaultOptions} height={400} width={400} className="lottieImag"/>;
+                <Lottie options={defaultOptions} height={400} width={400} className="lottieImag" />;
               </div>
             </div>
             <div className="col-lg-7 techcol2">
@@ -1018,7 +1070,7 @@ const GlobeImage = () => {
             Technology Stack...
           </p>
           <div className="text-center">
-          <Lottie options={defaultOptions} height={600} width={500} />;
+            <Lottie options={defaultOptions} height={600} width={500} />;
           </div>
           <div>
             <div className="smallcard">
