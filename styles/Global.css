@@ -1,9 +1,11 @@
 .cool-link2 {
     background-image: url("../public/assets/Mask_Group_11.jpg");
     background-repeat: no-repeat;
-    background-size: 100% 100vh;
+    background-size: 55vw 100vh;
     position: relative;
     overflow: hidden;
+    left: -110px;
+    z-index: 9999;
 }
 
 .searchbar {
@@ -22,7 +24,14 @@
     position: absolute;
     margin-top: 20vh;
 }
-
+.caroselproductname {
+    font-size: 1vw;
+    font-family: montserrat, sans-serif;
+    color: #2b1e68 !important;
+    line-height: 1.2;
+    display: block;
+    margin: 0;
+}
 .container-search {
     padding: 0 0 0 100px;
 }
@@ -128,9 +137,10 @@
     height: 100%;
     display: block;
     position: absolute;
-    width: 10vw;
+    width: 7vw;
     right: -50px;
     top: 0;
+    z-index: 1;
 }
 
 .appexamplecard {
@@ -141,30 +151,6 @@
     display: flex;
 }
 
-.webappimage:hover {
-    transform: rotateX(2.11055deg) rotateY(-19.6017deg);
-    transition-duration: 1s;
-}
-.mobappimg:hover{
-    transform: rotateX(-19.6017deg) rotateY(-19.6017deg);
-    transition-duration: 1s;
-}
-.desktopappimage:hover{
-    transform: rotateX(-13.8004deg) rotateY(-5.20406deg);
-    transition-duration: 1s;
-}
-.ecommerceappimage:hover{
-    transform: rotateX(-12.5069deg) rotateY(-15.1265deg);
-    transition-duration: 1s;
-}
-.aiappimage:hover{
-    transform: rotateX(18.1965deg) rotateY(5.57545deg);
-    transition-duration: 1s;
-}
-.chatappimag:hover{
-    transform: rotateX(6.087885deg) rotateY(-19.8212deg);
-    transition-duration: 1s;
-}
 .extrabutton{
     width: 3vw;
     height: 3vw;
@@ -177,7 +163,7 @@
     align-items: center;
     font-size: 2vw;
     position: absolute;
-    left: 23.2vw;
+    left: 27.2vw;
     bottom: 6.5vw;
 }
 .extrabutton:hover{
@@ -187,6 +173,23 @@
     transition-duration: 1s;
     transition-delay: 0.1s;
 }
+.examplecardcon{
+    position: relative;
+}
+.cardtextexample{
+    position: absolute;
+    bottom: -50px;
+    box-shadow: 3px 3px 6px #0000002e;
+    left: 0;
+}
+.appexamoolediv{
+    opacity: 0.5;
+}
+/* .carddeactive{
+    cursor: pointer;
+    opacity: .6;
+    transform: scale(1);
+} */
 @media (max-width: 1024px) {
     .downloadimga {
         height: 100px;

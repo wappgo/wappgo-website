@@ -8,9 +8,19 @@ import Lottie from 'react-lottie';
 import animationData from '../public/mobile.json';
 import "../styles/Global.css";
 import { PiCaretRightBold } from "react-icons/pi";
+import Tilt from 'react-parallax-tilt';
+import { WebApp } from "@/app/Data/WebApp";
+import { MobApp } from "@/app/Data/WebApp";
+import { DesApp } from "@/app/Data/WebApp";
+import { EcommerceApp } from "@/app/Data/WebApp";
+import { aimlApp } from "@/app/Data/WebApp";
+import { chatApp } from "@/app/Data/WebApp";
+// import './TrackOnWindow.demozap.css'
 gsap.registerPlugin(ScrollTrigger);
+
 const GlobeImage = () => {
   const [text, setText] = useState('BUSINESS');
+  const [count, setCount] = useState(null);
   const element = useRef(null);
   const verticalRef = useRef(null);
   const boxItemsRef = useRef([]);
@@ -26,6 +36,12 @@ const GlobeImage = () => {
     }
   };
 
+  const handleCard = (index) => {
+    if (index) {
+      setCount(index)
+    }
+    console.log("index", index, count)
+  }
 
   const handleText = () => {
 
@@ -80,7 +96,6 @@ const GlobeImage = () => {
       end: 'bottom center',
       scrub: true
     });
-    console.log("hello", getXPercent())
     gsap.to(boxItems, {
       xPercent: getXPercent(),
       scrollTrigger: {
@@ -109,21 +124,21 @@ const GlobeImage = () => {
     };
   }, []);
 
-  const handleMouseEnter = () => {
-    if (loopRef.current) {
-      loopRef.current.pause();
-    }
-  };
-  const handleMouseLeave = () => {
-    loopRef.current = horizontalLoop(".marquee__part", {
-      repeat: -1,
-      paused: false,
-      speed: 0.3
-    });
-    return () => {
-      loopRef.current.kill();
-    };
-  }
+  // const handleMouseEnter = () => {
+  //   if (loopRef.current) {
+  //     loopRef.current.pause();
+  //   }
+  // };
+  // const handleMouseLeave = () => {
+  //   loopRef.current = horizontalLoop(".marquee__part", {
+  //     repeat: -1,
+  //     paused: false,
+  //     speed: 0.3
+  //   });
+  //   return () => {
+  //     loopRef.current.kill();
+  //   };
+  // }
 
   return (
     <div ref={verticalRef}>
@@ -143,10 +158,23 @@ const GlobeImage = () => {
       <div id="horizontal" ref={SectionCenterRef} className="scroll-container">
         <div className="d-flex">
           <div className="firstscrolldiv" ref={el => boxItemsRef.current[0] = el}>
+
+            
             <div className="cool-link">
               <div className="row paddingmarginzero">
                 <div className="col-lg-7 col-md-12 paddingmarginzero changewidthcol7">
-                  <img src="/assets/Web_app.png" className="webappimage" />
+                  <Tilt
+                    tiltMaxAngleX={25}
+                    tiltMaxAngleY={25}
+                    perspective={500}
+                    glareEnable={true}
+                    glareMaxOpacity={false}
+                    gyroscope={true}
+                    trackOnWindow={true}
+                    transitionSpeed={1500}
+                  >
+                    <img src="/assets/Web_app.png" className="webappimage" />
+                  </Tilt>
                 </div>
                 <div className="col-lg-5 col-md-12 changewidthcol5 paddingmarginzero">
                   <p className="scrollcardheading">Web Application</p>
@@ -154,48 +182,18 @@ const GlobeImage = () => {
                   <p className="scrollcardtext"> These applications are accessible via browser, some of them are dynamic which requires server-side processing and some are static which doesn't . Let's build Web Apps. </p>
                   <p className="cardexample">Examples:-</p>
                   <div className="row appexamplecarddes">
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
+                    {WebApp?.map((item, index) => (
+                      <div className="col-lg-3" key={index}>
+                        <div className={count === index ? "firstexampledivactive" : count !== index && count !== null ? "carddeactive" : "firstexamplediv"} type="button" onClick={() => handleCard(index)}>
+                          <img src={item.image} className={item.className} />
+                        </div>
+                        {count === index && (
+                          <div className="cardtextexample">
+                            <p className="caroselproductname">{item.name}</p>
+                          </div>
+                        )}
                       </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row appexamplecarddes">
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Pinterest.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Google_Drive.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Youtube.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/assets/ESPN.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
+                    ))}
                   </div>
                   <div className="row appexamplecard">
                     <div className="col-2">
@@ -251,7 +249,19 @@ const GlobeImage = () => {
             <div className="cool-link">
               <div className="row paddingmarginzero">
                 <div className="col-lg-7 paddingmarginzero changewidthcol7">
-                  <img src="/mobapplication/Mobile_application.png" className="mobappimg" />
+                  <Tilt
+                    className="background-stripes track-on-window"
+                    tiltMaxAngleX={30}
+                    tiltMaxAngleY={25}
+                    perspective={500}
+                    glareEnable={true}
+                    glareMaxOpacity={false}
+                    gyroscope={true}
+                    trackOnWindow={true}
+                    transitionSpeed={1500}
+                  >
+                    <img src="/mobapplication/Mobile_application.png" className="mobappimg" />
+                  </Tilt>
                 </div>
                 <div className="col-lg-5 changewidthcol5 paddingmarginzero">
                   <p className="scrollcardheading">Mobile Application</p>
@@ -356,7 +366,19 @@ const GlobeImage = () => {
             <div className="cool-link">
               <div className="row paddingmarginzero">
                 <div className="col-lg-7 paddingmarginzero changewidthcol7">
-                  <img src="/desktopapplication/Desktop_application.png" className="desktopappimage" />
+                  <Tilt
+                    className="background-stripes track-on-window"
+                    tiltMaxAngleX={25}
+                    tiltMaxAngleY={25}
+                    perspective={500}
+                    glareEnable={true}
+                    glareMaxOpacity={false}
+                    gyroscope={true}
+                    trackOnWindow={true}
+                    transitionSpeed={1500}
+                  >
+                    <img src="/desktopapplication/Desktop_application.png" className="desktopappimage" />
+                  </Tilt>
                 </div>
                 <div className="col-lg-5 changewidthcol5 paddingmarginzero">
                   <p className="scrollcardheading">Desktop Application</p>
@@ -461,7 +483,18 @@ const GlobeImage = () => {
             <div className="cool-link">
               <div className="row paddingmarginzero">
                 <div className="col-lg-7 paddingmarginzero changewidthcol7">
-                  <img src="/ecommerceapp/Ecommerce.png" className="ecommerceappimage" />
+                  <Tilt
+                    tiltMaxAngleX={25}
+                    tiltMaxAngleY={25}
+                    perspective={500}
+                    glareEnable={true}
+                    glareMaxOpacity={false}
+                    gyroscope={true}
+                    trackOnWindow={true}
+                    transitionSpeed={1500}
+                  >
+                    <img src="/ecommerceapp/Ecommerce.png" className="ecommerceappimage" />
+                  </Tilt>
                 </div>
                 <div className="col-lg-5 changewidthcol5 paddingmarginzero">
                   <p className="scrollcardheading">E-commerce</p>
@@ -566,7 +599,19 @@ const GlobeImage = () => {
             <div className="cool-link">
               <div className="row paddingmarginzero">
                 <div className="col-lg-7 paddingmarginzero changewidthcol7">
-                  <img src="/aiapplication/aiapp.png" className="aiappimage" />
+                  <Tilt
+                    tiltMaxAngleX={25}
+                    tiltMaxAngleY={25}
+                    perspective={500}
+                    glareEnable={true}
+                    glareMaxOpacity={false}
+                    gyroscope={true}
+                    trackOnWindow={true}
+                    transitionSpeed={1500}
+                  >
+                    <img src="/aiapplication/aiapp.png" className="aiappimage" />
+                  </Tilt>
+
                 </div>
                 <div className="col-lg-5 changewidthcol5 paddingmarginzero">
                   <p className="scrollcardheading">A.I & M.L.</p>
@@ -671,7 +716,18 @@ const GlobeImage = () => {
             <div className="cool-link">
               <div className="row paddingmarginzero">
                 <div className="col-lg-7 paddingmarginzero changewidthcol7">
-                  <img src="/chatapplication/chatbots.png" className="chatappimag" />
+                  <Tilt
+                    tiltMaxAngleX={25}
+                    tiltMaxAngleY={25}
+                    perspective={500}
+                    glareEnable={true}
+                    glareMaxOpacity={false}
+                    gyroscope={true}
+                    trackOnWindow={true}
+                    transitionSpeed={1500}
+                  >
+                    <img src="/chatapplication/chatbots.png" className="chatappimag" />
+                  </Tilt>
                 </div>
                 <div className="col-lg-5 changewidthcol5 paddingmarginzero">
                   <p className="scrollcardheading">Chat Bots</p>
@@ -776,8 +832,7 @@ const GlobeImage = () => {
           <div className="secondscrolldiv  cool-link2" ref={el => boxItemsRef.current[6] = el}>
             <div className="container-search">
               <input placeholder="Search for something..." className="searchbar" />
-              <div className="scroll-animate" ref={marqueeRef} onMouseEnter={() => handleMouseEnter()}
-                onMouseLeave={() => handleMouseLeave()}
+              <div className="scroll-animate" ref={marqueeRef}
               >
                 <div className="searchcraoselinside">
                   <div className="morquecont">
