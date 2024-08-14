@@ -15,12 +15,17 @@ import { DesApp } from "@/app/Data/WebApp";
 import { EcommerceApp } from "@/app/Data/WebApp";
 import { aimlApp } from "@/app/Data/WebApp";
 import { chatApp } from "@/app/Data/WebApp";
-// import './TrackOnWindow.demozap.css'
 gsap.registerPlugin(ScrollTrigger);
 
 const GlobeImage = () => {
   const [text, setText] = useState('BUSINESS');
-  const [count, setCount] = useState(null);
+  const [count1, setCount1] = useState(null);
+  const [count2, setCount2] = useState(null);
+  const [count3, setCount3] = useState(null);
+  const [count4, setCount4] = useState(null);
+  const [count5, setCount5] = useState(null);
+  const [count6, setCount6] = useState(null);
+  const [active, setActive] = useState(true)
   const element = useRef(null);
   const verticalRef = useRef(null);
   const boxItemsRef = useRef([]);
@@ -36,11 +41,26 @@ const GlobeImage = () => {
     }
   };
 
-  const handleCard = (index) => {
-    if (index) {
-      setCount(index)
+  const handleCard = (index, str) => {
+    if (index && str === "webapp") {
+      if (count1===index) {
+        setActive(!active)
+      }
+      else{
+        setActive(true)
+      }
+      setCount1(index)
+    } else if (index && str === "mobapp") {
+      setCount2(index)
+    } else if (index && str === "desapp") {
+      setCount3(index)
+    } else if (index && str === "e-app") {
+      setCount4(index)
+    } else if (index && str === "aiapp") {
+      setCount5(index)
+    } else if (index && str === "chatapp") {
+      setCount6(index)
     }
-    console.log("index", index, count)
   }
 
   const handleText = () => {
@@ -77,7 +97,7 @@ const GlobeImage = () => {
   function getXPercent() {
     const viewportWidth = window.innerWidth;
     if (viewportWidth < 1280) {
-      return -500; // For smaller screens
+      return -400; // For smaller screens
     } else {
       return -502
     }
@@ -124,6 +144,12 @@ const GlobeImage = () => {
     };
   }, []);
 
+  // useEffect(() => {
+  //   setWmApp(WebApp.concat(MobApp))
+  // }, [])
+
+
+
   // const handleMouseEnter = () => {
   //   if (loopRef.current) {
   //     loopRef.current.pause();
@@ -158,8 +184,6 @@ const GlobeImage = () => {
       <div id="horizontal" ref={SectionCenterRef} className="scroll-container">
         <div className="d-flex">
           <div className="firstscrolldiv" ref={el => boxItemsRef.current[0] = el}>
-
-            
             <div className="cool-link">
               <div className="row paddingmarginzero">
                 <div className="col-lg-7 col-md-12 paddingmarginzero changewidthcol7">
@@ -170,7 +194,6 @@ const GlobeImage = () => {
                     glareEnable={true}
                     glareMaxOpacity={false}
                     gyroscope={true}
-                    trackOnWindow={true}
                     transitionSpeed={1500}
                   >
                     <img src="/assets/Web_app.png" className="webappimage" />
@@ -183,11 +206,13 @@ const GlobeImage = () => {
                   <p className="cardexample">Examples:-</p>
                   <div className="row appexamplecarddes">
                     {WebApp?.map((item, index) => (
-                      <div className="col-lg-3" key={index}>
-                        <div className={count === index ? "firstexampledivactive" : count !== index && count !== null ? "carddeactive" : "firstexamplediv"} type="button" onClick={() => handleCard(index)}>
+                      <div className="col-lg-3 col-md-3 position-relative" key={index}>
+                        <div className={count1 === index && active ? "firstexampledivactive" : count1 !== index && count1 !== null && active ? "carddeactive" : !active ? "firstexamplediv" : "firstexamplediv"}
+                          type="button"
+                          onClick={() => handleCard(index, "webapp")}>
                           <img src={item.image} className={item.className} />
                         </div>
-                        {count === index && (
+                        {count1 === index && active && (
                           <div className="cardtextexample">
                             <p className="caroselproductname">{item.name}</p>
                           </div>
@@ -250,14 +275,12 @@ const GlobeImage = () => {
               <div className="row paddingmarginzero">
                 <div className="col-lg-7 paddingmarginzero changewidthcol7">
                   <Tilt
-                    className="background-stripes track-on-window"
                     tiltMaxAngleX={30}
                     tiltMaxAngleY={25}
                     perspective={500}
                     glareEnable={true}
                     glareMaxOpacity={false}
                     gyroscope={true}
-                    trackOnWindow={true}
                     transitionSpeed={1500}
                   >
                     <img src="/mobapplication/Mobile_application.png" className="mobappimg" />
@@ -269,50 +292,19 @@ const GlobeImage = () => {
                   <p className="scrollcardtext"> Around 80% of mobile users prefer app for their needs. These apps can be native or hybrid with a single codebase for both IOS and Android. Let's build Mobile Applications.  </p>
                   <p className="cardexample">Examples:-</p>
                   <div className="row appexamplecarddes">
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Instagram.png" className="vertrectangleproductlogo" />
+                    {MobApp.map((item, index) => (
+                      <div className="col-lg-3 col-md-3 position-relative">
+                        <div className={count2 === index ? "firstexampledivactive" : count2 !== index && count2 !== null ? "carddeactive" : "firstexamplediv"} type="button" onClick={() => handleCard(index, "mobapp")}>
+                          <img src={item.image} className={item.className} />
+                        </div>
+                        {count2 === index && (
+                          <div className="cardtextexample">
+                            <p className="caroselproductname">{item.name}</p>
+                          </div>
+                        )}
                       </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Zomato.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Tinder.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Dropbox.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
+                    ))}
                   </div>
-                  <div className="row appexamplecarddes">
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Spotify.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Netflix.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Flipboard.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Google_Maps.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                  </div>
-
                   <div className="row appexamplecard">
                     <div className="col-2">
                       <div className="firstexamplediv">
@@ -367,14 +359,12 @@ const GlobeImage = () => {
               <div className="row paddingmarginzero">
                 <div className="col-lg-7 paddingmarginzero changewidthcol7">
                   <Tilt
-                    className="background-stripes track-on-window"
                     tiltMaxAngleX={25}
                     tiltMaxAngleY={25}
                     perspective={500}
                     glareEnable={true}
                     glareMaxOpacity={false}
                     gyroscope={true}
-                    trackOnWindow={true}
                     transitionSpeed={1500}
                   >
                     <img src="/desktopapplication/Desktop_application.png" className="desktopappimage" />
@@ -386,48 +376,18 @@ const GlobeImage = () => {
                   <p className="scrollcardtext"> Remove browser hassle and their dependency. These Apps are installed once & exists until you uninstall them, having in-app manual & auto update features. </p>
                   <p className="cardexample">Examples:-</p>
                   <div className="row appexamplecarddes">
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Slack.png" className="vertrectangleproductlogo" />
+                    {DesApp.map((item, index) => (
+                      <div className="col-lg-3 col-md-3 position-relative">
+                        <div className={count3 === index ? "firstexampledivactive" : count3 !== index && count3 !== null ? "carddeactive" : "firstexamplediv"} type="button" onClick={() => handleCard(index, "desapp")}>
+                          <img src={item.image} className={item.className} />
+                        </div>
+                        {count3 === index && (
+                          <div className="cardtextexample">
+                            <p className="caroselproductname">{item.name}</p>
+                          </div>
+                        )}
                       </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Zoho.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Skype.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Asana.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row appexamplecarddes">
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Vlc.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Whatsapp.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Amazon_Music.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Duolingo.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
+                    ))}
                   </div>
 
                   <div className="row appexamplecard">
@@ -490,7 +450,6 @@ const GlobeImage = () => {
                     glareEnable={true}
                     glareMaxOpacity={false}
                     gyroscope={true}
-                    trackOnWindow={true}
                     transitionSpeed={1500}
                   >
                     <img src="/ecommerceapp/Ecommerce.png" className="ecommerceappimage" />
@@ -502,48 +461,18 @@ const GlobeImage = () => {
                   <p className="scrollcardtext">An online shopping platform that is accessible from anywhere around the world. Order Management, Delivery options, Online payment collection, etc. Make your dream come true and become an entrepreneur. </p>
                   <p className="cardexample">Examples:-</p>
                   <div className="row appexamplecarddes">
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Amazon.png" className="horitrectangleproductlogo" />
+                    {EcommerceApp.map((item, index) => (
+                      <div className="col-lg-3 col-md-3 position-relative">
+                        <div className={count4 === index ? "firstexampledivactive" : count4 !== index && count4 !== null ? "carddeactive" : "firstexamplediv"} type="button" onClick={() => handleCard(index, "e-app")}>
+                          <img src={item.image} className={item.className} />
+                        </div>
+                        {count4 === index && (
+                          <div className="cardtextexample">
+                            <p className="caroselproductname">{item.name}</p>
+                          </div>
+                        )}
                       </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Flipkart.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Olx.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Netmeds.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row appexamplecarddes">
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Shein.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Zara.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Offerup.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Ebay.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
+                    ))}
                   </div>
 
                   <div className="row appexamplecard">
@@ -606,7 +535,6 @@ const GlobeImage = () => {
                     glareEnable={true}
                     glareMaxOpacity={false}
                     gyroscope={true}
-                    trackOnWindow={true}
                     transitionSpeed={1500}
                   >
                     <img src="/aiapplication/aiapp.png" className="aiappimage" />
@@ -619,48 +547,18 @@ const GlobeImage = () => {
                   <p className="scrollcardtext"> Give brains to your machine and let them handle your work. Imagine this as a program that can perform different operations based on the things they learn. </p>
                   <p className="cardexample">Examples:-</p>
                   <div className="row appexamplecarddes">
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Face_Recognition.png" className="vertrectangleproductlogo" />
+                    {aimlApp.map((item, index) => (
+                      <div className="col-lg-3 col-md-3 position-relative">
+                        <div className={count5 === index ? "firstexampledivactive" : count5 !== index && count5 !== null ? "carddeactive" : "firstexamplediv"} type="button" onClick={() => handleCard(index, "aiapp")}>
+                          <img src={item.image} className={item.className} />
+                        </div>
+                        {count5 === index && (
+                          <div className="cardtextexample">
+                            <p className="caroselproductname">{item.name}</p>
+                          </div>
+                        )}
                       </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Computer_Vision.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Lenskart.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Neural_Network.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row appexamplecarddes">
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Tensorflow.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Wolfram_Alpha.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/The_Weather_Channel.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Amazon_Alexa.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
+                    ))}
                   </div>
 
                   <div className="row appexamplecard">
@@ -723,7 +621,6 @@ const GlobeImage = () => {
                     glareEnable={true}
                     glareMaxOpacity={false}
                     gyroscope={true}
-                    trackOnWindow={true}
                     transitionSpeed={1500}
                   >
                     <img src="/chatapplication/chatbots.png" className="chatappimag" />
@@ -735,48 +632,18 @@ const GlobeImage = () => {
                   <p className="scrollcardtext"> Enhance your products by adding automation. Let the Chatbot handle the requests & increase the productivity of your business. Avoid multiple clicks and selections just start interacting with ChatBot. </p>
                   <p className="cardexample">Examples:-</p>
                   <div className="row appexamplecarddes">
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/Food.png" className="vertrectangleproductlogo" />
+                    {chatApp.map((item, index) => (
+                      <div className="col-lg-3 col-md-3 position-relative">
+                        <div className={count6 === index ? "firstexampledivactive card6" : count6 !== index && count6 !== null ? "carddeactive card6" : "firstexamplediv card6"} type="button" onClick={() => handleCard(index, "chatapp")}>
+                          <img src={item.image} className={item.className} />
+                        </div>
+                        {count6 === index && (
+                          <div className="cardtextexample">
+                            <p className="caroselproductname">{item.name}</p>
+                          </div>
+                        )}
                       </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/E_Learning.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/Travel.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/Health.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row appexamplecarddes">
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/Entertainment.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/Restaurant_Booking.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/Shopping.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-lg-3">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/Custom_Solutions.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
+                    ))}
                   </div>
 
                   <div className="row appexamplecard">
@@ -887,6 +754,15 @@ const GlobeImage = () => {
                       </div>
                     </div>
                   </div>
+                  {/* <div className="morquecont">
+                    <div className="marquee__part">
+                      {wmApp.map((item, index) => (
+                        <div className="firstexamplediv">
+                          <img src={item.image} className={item.className} />
+                        </div>
+                      ))}
+                    </div>
+                  </div> */}
                   <div className="morquecont1">
                     <div className="marquee__part">
                       <div className="firstexamplediv mx-3">

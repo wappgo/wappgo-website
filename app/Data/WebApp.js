@@ -12,7 +12,7 @@ export const WebApp = [
 export const MobApp = [
     { name: "Instagram", image: "/mobapplication/Instagram.png", className: "vertrectangleproductlogo" },
     { name: "Zomato", image: "/mobapplication/Zomato.png", className: "vertrectangleproductlogo" },
-    { name: "Tinder", image: "/mobapplication/Tinder.png", className: "horitrectangleproductlogo" },
+    { name: "Tinder", image: "/mobapplication/Tinder.png", className: "vertrectangleproductlogo" },
     { name: "Dropbox", image: "/mobapplication/Dropbox.png", className: "vertrectangleproductlogo" },
     { name: "Spotify", image: "/mobapplication/Spotify.png", className: "vertrectangleproductlogo" },
     { name: "Netflix", image: "/mobapplication/Netflix.png", className: "vertrectangleproductlogo" },
@@ -22,7 +22,7 @@ export const MobApp = [
 
 export const DesApp = [
     { name: "Slack", image: "/desktopapplication/Slack.png", className: "vertrectangleproductlogo" },
-    { name: "Zoho", image: "desktopapplication/Zoho.png", className: "vertrectangleproductlogo" },
+    { name: "Zoho", image: "desktopapplication/Zoho.png", className: "horitrectangleproductlogo" },
     { name: "Skype", image: "/desktopapplication/Skype.png", className: "vertrectangleproductlogo" },
     { name: "Asana", image: "/desktopapplication/Asana.png", className: "vertrectangleproductlogo" },
     { name: "Vlc", image: "/desktopapplication/Vlc.png", className: "vertrectangleproductlogo" },
@@ -46,11 +46,11 @@ export const aimlApp = [
     { name: "Face Recognition", image: "/aiapplication/Face_Recognition.png", className: "vertrectangleproductlogo" },
     { name: "Computer Vision", image: "/aiapplication/Computer_Vision.png", className: "vertrectangleproductlogo" },
     { name: "Lenskart", image: "/aiapplication/Lenskart.png", className: "horitrectangleproductlogo" },
-    { name: "Neural_Network", image: "/aiapplication/Neural_Network.png", className: "vertrectangleproductlogo" },
+    { name: "Neural Network", image: "/aiapplication/Neural_Network.png", className: "vertrectangleproductlogo" },
     { name: "Tensorflow", image: "/aiapplication/Tensorflow.png", className: "vertrectangleproductlogo" },
     { name: "Wolfram Alpha", image: "/aiapplication/Wolfram_Alpha.png", className: "vertrectangleproductlogo" },
     { name: "The Weather Channel", image: "/aiapplication/The_Weather_Channel.png", className: "vertrectangleproductlogo" },
-    { name: "Amazon_Alexa", image: "/aiapplication/Amazon_Alexa.png", className: "vertrectangleproductlogo" },
+    { name: "Amazon Alexa", image: "/aiapplication/Amazon_Alexa.png", className: "vertrectangleproductlogo" },
 ]
 
 export const chatApp = [

@@ -24,14 +24,6 @@
     position: absolute;
     margin-top: 20vh;
 }
-.caroselproductname {
-    font-size: 1vw;
-    font-family: montserrat, sans-serif;
-    color: #2b1e68 !important;
-    line-height: 1.2;
-    display: block;
-    margin: 0;
-}
 .container-search {
     padding: 0 0 0 100px;
 }
@@ -151,14 +143,14 @@
     display: flex;
 }
 
-.extrabutton{
+.extrabutton {
     width: 3vw;
     height: 3vw;
     border: 2px solid #FFF;
     border-radius: 25px;
     color: #FFF;
     padding: 4px;
-    display: flex;  
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2vw;
@@ -166,30 +158,64 @@
     left: 27.2vw;
     bottom: 6.5vw;
 }
-.extrabutton:hover{
+
+.extrabutton:hover {
     background-color: #FFF;
     color: #34116d;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     transition-duration: 1s;
     transition-delay: 0.1s;
 }
-.examplecardcon{
+
+.examplecardcon {
     position: relative;
 }
-.cardtextexample{
+
+.cardtextexample {
     position: absolute;
-    bottom: -50px;
+    top: 70px;
     box-shadow: 3px 3px 6px #0000002e;
-    left: 0;
+    left: -18px;
+    z-index: 9;
+    background-color: #FFF;
+    border-radius: 2px;
+    padding: 2px;
+    width: 5vw;
+    overflow: hidden;
 }
-.appexamoolediv{
+.caroselproductname {
+    font-size: 0.8vw;
+    font-family: "Manrope";
+    color: #2b1e68 !important;
+    line-height: 1.2;
+    display: block;
+    margin: 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+.appexamoolediv {
     opacity: 0.5;
 }
-/* .carddeactive{
+
+.carddeactive {
     cursor: pointer;
     opacity: .6;
-    transform: scale(1);
-} */
+    box-shadow: 3px 3px 6px #0000002e;
+    margin: 0 .4vw 0 0;
+    padding: 0;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #fff;
+    border: none;
+    width: 2.6vw;
+    text-align: center;
+    height: 2.6vw;
+    position: relative;
+    z-index: 1;
+    transition-duration: 0.8;
+    transition-delay: 0.2;
+}
 @media (max-width: 1024px) {
     .downloadimga {
         height: 100px;
@@ -489,7 +515,8 @@
         text-align: center;
     }
 
-    .webappimage,.aiappimage {
+    .webappimage,
+    .aiappimage {
         width: 45vw;
     }
 
