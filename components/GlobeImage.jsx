@@ -2,10 +2,6 @@
 import gsap from "gsap";
 import { useEffect, useState, useRef, useCallback } from "react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BiSearch } from "react-icons/bi";
-import { useGSAP } from "@gsap/react";
-import Lottie from 'react-lottie';
-import animationData from '../public/mobile.json';
 import "../styles/Global.css";
 import { PiCaretRightBold } from "react-icons/pi";
 import Tilt from 'react-parallax-tilt';
@@ -15,6 +11,7 @@ import { DesApp } from "@/app/Data/WebApp";
 import { EcommerceApp } from "@/app/Data/WebApp";
 import { aimlApp } from "@/app/Data/WebApp";
 import { chatApp } from "@/app/Data/WebApp";
+import Technology from "./Technology";
 gsap.registerPlugin(ScrollTrigger);
 
 const GlobeImage = () => {
@@ -25,48 +22,84 @@ const GlobeImage = () => {
   const [count4, setCount4] = useState(null);
   const [count5, setCount5] = useState(null);
   const [count6, setCount6] = useState(null);
-  const [active, setActive] = useState(true)
+  const [active1, setActive1] = useState(true)
+  const [active2, setActive2] = useState(true)
+  const [active3, setActive3] = useState(true)
+  const [active4, setActive4] = useState(true)
+  const [active5, setActive5] = useState(true)
+  const [active6, setActive6] = useState(true)
+  const [wmApp, setWmApp] = useState([])
+  const [decApp, setDecApp] = useState([])
+  const [aiChatApp, setAiChatApp] = useState([])
   const element = useRef(null);
   const verticalRef = useRef(null);
   const boxItemsRef = useRef([]);
   const SectionCenterRef = useRef(null);
-  const marqueeRef = useRef(null);
   const loopRef = useRef(null);
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
-  };
+  const marqueeRef = useRef(null);
+  const elementRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [oneState, setOneState] = useState(null);
+  const [secondState, setSecondState] = useState(null);
+  const [thirdState, setThirdState] = useState(null);
+  const [activeAni1, setActiveAni1] = useState(false);
+  const [activeAni2, setActiveAni2] = useState(false);
+  const [activeAni3, setActiveAni3] = useState(false);
 
   const handleCard = (index, str) => {
-    if (index && str === "webapp") {
-      if (count1===index) {
-        setActive(!active)
+    if (index !== undefined && index !== null && str == "webapp") {
+      if (count1 === index) {
+        setActive1(!active1)
       }
-      else{
-        setActive(true)
+      else {
+        setActive1(true)
       }
       setCount1(index)
-    } else if (index && str === "mobapp") {
+    } else if (index !== undefined && index !== null && str === "mobapp") {
+      if (count2 === index) {
+        setActive2(!active2)
+      }
+      else {
+        setActive2(true)
+      }
       setCount2(index)
-    } else if (index && str === "desapp") {
+    } else if (index !== undefined && index !== null && str === "desapp") {
+      if (count3 === index) {
+        setActive3(!active3)
+      }
+      else {
+        setActive3(true)
+      }
       setCount3(index)
-    } else if (index && str === "e-app") {
+    } else if (index !== undefined && index !== null && str === "e-app") {
+      if (count4 === index) {
+        setActive4(!active4)
+      }
+      else {
+        setActive4(true)
+      }
       setCount4(index)
-    } else if (index && str === "aiapp") {
+    } else if (index !== undefined && index !== null && str === "aiapp") {
+      if (count5 === index) {
+        setActive5(!active5)
+      }
+      else {
+        setActive5(true)
+      }
       setCount5(index)
-    } else if (index && str === "chatapp") {
+    } else if (index !== undefined && index !== null && str === "chatapp") {
+      if (count6 === index) {
+        setActive6(!active6)
+      }
+      else {
+        setActive6(true)
+      }
       setCount6(index)
     }
   }
 
   const handleText = () => {
-
     const tl = new gsap.timeline();
-
     tl.from(element.current, {
       duration: 1,
       call: () => {
@@ -87,6 +120,80 @@ const GlobeImage = () => {
       })
   };
 
+  const handleAnimateCard1 = (index, str) => {
+    if (index !== undefined && index !== null && str === "first") {
+      if (oneState === index) {
+        setActiveAni1(!activeAni1)
+        setActiveAni2(false)
+        setActiveAni3(false)
+      }
+      else {
+        setActiveAni1(true)
+        setActiveAni2(false)
+        setActiveAni3(false)
+      }
+      setOneState(index)
+    } else if (index !== undefined && index !== null && str === "second") {
+      if (secondState === index) {
+        setActiveAni2(!activeAni2)
+        setActiveAni1(false)
+        setActiveAni3(false)
+      }
+      else {
+        setActiveAni2(true)
+        setActiveAni2(false)
+        setActiveAni3(false)
+      }
+      setSecondState(index)
+    } else if (index !== undefined && index !== null && str === "third") {
+      if (thirdState === index) {
+        setActiveAni3(!activeAni3)
+        setActiveAni2(false)
+        setActiveAni1(false)
+      }
+      else {
+        setActiveAni3(true)
+        setActiveAni2(false)
+        setActiveAni3(false)
+      }
+      setThirdState(index)
+    }
+  }
+
+  const handleAnimateCard2 = (index, str) => {
+    console.log("hell")
+    if (index !== undefined && index !== null && str === "second") {
+      if (secondState === index) {
+        setActiveAni2(!activeAni2)
+        setActiveAni1(false)
+        setActiveAni3(false)
+      }
+      else {
+        setActiveAni2(true)
+        setActiveAni2(false)
+        setActiveAni3(false)
+      }
+      setSecondState(index)
+    }
+  }
+  const handleAnimateCard3 = (index, str) => {
+
+    if (index !== undefined && index !== null && str === "third") {
+      if (thirdState === index) {
+        setActiveAni3(!activeAni3)
+        setActiveAni2(false)
+        setActiveAni1(false)
+      }
+      else {
+        setActiveAni3(true)
+        setActiveAni2(false)
+        setActiveAni3(false)
+      }
+      setThirdState(index)
+    }
+  }
+
+
   useEffect(() => {
     const timeOut = setTimeout(() => {
       handleText()
@@ -94,10 +201,10 @@ const GlobeImage = () => {
     return () => clearTimeout(timeOut)
   }, [text])
 
-  function getXPercent() {
+  const getXPercent = () => {
     const viewportWidth = window.innerWidth;
     if (viewportWidth < 1280) {
-      return -400; // For smaller screens
+      return -490;
     } else {
       return -502
     }
@@ -106,9 +213,7 @@ const GlobeImage = () => {
   useEffect(() => {
     const SectionCenter = SectionCenterRef.current;
     const boxItems = boxItemsRef.current;
-
     const timeline = gsap.timeline({ paused: true });
-
     ScrollTrigger.create({
       animation: timeline,
       trigger: verticalRef.current,
@@ -121,7 +226,7 @@ const GlobeImage = () => {
       scrollTrigger: {
         trigger: SectionCenter,
         pin: true,
-        scrub: 3,
+        scrub: 1,
         // snap: 1 / (boxItems.length - 1),
         // end: "+=" + SectionCenter.offsetWidth
 
@@ -132,39 +237,38 @@ const GlobeImage = () => {
     };
   }, []);
 
-  useEffect(() => {
-    loopRef.current = horizontalLoop(".marquee__part", {
-      repeat: -1,
-      paused: false,
-      speed: 0.3
-    });
 
-    return () => {
-      loopRef.current.kill();
-    };
-  }, []);
+  useEffect(() => {
+    setWmApp(WebApp.concat(...MobApp, ...DesApp, ...EcommerceApp, ...aimlApp, ...chatApp))
+    // setWmApp(WebApp.concat(MobApp))
+    setDecApp(DesApp.concat(...EcommerceApp, ...aimlApp, ...chatApp, ...MobApp, ...WebApp))
+    setAiChatApp(aimlApp.concat(...chatApp, ...MobApp, ...WebApp, ...EcommerceApp, ...chatApp))
+  }, [])
 
   // useEffect(() => {
-  //   setWmApp(WebApp.concat(MobApp))
-  // }, [])
+  //   const marquee = marqueeRef.current;
+  //   const marqueeContent = marquee.innerHTML;
+  //   marquee.innerHTML += marqueeContent;
+  // }, []);
 
+  const handleMouseEnter = () => {
+    gsap.to(elementRef.current, {
+      x: 20, // Move right by 20 pixels
+      duration: 0.3,
+      yoyo: true,
+      repeat: 1,
+      ease: "power1.inOut"
+    });
+  };
 
+  const handleMouseLeave = () => {
+    gsap.to(elementRef.current, {
+      x: 0, // Reset position
+      duration: 0.3,
+      ease: "power1.inOut"
+    });
+  };
 
-  // const handleMouseEnter = () => {
-  //   if (loopRef.current) {
-  //     loopRef.current.pause();
-  //   }
-  // };
-  // const handleMouseLeave = () => {
-  //   loopRef.current = horizontalLoop(".marquee__part", {
-  //     repeat: -1,
-  //     paused: false,
-  //     speed: 0.3
-  //   });
-  //   return () => {
-  //     loopRef.current.kill();
-  //   };
-  // }
 
   return (
     <div ref={verticalRef}>
@@ -204,15 +308,15 @@ const GlobeImage = () => {
                   <p className="scrollcardsubheading">Best fit to implement your idea and let the world know your play. </p>
                   <p className="scrollcardtext"> These applications are accessible via browser, some of them are dynamic which requires server-side processing and some are static which doesn't . Let's build Web Apps. </p>
                   <p className="cardexample">Examples:-</p>
-                  <div className="row appexamplecarddes">
+                  <div className="row">
                     {WebApp?.map((item, index) => (
-                      <div className="col-lg-3 col-md-3 position-relative" key={index}>
-                        <div className={count1 === index && active ? "firstexampledivactive" : count1 !== index && count1 !== null && active ? "carddeactive" : !active ? "firstexamplediv" : "firstexamplediv"}
+                      <div className="col-lg-3 col-md-3 col-2 position-relative" key={index}>
+                        <div className={count1 === index && active1 ? `firstexampledivactive servicsecard-${index}` : count1 !== index && count1 !== null && active1 ? `carddeactive servicsecard-${index}` : !active1 ? `firstexamplediv servicsecard-${index}` : `firstexamplediv servicsecard-${index}`}
                           type="button"
                           onClick={() => handleCard(index, "webapp")}>
                           <img src={item.image} className={item.className} />
                         </div>
-                        {count1 === index && active && (
+                        {count1 === index && active1 && (
                           <div className="cardtextexample">
                             <p className="caroselproductname">{item.name}</p>
                           </div>
@@ -220,42 +324,10 @@ const GlobeImage = () => {
                       </div>
                     ))}
                   </div>
-                  <div className="row appexamplecard">
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Pinterest.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Google_Drive.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
               <div className="boutton-chat">
-                <div>
+                <div className="btn-chatetext">
                   <a className="getstartedwithgobutton">Get a Quote
                     <img src="/assets/Groupget.svg" className="getstartedwithgobuttonimg mx-2" />
                   </a>
@@ -291,51 +363,19 @@ const GlobeImage = () => {
                   <p className="scrollcardsubheading">Give wings to your idea by serving it directly to the user's phone.  </p>
                   <p className="scrollcardtext"> Around 80% of mobile users prefer app for their needs. These apps can be native or hybrid with a single codebase for both IOS and Android. Let's build Mobile Applications.  </p>
                   <p className="cardexample">Examples:-</p>
-                  <div className="row appexamplecarddes">
+                  <div className="row">
                     {MobApp.map((item, index) => (
-                      <div className="col-lg-3 col-md-3 position-relative">
-                        <div className={count2 === index ? "firstexampledivactive" : count2 !== index && count2 !== null ? "carddeactive" : "firstexamplediv"} type="button" onClick={() => handleCard(index, "mobapp")}>
+                      <div className="col-lg-3 col-md-3 col-2 position-relative">
+                        <div className={count2 === index && active2 ? `firstexampledivactive servicsecard-${index}` : count2 !== index && count2 !== null && active2 ? `carddeactive servicsecard-${index}` : !active2 ? `firstexamplediv servicsecard-${index}` : `firstexamplediv servicsecard-${index}`} type="button" onClick={() => handleCard(index, "mobapp")}>
                           <img src={item.image} className={item.className} />
                         </div>
-                        {count2 === index && (
+                        {count2 === index && active2 && (
                           <div className="cardtextexample">
                             <p className="caroselproductname">{item.name}</p>
                           </div>
                         )}
                       </div>
                     ))}
-                  </div>
-                  <div className="row appexamplecard">
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Instagram.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Zomato.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Tinder.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Dropbox.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Spotify.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Netflix.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -375,13 +415,13 @@ const GlobeImage = () => {
                   <p className="scrollcardsubheading">Enhance user experience by delivering installable software & applications right into your PC </p>
                   <p className="scrollcardtext"> Remove browser hassle and their dependency. These Apps are installed once & exists until you uninstall them, having in-app manual & auto update features. </p>
                   <p className="cardexample">Examples:-</p>
-                  <div className="row appexamplecarddes">
+                  <div className="row">
                     {DesApp.map((item, index) => (
-                      <div className="col-lg-3 col-md-3 position-relative">
-                        <div className={count3 === index ? "firstexampledivactive" : count3 !== index && count3 !== null ? "carddeactive" : "firstexamplediv"} type="button" onClick={() => handleCard(index, "desapp")}>
+                      <div className="col-lg-3 col-md-3 col-2 position-relative">
+                        <div className={count3 === index && active3 ? `firstexampledivactive servicsecard-${index}` : count3 !== index && count3 !== null && active3 ? `carddeactive servicsecard-${index}` : !active3 ? `firstexamplediv servicsecard-${index}` : `firstexamplediv servicsecard-${index}`} type="button" onClick={() => handleCard(index, "desapp")}>
                           <img src={item.image} className={item.className} />
                         </div>
-                        {count3 === index && (
+                        {count3 === index && active3 && (
                           <div className="cardtextexample">
                             <p className="caroselproductname">{item.name}</p>
                           </div>
@@ -390,38 +430,6 @@ const GlobeImage = () => {
                     ))}
                   </div>
 
-                  <div className="row appexamplecard">
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Slack.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Zoho.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Skype.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Asana.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Vlc.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Whatsapp.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
               <div className="boutton-chat">
@@ -460,52 +468,19 @@ const GlobeImage = () => {
                   <p className="scrollcardsubheading">Set up your very own giant marketplace. </p>
                   <p className="scrollcardtext">An online shopping platform that is accessible from anywhere around the world. Order Management, Delivery options, Online payment collection, etc. Make your dream come true and become an entrepreneur. </p>
                   <p className="cardexample">Examples:-</p>
-                  <div className="row appexamplecarddes">
+                  <div className="row">
                     {EcommerceApp.map((item, index) => (
-                      <div className="col-lg-3 col-md-3 position-relative">
-                        <div className={count4 === index ? "firstexampledivactive" : count4 !== index && count4 !== null ? "carddeactive" : "firstexamplediv"} type="button" onClick={() => handleCard(index, "e-app")}>
+                      <div className="col-lg-3 col-md-3 col-2 position-relative">
+                        <div className={count4 === index && active4 ? `firstexampledivactive servicsecard-${index}` : count4 !== index && count4 !== null && active4 ? `carddeactive servicsecard-${index}` : !active4 ? `firstexamplediv servicsecard-${index}` : `firstexamplediv servicsecard-${index}`} type="button" onClick={() => handleCard(index, "e-app")}>
                           <img src={item.image} className={item.className} />
                         </div>
-                        {count4 === index && (
+                        {count4 === index && active4 && (
                           <div className="cardtextexample">
                             <p className="caroselproductname">{item.name}</p>
                           </div>
                         )}
                       </div>
                     ))}
-                  </div>
-
-                  <div className="row appexamplecard">
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Amazon.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Flipkart.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Olx.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Netmeds.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Shein.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Zara.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -548,11 +523,11 @@ const GlobeImage = () => {
                   <p className="cardexample">Examples:-</p>
                   <div className="row appexamplecarddes">
                     {aimlApp.map((item, index) => (
-                      <div className="col-lg-3 col-md-3 position-relative">
-                        <div className={count5 === index ? "firstexampledivactive" : count5 !== index && count5 !== null ? "carddeactive" : "firstexamplediv"} type="button" onClick={() => handleCard(index, "aiapp")}>
+                      <div className="col-lg-3 col-md-3 col-2 position-relative">
+                        <div className={count5 === index && active5 ? `firstexampledivactive servicsecard-${index}` : count5 !== index && count5 !== null && active5 ? `carddeactive servicsecard-${index}` : !active5 ? `firstexamplediv servicsecard-${index}` : `firstexamplediv servicsecard-${index}`} type="button" onClick={() => handleCard(index, "aiapp")}>
                           <img src={item.image} className={item.className} />
                         </div>
-                        {count5 === index && (
+                        {count5 === index && active5 && (
                           <div className="cardtextexample">
                             <p className="caroselproductname">{item.name}</p>
                           </div>
@@ -561,38 +536,6 @@ const GlobeImage = () => {
                     ))}
                   </div>
 
-                  <div className="row appexamplecard">
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Face_Recognition.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Computer_Vision.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Lenskart.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Neural_Network.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Tensorflow.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Wolfram_Alpha.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
               <div className="boutton-chat">
@@ -633,11 +576,11 @@ const GlobeImage = () => {
                   <p className="cardexample">Examples:-</p>
                   <div className="row appexamplecarddes">
                     {chatApp.map((item, index) => (
-                      <div className="col-lg-3 col-md-3 position-relative">
-                        <div className={count6 === index ? "firstexampledivactive card6" : count6 !== index && count6 !== null ? "carddeactive card6" : "firstexamplediv card6"} type="button" onClick={() => handleCard(index, "chatapp")}>
+                      <div className="col-lg-3 col-md-3 col-2 position-relative">
+                        <div className={count6 === index && active6 ? `firstexampledivactive card6 servicsecard-${index}` : count6 !== index && count6 !== null && active6 ? `carddeactive card6 servicsecard-${index}` : !active6 ? `firstexamplediv card6 servicsecard-${index}` : `firstexamplediv card6 servicsecard-${index}`} type="button" onClick={() => handleCard(index, "chatapp")}>
                           <img src={item.image} className={item.className} />
                         </div>
-                        {count6 === index && (
+                        {count6 === index && active6 && (
                           <div className="cardtextexample">
                             <p className="caroselproductname">{item.name}</p>
                           </div>
@@ -646,38 +589,6 @@ const GlobeImage = () => {
                     ))}
                   </div>
 
-                  <div className="row appexamplecard">
-                    <div className="col-2">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/Food.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/E_Learning.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/Travel.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/Health.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/Entertainment.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/Restaurant_Booking.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                  </div>
 
                 </div>
               </div>
@@ -696,167 +607,127 @@ const GlobeImage = () => {
               </div>
             </div>
           </div>
-          <div className="secondscrolldiv  cool-link2" ref={el => boxItemsRef.current[6] = el}>
+          {/* <div className="secondscrolldiv  cool-link2" ref={el => boxItemsRef.current[6] = el}>
             <div className="container-search">
               <input placeholder="Search for something..." className="searchbar" />
-              <div className="scroll-animate" ref={marqueeRef}
-              >
-                <div className="searchcraoselinside">
-                  <div className="morquecont">
-                    <div className="marquee__part">
-                      <div className="firstexamplediv mx-2">
-                        <img src="/assets/Airbnb.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Facebook.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/E_Learning.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Cnn.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Starbucks_Coffee.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Google_Drive.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Pinterest.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/assets/Pinterest.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv card6">
-                        <img src="/chatapplication/Food.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="aiapplication/Tensorflow.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                  </div>
-                  {/* <div className="morquecont">
-                    <div className="marquee__part">
+              <div className="scroll-animate">
+                <div className="marquee1">
+                  <div className={activeAni1 ? "marquee-inner1 stopanimate" : "marquee-inner1"}>
+                    <div className="row">
                       {wmApp.map((item, index) => (
-                        <div className="firstexamplediv">
-                          <img src={item.image} className={item.className} />
+                        <div className="col-onehalf position-relative" key={index}>
+                          <div className={index == oneState && activeAni1 ? `firstexampledivactive1 hideanimate-${index}` : index !== oneState && activeAni1 ? `firstexamplediv1 anicarddeactive  hideanimate-${index}` : `firstexamplediv1 hideanimate-${index}`} onClick={() => handleAnimateCard(index, "first")}
+                          >
+                            <img src={item.image} className={item.className} />
+                          </div>
+                          {index === oneState && activeAni1 &&
+                            <div className={`animated-text animated-text-${index}`}>
+                              <p className="caroselproductname text-white">{item.name}</p>
+                            </div>
+                          }
                         </div>
                       ))}
-                    </div>
-                  </div> */}
-                  <div className="morquecont1">
-                    <div className="marquee__part">
-                      <div className="firstexamplediv mx-3">
-                        <img src="/mobapplication/Google_Maps.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Slack.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Wolfram_Alpha.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Zoho.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Skype.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Duolingo.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Amazon_Music.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Whatsapp.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/desktopapplication/Vlc.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="morquecont2">
-                    <div className="marquee__part">
-                      <div className="firstexamplediv mx-2">
-                        <img src="/ecommerceapp/Amazon.png" className="horitrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Flipkart.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Olx.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/ecommerceapp/Netmeds.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Face_Recognition.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Computer_Vision.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/aiapplication/Amazon_Alexa.png" className="vertrectangleproductlogo" />
-                      </div>
-                    </div>
-                    <div className="marquee__part">
-                      <div className="firstexamplediv">
-                        <img src="/mobapplication/Netflix.png" className="vertrectangleproductlogo" />
-                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div>
-                <a className="extrabutton">
+                <a className="extrabutton"
+                  ref={elementRef}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <PiCaretRightBold />
+                </a>
+              </div>
+            </div>
+          </div> */}
+          <div className="secondscrolldiv  cool-link2" ref={el => boxItemsRef.current[6] = el}>
+            <div className="container-search">
+              <input placeholder="Search for something..." className="searchbar" />
+              <div className="marquee-conteiner">
+                <div class="Marquee22">
+                  <div class={activeAni2 || activeAni1 || activeAni3 ? "stopanimate22" : "Marquee-content22"}>
+                    {wmApp.map((item, index) => (
+                      <div className="Marquee-tag" key={index}>
+                        <div
+                          className={
+                            index === oneState && activeAni1
+                              ? `firstexampledivactive1 hideanimate-${index}`
+                              : index !== oneState && activeAni1 || activeAni2 || activeAni3
+                                ? `firstexamplediv1 anicarddeactive hideanimate-${index}`
+                                : `firstexamplediv1 hideanimate-${index}`
+                          }
+                          onClick={() => handleAnimateCard1(index, "first")}
+                        >
+                          <img src={item.image} className={item.className} alt={item.name} />
+                          {index === oneState && activeAni1 && (
+                            <div className={`animated-text animated-text-${index}`}>
+                              <p className="caroselproductname text-white">{item.name}</p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div class="Marquee33">
+                  <div class={activeAni2 || activeAni1 || activeAni3 ? "stopanimate22" : "Marquee-content22"}>
+                    {decApp.map((item, index) => (
+                      <div className="Marquee-tag" key={index}>
+                        <div
+                          className={
+                            index === secondState && activeAni2
+                              ? `firstexampledivactive1 hideanimate-${index}`
+                              : index !== secondState && activeAni2 || activeAni1 || activeAni3
+                                ? `firstexamplediv1 anicarddeactive hideanimate-${index}`
+                                : `firstexamplediv1 hideanimate-${index}`
+                          }
+                          onClick={() => handleAnimateCard2(index, "second")}
+                        >
+                          <img src={item.image} className={item.className} alt={item.name} />
+                          {index === secondState && activeAni2 && (
+                            <div className={`animated-text animated-text-${index}`}>
+                              <p className="caroselproductname text-white">{item.name}</p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div class="Marquee44">
+                  <div class={activeAni2 || activeAni1 || activeAni3 ? "stopanimate22" : "Marquee-content22"}>
+                    {aiChatApp.map((item, index) => (
+                      <div className="Marquee-tag" key={index}>
+                        <div
+                          className={
+                            index === thirdState && activeAni3
+                              ? `firstexampledivactive1 hideanimate-${index}`
+                              : index !== thirdState && activeAni3 || activeAni2 || activeAni1
+                                ? `firstexamplediv1 anicarddeactive hideanimate-${index}`
+                                : `firstexamplediv1 hideanimate-${index}`
+                          }
+                          onClick={() => handleAnimateCard3(index, "third")}
+                        >
+                          <img src={item.image} className={item.className} alt={item.name} />
+                          {index === thirdState && activeAni3 && (
+                            <div className={`animated-text animated-text-${index}`}>
+                              <p className="caroselproductname text-white">{item.name}</p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div>
+                <a className="extrabutton"
+                  ref={elementRef}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
                   <PiCaretRightBold />
                 </a>
               </div>
@@ -864,259 +735,11 @@ const GlobeImage = () => {
           </div>
         </div>
       </div>
-
-      <div className="techmaindiv">
-        <div className="techmainpadding techfordes">
-          <div className="row">
-            <div className="col-lg-5">
-              <p className="everreadyplayheading">
-                Ever Ready
-                <br />
-                To Play With
-                <br />
-                Your Favourite
-                <br />
-                Technology Stack...
-              </p>
-              <div className="text-center">
-                <Lottie options={defaultOptions} height={400} width={400} className="lottieImag" />;
-              </div>
-            </div>
-            <div className="col-lg-7 techcol2">
-              <div className="commontech tech1">
-                <center>
-                  <img src="/techimg/wordpress-icon.svg" className="techicon1" />
-                </center>
-              </div>
-              <div className="commontech tech2">
-                <center>
-                  <img src="/techimg/flutterio-icon.webp" className="techicon2" />
-                </center>
-              </div>
-              <div className="commontech tech3">
-                <center>
-                  <img src="/techimg/angular-icon.webp" className="techicon3" />
-                </center>
-              </div>
-              <div className="commontech tech4">
-                <center>
-                  <img src="/techimg/dartlang-icon.webp" className="techicon4" />
-                </center>
-              </div>
-              <div className="commontech tech5">
-                <center>
-                  <img src="/techimg/google_cloud-icon.webp" className="techicon1" />
-                </center>
-              </div>
-              <div className="commontech tech6">
-                <center>
-                  <img src="/techimg/laravel-icon.webp" className="techicon1" />
-                </center>
-              </div>
-              <div className="commontech tech7">
-                <center>
-                  <img src="/techimg/node-node-js-seeklogo.com.webp" className="techicon7" />
-                </center>
-              </div>
-              <div className="commontech tech8">
-                <center>
-                  <img src="/techimg/kotlinlang-icon.webp" className="techicon1" />
-                </center>
-              </div>
-              <div className="commontech tech9">
-                <center>
-                  <img src="/techimg/microsoft_azure-icon.webp" className="techicon9" />
-                </center>
-              </div>
-              <div className="commontech tech10">
-                <center>
-                  <img src="/techimg/swift-icon.svg" className="techicon10" />
-                </center>
-              </div>
-              <div className="commontech tech11">
-                <center>
-                  <img src="/techimg/vuejs-seeklogo.com.svg" className="techicon11" />
-                </center>
-              </div>
-              <div className="commontech tech12">
-                <center>
-                  <img src="/techimg/golang-official.webp" className="techicon12" />
-                </center>
-              </div>
-              <div className="commontech tech13">
-                <center>
-                  <img src="/techimg/electronjs-icon.webp" className="techicon1" />
-                </center>
-              </div>
-              <div className="commontech tech14">
-                <center>
-                  <img src="/techimg/graphql-icon.webp" className="techicon14" />
-                </center>
-              </div>
-              <div className="commontech tech15">
-                <center>
-                  <img src="/techimg/Path_7239.svg" className="techicon15" />
-                </center>
-              </div>
-              <div className="commontech tech16">
-                <center>
-                  <img src="/techimg/python-icon.svg" className="techicon16" />
-                </center>
-              </div>
-              <div className="commontech tech17">
-                <center>
-                  <img src="/techimg/graphql-icon.webp" className="techicon1" />
-                </center>
-              </div>
-              <div className="commontech tech18">
-                <center>
-                  <img src="/techimg/java-vertical.webp" className="techicon18" />
-                </center>
-              </div>
-              <div className="commontech tech19">
-                <center>
-                  <img src="/techimg/reactjs-icon.svg" className="techicon1" />
-                </center>
-              </div>
-              <div className="commontech tech20">
-                <center>
-                  <img src="/techimg/Layer%202.svg" className="techicon20" />
-                </center>
-              </div>
-
-            </div>
-          </div>
-          <div>
-            <img src="/assets/Up.svg" className="mt-5 downloadimga" width="100%" />
-          </div>
-        </div>
-        <div className="techformob">
-          <p className="everreadyplayheading">
-            Ever Ready
-            <br />
-            To Play With
-            <br />
-            Your Favourite
-            <br />
-            Technology Stack...
-          </p>
-          <div className="text-center">
-            <Lottie options={defaultOptions} height={600} width={500} />;
-          </div>
-          <div>
-            <div className="smallcard">
-              <div className="commontech1 commontech10 ">
-                <img src="/techimg/wordpress-icon.svg" className="techicon188" />
-              </div>
-              <div className="commontech1 commontech11">
-                <img src="/techimg/flutterio-icon.webp" className="techicon188" />
-              </div>
-              <div className="commontech1 commontech13">
-                <img src="/techimg/angular-icon.webp" className="techicon188" />
-              </div>
-            </div>
-            <div className="smallcard">
-              <div className="commontech1 commontech10 ">
-                <img src="/techimg/dartlang-icon.webp" className="techicon188" />
-              </div>
-              <div className="commontech1 commontech11">
-                <img src="/techimg/google_cloud-icon.webp" className="techicon188" />
-              </div>
-              <div className="commontech1 commontech13">
-                <img src="/techimg/laravel-icon.webp" className="techicon188" />
-              </div>
-            </div>
-            <div className="smallcard">
-              <div className="commontech1 commontech10 ">
-                <img src="/techimg/kotlinlang-icon.webp" className="techicon188" />
-              </div>
-              <div className="commontech1 commontech11">
-                <img src="/techimg/node-node-js-seeklogo.com.webp" className="techicon188" />
-              </div>
-              <div className="commontech1 commontech13">
-                <img src="/techimg/microsoft_azure-icon.webp" className="techicon188" />
-              </div>
-            </div>
-          </div>
-          <div>
-            <img src="/assets/Up.svg" className="mt-5 downloadimga" width="100%" />
-          </div>
-        </div>
-      </div>
+      <Technology />
     </div>
   );
 };
 
 export default GlobeImage;
-
-
-
-
-{/* <img className="col" src="/assets/globe-section-image.svg" /> */ }
-{/* <video  style={{width:"100%", height:"100%"}} src="/vedios\172170-846731303_small.mp4" autoPlay loop muted/> */ }
-
-
-function horizontalLoop(items, config) {
-  items = gsap.utils.toArray(items);
-  config = config || {};
-  let tl = gsap.timeline({ repeat: config.repeat, paused: config.paused, defaults: { ease: "none" }, onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100) }),
-    length = items.length,
-    startX = items[0].offsetLeft,
-    times = [],
-    widths = [],
-    xPercents = [],
-    curIndex = 0,
-    pixelsPerSecond = (config.speed || 1) * 100,
-    snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1),
-    totalWidth, curX, distanceToStart, distanceToLoop, item, i;
-
-  gsap.set(items, {
-    xPercent: (i, el) => {
-      let w = widths[i] = parseFloat(gsap.getProperty(el, "width", "px"));
-      xPercents[i] = snap(parseFloat(gsap.getProperty(el, "x", "px")) / w * 100 + gsap.getProperty(el, "xPercent"));
-      return xPercents[i];
-    }
-  });
-
-  gsap.set(items, { x: 0 });
-  totalWidth = items[length - 1].offsetLeft + xPercents[length - 1] / 100 * widths[length - 1] - startX + items[length - 1].offsetWidth * gsap.getProperty(items[length - 1], "scaleX") + (parseFloat(config.paddingRight) || 0);
-
-  for (i = 0; i < length; i++) {
-    item = items[i];
-    curX = xPercents[i] / 100 * widths[i];
-    distanceToStart = item.offsetLeft + curX - startX;
-    distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
-    tl.to(item, { xPercent: snap((curX - distanceToLoop) / widths[i] * 100), duration: distanceToLoop / pixelsPerSecond }, 0)
-      .fromTo(item, { xPercent: snap((curX - distanceToLoop + totalWidth) / widths[i] * 100) }, { xPercent: xPercents[i], duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond, immediateRender: false }, distanceToLoop / pixelsPerSecond)
-      .add("label" + i, distanceToStart / pixelsPerSecond);
-    times[i] = distanceToStart / pixelsPerSecond;
-  }
-
-  function toIndex(index, vars) {
-    vars = vars || {};
-    (Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length);
-    let newIndex = gsap.utils.wrap(0, length, index),
-      time = times[newIndex];
-    if (time > tl.time() !== index > curIndex) {
-      vars.modifiers = { time: gsap.utils.wrap(0, tl.duration()) };
-      time += tl.duration() * (index > curIndex ? 1 : -1);
-    }
-    curIndex = newIndex;
-    vars.overwrite = true;
-    return tl.tweenTo(time, vars);
-  }
-
-  tl.next = vars => toIndex(curIndex + 1, vars);
-  tl.previous = vars => toIndex(curIndex - 1, vars);
-  tl.current = () => curIndex;
-  tl.toIndex = (index, vars) => toIndex(index, vars);
-  tl.times = times;
-  tl.progress(1, true).progress(0, true);
-  if (config.reversed) {
-    tl.vars.onReverseComplete();
-    tl.reverse();
-  }
-  return tl;
-}
 
 
