@@ -35,10 +35,7 @@ const GlobeImage = () => {
   const verticalRef = useRef(null);
   const boxItemsRef = useRef([]);
   const SectionCenterRef = useRef(null);
-  const loopRef = useRef(null);
-  const marqueeRef = useRef(null);
   const elementRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
   const [oneState, setOneState] = useState(null);
   const [secondState, setSecondState] = useState(null);
   const [thirdState, setThirdState] = useState(null);
@@ -119,80 +116,40 @@ const GlobeImage = () => {
         }
       })
   };
+  const handleAnimateCard = (index, type) => {
+    if (index === undefined || index === null) return;
 
-  const handleAnimateCard1 = (index, str) => {
-    if (index !== undefined && index !== null && str === "first") {
-      if (oneState === index) {
-        setActiveAni1(!activeAni1)
-        setActiveAni2(false)
-        setActiveAni3(false)
-      }
-      else {
-        setActiveAni1(true)
-        setActiveAni2(false)
-        setActiveAni3(false)
-      }
-      setOneState(index)
-    } else if (index !== undefined && index !== null && str === "second") {
-      if (secondState === index) {
-        setActiveAni2(!activeAni2)
-        setActiveAni1(false)
-        setActiveAni3(false)
-      }
-      else {
-        setActiveAni2(true)
-        setActiveAni2(false)
-        setActiveAni3(false)
-      }
-      setSecondState(index)
-    } else if (index !== undefined && index !== null && str === "third") {
-      if (thirdState === index) {
-        setActiveAni3(!activeAni3)
-        setActiveAni2(false)
-        setActiveAni1(false)
-      }
-      else {
-        setActiveAni3(true)
-        setActiveAni2(false)
-        setActiveAni3(false)
-      }
-      setThirdState(index)
+    let stateSetter;
+    let activeState;
+
+    switch (type) {
+      case "first":
+        stateSetter = setOneState;
+        activeState = activeAni1;
+        setActiveAni1(!activeAni1);
+        setActiveAni2(false);
+        setActiveAni3(false);
+        break;
+      case "second":
+        stateSetter = setSecondState;
+        activeState = activeAni2;
+        setActiveAni2(!activeAni2);
+        setActiveAni1(false);
+        setActiveAni3(false);
+        break;
+      case "third":
+        stateSetter = setThirdState;
+        activeState = activeAni3;
+        setActiveAni3(!activeAni3);
+        setActiveAni2(false);
+        setActiveAni1(false);
+        break;
+      default:
+        return;
     }
-  }
 
-  const handleAnimateCard2 = (index, str) => {
-    console.log("hell")
-    if (index !== undefined && index !== null && str === "second") {
-      if (secondState === index) {
-        setActiveAni2(!activeAni2)
-        setActiveAni1(false)
-        setActiveAni3(false)
-      }
-      else {
-        setActiveAni2(true)
-        setActiveAni2(false)
-        setActiveAni3(false)
-      }
-      setSecondState(index)
-    }
-  }
-  const handleAnimateCard3 = (index, str) => {
-
-    if (index !== undefined && index !== null && str === "third") {
-      if (thirdState === index) {
-        setActiveAni3(!activeAni3)
-        setActiveAni2(false)
-        setActiveAni1(false)
-      }
-      else {
-        setActiveAni3(true)
-        setActiveAni2(false)
-        setActiveAni3(false)
-      }
-      setThirdState(index)
-    }
-  }
-
+    stateSetter(index);
+  };
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
@@ -204,7 +161,7 @@ const GlobeImage = () => {
   const getXPercent = () => {
     const viewportWidth = window.innerWidth;
     if (viewportWidth < 1280) {
-      return -490;
+      return -320;
     } else {
       return -502
     }
@@ -240,34 +197,27 @@ const GlobeImage = () => {
 
   useEffect(() => {
     setWmApp(WebApp.concat(...MobApp, ...DesApp, ...EcommerceApp, ...aimlApp, ...chatApp))
-    // setWmApp(WebApp.concat(MobApp))
     setDecApp(DesApp.concat(...EcommerceApp, ...aimlApp, ...chatApp, ...MobApp, ...WebApp))
     setAiChatApp(aimlApp.concat(...chatApp, ...MobApp, ...WebApp, ...EcommerceApp, ...chatApp))
   }, [])
 
-  // useEffect(() => {
-  //   const marquee = marqueeRef.current;
-  //   const marqueeContent = marquee.innerHTML;
-  //   marquee.innerHTML += marqueeContent;
-  // }, []);
-
   const handleMouseEnter = () => {
     gsap.to(elementRef.current, {
-      x: 20, // Move right by 20 pixels
+      x: 20, 
       duration: 0.3,
       yoyo: true,
-      repeat: 1,
+      repeat: 1,  
       ease: "power1.inOut"
     });
   };
 
-  const handleMouseLeave = () => {
-    gsap.to(elementRef.current, {
-      x: 0, // Reset position
-      duration: 0.3,
-      ease: "power1.inOut"
-    });
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleMouseEnter();
+    }, 3000); 
+    return () => clearInterval(interval);
+  }, []);
+
 
 
   return (
@@ -607,24 +557,82 @@ const GlobeImage = () => {
               </div>
             </div>
           </div>
-          {/* <div className="secondscrolldiv  cool-link2" ref={el => boxItemsRef.current[6] = el}>
+          <div className="secondscrolldiv  cool-link2" ref={el => boxItemsRef.current[6] = el}>
             <div className="container-search">
               <input placeholder="Search for something..." className="searchbar" />
-              <div className="scroll-animate">
-                <div className="marquee1">
-                  <div className={activeAni1 ? "marquee-inner1 stopanimate" : "marquee-inner1"}>
-                    <div className="row">
+              <div className="marquee-conteiner">
+                <div className="cardmarquee">
+                  <div class="Marquee22">
+                    <div class={activeAni2 || activeAni1 || activeAni3 ? "Marquee-content22 stopanimate22" : "Marquee-content22"}>
                       {wmApp.map((item, index) => (
-                        <div className="col-onehalf position-relative" key={index}>
-                          <div className={index == oneState && activeAni1 ? `firstexampledivactive1 hideanimate-${index}` : index !== oneState && activeAni1 ? `firstexamplediv1 anicarddeactive  hideanimate-${index}` : `firstexamplediv1 hideanimate-${index}`} onClick={() => handleAnimateCard(index, "first")}
+                        <div className="Marquee-tag" key={index}>
+                          <div
+                            className={
+                              index === oneState && activeAni1
+                                ? `firstexampledivactive1 hideanimate-${index}`
+                                : index !== oneState && activeAni1 || activeAni2 || activeAni3
+                                  ? `firstexamplediv1 anicarddeactive hideanimate-${index}`
+                                  : `firstexamplediv1 hideanimate-${index}`
+                            }
+                            onClick={() => handleAnimateCard(index, "first")}
                           >
-                            <img src={item.image} className={item.className} />
+                            <img src={item.image} className={item.className} alt={item.name} />
+                            {index === oneState && activeAni1 && (
+                              <div className={`animated-text animated-text-${index}`}>
+                                <p className="caroselproductname1 text-white">{item.name}</p>
+                              </div>
+                            )}
                           </div>
-                          {index === oneState && activeAni1 &&
-                            <div className={`animated-text animated-text-${index}`}>
-                              <p className="caroselproductname text-white">{item.name}</p>
-                            </div>
-                          }
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div class="Marquee33">
+                    <div class={activeAni2 || activeAni1 || activeAni3 ? "Marquee-content22 stopanimate22" : "Marquee-content22"}>
+                      {decApp.map((item, index) => (
+                        <div className="Marquee-tag" key={index}>
+                          <div
+                            className={
+                              index === secondState && activeAni2
+                                ? `firstexampledivactive1 hideanimate-${index}`
+                                : index !== secondState && activeAni2 || activeAni1 || activeAni3
+                                  ? `firstexamplediv1 anicarddeactive hideanimate-${index}`
+                                  : `firstexamplediv1 hideanimate-${index}`
+                            }
+                            onClick={() => handleAnimateCard(index, "second")}
+                          >
+                            <img src={item.image} className={item.className} alt={item.name} />
+                            {index === secondState && activeAni2 && (
+                              <div className={`animated-text animated-text-${index}`}>
+                                <p className="caroselproductname1 text-white">{item.name}</p>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div class="Marquee44">
+                    <div class={activeAni2 || activeAni1 || activeAni3 ? "Marquee-content22 stopanimate22" : "Marquee-content22"}>
+                      {aiChatApp.map((item, index) => (
+                        <div className="Marquee-tag" key={index}>
+                          <div
+                            className={
+                              index === thirdState && activeAni3
+                                ? `firstexampledivactive1 hideanimate-${index}`
+                                : index !== thirdState && activeAni3 || activeAni2 || activeAni1
+                                  ? `firstexamplediv1 anicarddeactive hideanimate-${index}`
+                                  : `firstexamplediv1 hideanimate-${index}`
+                            }
+                            onClick={() => handleAnimateCard(index, "third")}
+                          >
+                            <img src={item.image} className={item.className} alt={item.name} />
+                            {index === thirdState && activeAni3 && (
+                              <div className={`animated-text animated-text-${index}`}>
+                                <p className="caroselproductname1 text-white">{item.name}</p>
+                              </div>
+                            )}
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -634,99 +642,8 @@ const GlobeImage = () => {
               <div>
                 <a className="extrabutton"
                   ref={elementRef}
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <PiCaretRightBold />
-                </a>
-              </div>
-            </div>
-          </div> */}
-          <div className="secondscrolldiv  cool-link2" ref={el => boxItemsRef.current[6] = el}>
-            <div className="container-search">
-              <input placeholder="Search for something..." className="searchbar" />
-              <div className="marquee-conteiner">
-                <div class="Marquee22">
-                  <div class={activeAni2 || activeAni1 || activeAni3 ? "stopanimate22" : "Marquee-content22"}>
-                    {wmApp.map((item, index) => (
-                      <div className="Marquee-tag" key={index}>
-                        <div
-                          className={
-                            index === oneState && activeAni1
-                              ? `firstexampledivactive1 hideanimate-${index}`
-                              : index !== oneState && activeAni1 || activeAni2 || activeAni3
-                                ? `firstexamplediv1 anicarddeactive hideanimate-${index}`
-                                : `firstexamplediv1 hideanimate-${index}`
-                          }
-                          onClick={() => handleAnimateCard1(index, "first")}
-                        >
-                          <img src={item.image} className={item.className} alt={item.name} />
-                          {index === oneState && activeAni1 && (
-                            <div className={`animated-text animated-text-${index}`}>
-                              <p className="caroselproductname text-white">{item.name}</p>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div class="Marquee33">
-                  <div class={activeAni2 || activeAni1 || activeAni3 ? "stopanimate22" : "Marquee-content22"}>
-                    {decApp.map((item, index) => (
-                      <div className="Marquee-tag" key={index}>
-                        <div
-                          className={
-                            index === secondState && activeAni2
-                              ? `firstexampledivactive1 hideanimate-${index}`
-                              : index !== secondState && activeAni2 || activeAni1 || activeAni3
-                                ? `firstexamplediv1 anicarddeactive hideanimate-${index}`
-                                : `firstexamplediv1 hideanimate-${index}`
-                          }
-                          onClick={() => handleAnimateCard2(index, "second")}
-                        >
-                          <img src={item.image} className={item.className} alt={item.name} />
-                          {index === secondState && activeAni2 && (
-                            <div className={`animated-text animated-text-${index}`}>
-                              <p className="caroselproductname text-white">{item.name}</p>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div class="Marquee44">
-                  <div class={activeAni2 || activeAni1 || activeAni3 ? "stopanimate22" : "Marquee-content22"}>
-                    {aiChatApp.map((item, index) => (
-                      <div className="Marquee-tag" key={index}>
-                        <div
-                          className={
-                            index === thirdState && activeAni3
-                              ? `firstexampledivactive1 hideanimate-${index}`
-                              : index !== thirdState && activeAni3 || activeAni2 || activeAni1
-                                ? `firstexamplediv1 anicarddeactive hideanimate-${index}`
-                                : `firstexamplediv1 hideanimate-${index}`
-                          }
-                          onClick={() => handleAnimateCard3(index, "third")}
-                        >
-                          <img src={item.image} className={item.className} alt={item.name} />
-                          {index === thirdState && activeAni3 && (
-                            <div className={`animated-text animated-text-${index}`}>
-                              <p className="caroselproductname text-white">{item.name}</p>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div>
-                <a className="extrabutton"
-                  ref={elementRef}
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
+                  // onMouseEnter={handleMouseEnter}
+                  // onMouseLeave={handleMouseLeave}
                 >
                   <PiCaretRightBold />
                 </a>

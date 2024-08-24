@@ -3777,7 +3777,7 @@ li {
   height: 2.9vw;
   width: 2.9vw;
   opacity: 1 !important;
-  transform: scale(1.6) !important;
+  transform: scale(2) !important;
   z-index: 10;
   box-shadow: 3px 3px 6px #0000002e;
   position: relative;

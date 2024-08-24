@@ -54,12 +54,12 @@ export const aimlApp = [
 ]
 
 export const chatApp = [
-    { name: "Food", image: "/chatapplication/Food.png", className: "vertrectangleproductlogo" },
-    { name: "E-Learning", image: "/chatapplication/E_Learning.png", className: "vertrectangleproductlogo" },
-    { name: "Travel", image: "/chatapplication/Travel.png", className: "vertrectangleproductlogo" },
-    { name: "Health", image: "/chatapplication/Health.png", className: "vertrectangleproductlogo" },
-    { name: "Entertainment", image: "/chatapplication/Entertainment.png", className: "vertrectangleproductlogo" },
-    { name: "Restaurant Booking", image: "/chatapplication/Restaurant_Booking.png", className: "vertrectangleproductlogo" },
-    { name: "Shopping", image: "/chatapplication/Shopping.png", className: "vertrectangleproductlogo" },
-    { name: "Custom Solutions", image: "/chatapplication/Custom_Solutions.png", className: "vertrectangleproductlogo" },
+    { name: "Food chatbot", image: "/chatapplication/Food.png", className: "vertrectangleproductlogo" },
+    { name: "E-Learning chatbot", image: "/chatapplication/E_Learning.png", className: "vertrectangleproductlogo" },
+    { name: "Travel chatbot", image: "/chatapplication/Travel.png", className: "vertrectangleproductlogo" },
+    { name: "Health chatbot", image: "/chatapplication/Health.png", className: "vertrectangleproductlogo" },
+    { name: "Entertainm chatbot", image: "/chatapplication/Entertainment.png", className: "vertrectangleproductlogo" },
+    { name: "Restaurant Booking chatbot", image: "/chatapplication/Restaurant_Booking.png", className: "vertrectangleproductlogo" },
+    { name: "Shopping chatbot", image: "/chatapplication/Shopping.png", className: "vertrectangleproductlogo" },
+    { name: "Custom Solutions chatbot", image: "/chatapplication/Custom_Solutions.png", className: "vertrectangleproductlogo" },
 ]

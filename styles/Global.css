@@ -29,40 +29,8 @@
     padding: 0 0 0 100px;
 }
 
-.scroll-animate {
-    /* margin-top: 18px; */
-    color: #FFF;
-    font-size: 30px;
-    margin-top: 28vh;
-    /* overflow: hidden; */
-    /* position: relative; */
-}
-
-.morquecont {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-
-.morquecont1 {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-}
-
 .btnimg {
     width: 1.4vw;
-}
-
-.morquecont2 {
-    display: flex;
-    justify-content: space-between;
-    gap: 18px;
-}
-
-.searchcraoselinside {
-    overflow: hidden;
 }
 
 .scroll-morquecont::before {
@@ -135,16 +103,6 @@
 }
 
 .marquee1::after {
-    /* background: linear-gradient(to right, #34116d 50%, rgba(255, 255, 255, 0) 100%);
-    content: "";
-    height: 100%;
-    display: block;
-    position: absolute;
-    width: 12vw;
-    top: 0px;
-    z-index: 1;
-    left: 610px;
-    height: 15vw !important; */
     background: linear-gradient(to left, #2B1E68 18%, rgba(255, 255, 255, 0) 100%);
     content: "";
     height: 15vw;
@@ -162,17 +120,30 @@
 .extrabutton {
     width: 3vw;
     height: 3vw;
-    border: 2px solid #FFF;
-    border-radius: 25px;
-    color: #FFF;
-    padding: 4px;
+    border: .17vw solid #fff;
+    display: block;
+    position: absolute;
+    bottom: 13vh;
+    margin-left: 18vw;
+    border-radius: 100%;
+    background-color: transparent;
+    text-align: center;
+    animation-name: bounce;
+    transform-origin: center bottom;
+    animation-duration: 4s;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    text-decoration: none !important;
+    font-size: 2vw;
+    transition-property: all;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2vw;
-    position: absolute;
-    left: 27.2vw;
-    bottom: 6.5vw;
 }
 
 .extrabutton:hover {
@@ -189,19 +160,19 @@
 
 .cardtextexample {
     position: absolute;
-    top: 4.5vw;
+    top: 4.7vw;
     box-shadow: 3px 3px 6px #0000002e;
-    left: -1vw;
+    left: -1.5vw;
     z-index: 9;
     background-color: #FFF;
     border-radius: 2px;
     padding: 2px;
-    width: 5vw;
+    width: 6vw;
     overflow: hidden;
 }
 
 .caroselproductname {
-    font-size: 0.6vw;
+    font-size: 1vw;
     font-family: "Manrope";
     color: #2b1e68 !important;
     line-height: 1.2;
@@ -740,6 +711,7 @@
     .caroselproductname {
         font-size: 3vw;
     }
+
 }
 
 @media (max-width: 590px) {
@@ -772,28 +744,6 @@
     }
 }
 
-
-
-
-
-/* .marquee-inner1 img {
-    height: 1.8vw;
-    transition: transform 0.5s;
-    flex-shrink: 0;
-    width: 2vw;
-    border-radius: 2rem;
-  } */
-
-
-/* .marquee-inner1 img {
-    height: 100%;
-    transition: transform 0.5s;
-    flex-shrink: 0;
-    width: 20vw;
-    border-radius: 2rem;
-  } */
-
-
 @keyframes marqueeScroll {
     0% {
         transform: translateX(0%);
@@ -806,23 +756,18 @@
 
 .animated-text {
     background-color: white;
-    /* margin-top: 1.5vw; */
-    /* width: 5vw; */
-    /* margin-left: -1vw; */
+    width: 3.2vw;
     box-shadow: 3px 3px 6px #0000002e;
     border-radius: 2px;
     overflow: hidden;
     padding: 2px;
     position: absolute;
-    z-index: 999999999;
-    /* margin-top: 2vw; */
-    /* left: -1vw; */
-    top: 3.5vw;
+    z-index: 999999999 !important;
+    top: 3.2vw;
 }
 
 .firstexamplediv1 {
     box-shadow: 3px 3px 6px #0000002e;
-    /* margin: 0 .4vw 0 0; */
     padding: 0;
     display: inline-block;
     border-radius: 4px;
@@ -832,11 +777,9 @@
     text-align: center;
     height: 2.9vw;
     position: relative;
-    z-index: 1;
     transition: 0.6s;
     transition-delay: 0.3;
     top: 1vw;
-    /* margin-left: 1vw; */
 }
 
 .firstexampledivactive1 {
@@ -848,16 +791,16 @@
     box-shadow: 3px 3px 6px #0000002e;
     width: 2.9vw;
     height: 2.9vw;
-    transform: scale(1.6);
-    transition-duration: 1s;
-    transition-delay: 0.2s;
+    transform: scale(2);
     position: relative;
     z-index: 99999999;
     top: 0.7vw;
+    transition: all .3s cubic-bezier(0.25, 0.1, 0.29, 1)
 }
 
 .anicarddeactive {
-    opacity: 0.5;
+    opacity: .5;
+    transform: scale(.88);
 }
 
 .hideanimate-30,
@@ -905,8 +848,6 @@
     align-items: center;
     width: 100%;
     gap: 1.2vw;
-    /* Adjust as needed */
-    /* Additional styling if needed */
 }
 
 .marquee-conteiner {
@@ -916,50 +857,49 @@
 }
 
 .Marquee22 {
-    /* background: linear-gradient(-135deg, #008ed9, #8b00db); */
     width: 35vw;
     box-sizing: border-box;
-    /* padding: 1em; */
     color: white;
     font-weight: 200;
     display: flex;
     align-items: center;
-    overflow: hidden;
-    height: 17vw;
-    margin-top: -5vw;
+    position: relative;
+    z-index: 3;
+    margin-top: 1.8vw;
+}
+
+.Marquee22-card {
+    position: relative;
+    z-index: 99;
 }
 
 .Marquee33 {
-    /* background: linear-gradient(-135deg, #008ed9, #8b00db); */
     width: 35vw;
     box-sizing: border-box;
-    /* padding: 1em; */
     color: white;
     font-weight: 200;
     display: flex;
     align-items: center;
-    overflow: hidden;
-    height: 17vw;
-    margin-top: -12.5vw;
+    margin-top: 1.8vw;
+    position: relative;
+    z-index: 2;
 }
 
 .Marquee44 {
-    /* background: linear-gradient(-135deg, #008ed9, #8b00db); */
     width: 35vw;
     box-sizing: border-box;
-    /* padding: 1em; */
     color: white;
     font-weight: 200;
     display: flex;
     align-items: center;
-    overflow: hidden;
-    height: 17vw;
-    margin-top: -12.5vw;
+    position: relative;
+    z-index: 1;
+    margin-top: 1.8vw;
 }
 
 .Marquee-content22 {
     display: flex;
-    animation: marquee 25s linear infinite running;
+    animation: marquee 40s linear infinite running;
     gap: 1.7vw;
     margin-top: -1vw;
 }
@@ -995,7 +935,7 @@
     }
 }
 
-.Marquee22::before {
+.marquee-conteiner::before {
     background: linear-gradient(to right, #2B1E68 0%, rgba(255, 255, 255, 0) 100%);
     content: "";
     height: 15vw;
@@ -1007,22 +947,68 @@
     top: 14vw;
 }
 
-.Marquee22::after {
+.marquee-conteiner::after {
     background: linear-gradient(to left, #2B1E68 18%, rgba(255, 255, 255, 0) 100%);
     content: "";
     height: 15vw;
     display: block;
     position: absolute;
-    width: 18vw;
+    width: 12vw;
     top: 14vw;
     right: 13vw;
     z-index: 99;
 }
 
-.stopanimate22{
+.stopanimate22 {
+    animation-play-state: paused !important;
     display: flex;
     gap: 1.7vw;
 }
-.Marquee-tag{
+
+.Marquee-tag {
     position: relative;
+}
+
+.caroselproductname1 {
+    font-size: 0.5vw;
+    font-family: "Manrope";
+    color: #2b1e68 !important;
+    line-height: 1.2;
+    display: block;
+    margin: 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+.cardmarquee {
+    overflow: hidden;
+    height: 60vh;
+}
+
+.caroselproductname:hover {
+    text-decoration: underline;
+}
+
+.caroselproductname1:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1399px) {
+    .marquee-conteiner::before {
+        top: 16vw;
+    }
+
+    .marquee-conteiner::after {
+        top: 16vw;
+    }
+}
+
+@media (max-width: 1280px) {
+    .marquee-conteiner::before {
+        top: 16vw;
+    }
+
+    .marquee-conteiner::after {
+        top: 16vw;
+    }
 }
