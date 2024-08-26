@@ -38,30 +38,30 @@ const GetConsultation = () => {
                             </div> */}
 
                             <form>
-                                <div class="form-group pb-3">
+                                <div className="form-group pb-3">
                                     <label for="exampleInputEmail1">Name<span className="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name" style={{ backgroundColor: "#f9f9fa" }} />
+                                    <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name" style={{ backgroundColor: "#f9f9fa" }} />
 
                                 </div>
-                                <div class="form-group py-3">
+                                <div className="form-group py-3">
                                     <label for="exampleInputEmail1">Email<span className="text-danger">*</span></label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Email" style={{ backgroundColor: "#f9f9fa" }} />
+                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Email" style={{ backgroundColor: "#f9f9fa" }} />
 
                                 </div>
-                                <div class="form-group py-3">
+                                <div className="form-group py-3">
                                     <label for="exampleInputPassword1">You're<span className="text-danger">*</span></label>
 
                                     <div className="d-flex pt-2" >
 
-                                        <div class="form-check me-4">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" />
-                                            <label class="form-check-label fw-bold" for="exampleRadios1">
+                                        <div className="form-check me-4">
+                                            <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" />
+                                            <label className="form-check-label fw-bold" for="exampleRadios1">
                                                 Individual
                                             </label>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" />
-                                            <label class="form-check-label fw-bold" for="exampleRadios2">
+                                        <div className="form-check">
+                                            <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" />
+                                            <label className="form-check-label fw-bold" for="exampleRadios2">
                                                 Represents organisation
                                             </label>
                                         </div>
@@ -69,24 +69,24 @@ const GetConsultation = () => {
 
                                 </div>
 
-                                <div class="form-group py-3">
+                                <div className="form-group py-3">
                                     <label for="exampleInputEmail1">Organization Name<span className="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Org Name" style={{ backgroundColor: "#f9f9fa" }} />
+                                    <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Org Name" style={{ backgroundColor: "#f9f9fa" }} />
 
                                 </div>
 
                                 <div className="row py-3">
                                     <div className="col-md-6 pb-2">
-                                        <div class="form-group me-2">
+                                        <div className="form-group me-2">
                                             <label for="exampleInputEmail1">Your Designation<span className="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Designation" style={{ backgroundColor: "#f9f9fa" }} />
+                                            <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Designation" style={{ backgroundColor: "#f9f9fa" }} />
 
                                         </div>
                                     </div>
                                     <div className="col-md-6 ">
-                                        <div class="form-group ms-1">
+                                        <div className="form-group ms-1">
                                             <label for="exampleInputEmail1">Organization Website<span className="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Org Website" style={{ backgroundColor: "#f9f9fa" }} />
+                                            <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Org Website" style={{ backgroundColor: "#f9f9fa" }} />
 
                                         </div>
                                     </div>
@@ -97,41 +97,41 @@ const GetConsultation = () => {
 
                                     <div className="row py-3">
                                         <div className="col-md-4">
-                                            <div class="form-check whatkind-items">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                                <label class="form-check-label" for="flexCheckDefault">
+                                            <div className="form-check whatkind-items">
+                                                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                                <label className="form-check-label" for="flexCheckDefault">
                                                     Tech Security & Scalability
                                                 </label>
                                             </div>
                                         </div>
                                         <div className="col-md-4">
-                                            <div class="form-check whatkind-items">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                                <label class="form-check-label" for="flexCheckDefault">
+                                            <div className="form-check whatkind-items">
+                                                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                                <label className="form-check-label" for="flexCheckDefault">
                                                     System Security
                                                 </label>
                                             </div>
                                         </div>
                                         <div className="col-md-4">
-                                            <div class="form-check whatkind-items">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                                <label class="form-check-label" for="flexCheckDefault">
+                                            <div className="form-check whatkind-items">
+                                                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                                <label className="form-check-label" for="flexCheckDefault">
                                                     Personal security
                                                 </label>
                                             </div>
                                         </div>
                                         <div className="col-md-4">
-                                            <div class="form-check whatkind-items">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                                <label class="form-check-label" for="flexCheckDefault">
+                                            <div className="form-check whatkind-items">
+                                                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                                <label className="form-check-label" for="flexCheckDefault">
                                                     Attack Victim
                                                 </label>
                                             </div>
                                         </div>
                                         <div className="col-md-4">
-                                            <div class="form-check whatkind-items">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                                <label class="form-check-label" for="flexCheckDefault">
+                                            <div className="form-check whatkind-items">
+                                                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                                <label className="form-check-label" for="flexCheckDefault">
                                                     Other
                                                 </label>
                                             </div>

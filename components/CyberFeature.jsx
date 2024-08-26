@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "../styles/CyberFeature.css"
+import "../public/styles/CyberFeature.css"
 const CyberFeature = () => {
   const [count, setCount] = useState(1);
 
@@ -9,12 +9,12 @@ const CyberFeature = () => {
     if (count < 4) {
       var timeoutId = setTimeout(() => {
         setCount(count + 1)
-      }, 1000);
+      }, 2000);
     }
     if(count==4){
       var timeoutId2 = setTimeout(() => {
         setCount(1)
-      }, 1000);
+      }, 2000);
     }
     
     return () => clearTimeout(timeoutId,timeoutId2)

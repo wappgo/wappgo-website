@@ -2,7 +2,7 @@
 import gsap from "gsap";
 import { useEffect, useState, useRef, useCallback } from "react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import "../styles/Global.css";
+import "../public/styles/Global.css";
 import { PiCaretRightBold } from "react-icons/pi";
 import Tilt from 'react-parallax-tilt';
 import { WebApp } from "@/app/Data/WebApp";
@@ -12,6 +12,7 @@ import { EcommerceApp } from "@/app/Data/WebApp";
 import { aimlApp } from "@/app/Data/WebApp";
 import { chatApp } from "@/app/Data/WebApp";
 import Technology from "./Technology";
+import { debounce } from 'lodash'; 
 gsap.registerPlugin(ScrollTrigger);
 
 const GlobeImage = () => {
@@ -42,7 +43,6 @@ const GlobeImage = () => {
   const [activeAni1, setActiveAni1] = useState(false);
   const [activeAni2, setActiveAni2] = useState(false);
   const [activeAni3, setActiveAni3] = useState(false);
-
   const handleCard = (index, str) => {
     if (index !== undefined && index !== null && str == "webapp") {
       if (count1 === index) {
@@ -94,28 +94,35 @@ const GlobeImage = () => {
       setCount6(index)
     }
   }
+  const handleText = useCallback(() => {
+      const tl = new gsap.timeline();
+     tl.from(element.current, {
+       duration: 1,
+       call: () => {
+         setText('STARTUP');
+       }
+     })
+       .from(element.current, {
+         duration: 1,
+         call: () => {
+           setText('EVERYTHING');
+         }
+       })
+       .from(element.current, {
+         duration: 1,
+         call: () => {
+           setText('BUSINESS');
+         }
+       })
+  }, [text]);
 
-  const handleText = () => {
-    const tl = new gsap.timeline();
-    tl.from(element.current, {
-      duration: 1,
-      call: () => {
-        setText('STARTUP');
-      }
-    })
-      .from(element.current, {
-        duration: 1,
-        call: () => {
-          setText('EVERYTHING');
-        }
-      })
-      .from(element.current, {
-        duration: 1,
-        call: () => {
-          setText('BUSINESS');
-        }
-      })
-  };
+  const debouncedHandleText = useCallback(debounce(handleText, 1000), [handleText]);
+
+  useEffect(() => {
+    debouncedHandleText();
+    return () => debouncedHandleText.cancel();
+  }, [debouncedHandleText]);
+
   const handleAnimateCard = (index, type) => {
     if (index === undefined || index === null) return;
 
@@ -151,12 +158,7 @@ const GlobeImage = () => {
     stateSetter(index);
   };
 
-  useEffect(() => {
-    const timeOut = setTimeout(() => {
-      handleText()
-    }, 1000)
-    return () => clearTimeout(timeOut)
-  }, [text])
+
 
   const getXPercent = () => {
     const viewportWidth = window.innerWidth;
@@ -203,22 +205,20 @@ const GlobeImage = () => {
 
   const handleMouseEnter = () => {
     gsap.to(elementRef.current, {
-      x: 20, 
       duration: 0.3,
+      ease: "bounce.out",
       yoyo: true,
-      repeat: 1,  
-      ease: "power1.inOut"
+      repeat: -1, 
+      x: 20
     });
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
       handleMouseEnter();
-    }, 3000); 
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
-
-
 
   return (
     <div ref={verticalRef}>
@@ -315,7 +315,7 @@ const GlobeImage = () => {
                   <p className="cardexample">Examples:-</p>
                   <div className="row">
                     {MobApp.map((item, index) => (
-                      <div className="col-lg-3 col-md-3 col-2 position-relative">
+                      <div className="col-lg-3 col-md-3 col-2 position-relative" key={index}>
                         <div className={count2 === index && active2 ? `firstexampledivactive servicsecard-${index}` : count2 !== index && count2 !== null && active2 ? `carddeactive servicsecard-${index}` : !active2 ? `firstexamplediv servicsecard-${index}` : `firstexamplediv servicsecard-${index}`} type="button" onClick={() => handleCard(index, "mobapp")}>
                           <img src={item.image} className={item.className} />
                         </div>
@@ -367,7 +367,7 @@ const GlobeImage = () => {
                   <p className="cardexample">Examples:-</p>
                   <div className="row">
                     {DesApp.map((item, index) => (
-                      <div className="col-lg-3 col-md-3 col-2 position-relative">
+                      <div className="col-lg-3 col-md-3 col-2 position-relative" key={index}>
                         <div className={count3 === index && active3 ? `firstexampledivactive servicsecard-${index}` : count3 !== index && count3 !== null && active3 ? `carddeactive servicsecard-${index}` : !active3 ? `firstexamplediv servicsecard-${index}` : `firstexamplediv servicsecard-${index}`} type="button" onClick={() => handleCard(index, "desapp")}>
                           <img src={item.image} className={item.className} />
                         </div>
@@ -420,7 +420,7 @@ const GlobeImage = () => {
                   <p className="cardexample">Examples:-</p>
                   <div className="row">
                     {EcommerceApp.map((item, index) => (
-                      <div className="col-lg-3 col-md-3 col-2 position-relative">
+                      <div className="col-lg-3 col-md-3 col-2 position-relative" key={index}>
                         <div className={count4 === index && active4 ? `firstexampledivactive servicsecard-${index}` : count4 !== index && count4 !== null && active4 ? `carddeactive servicsecard-${index}` : !active4 ? `firstexamplediv servicsecard-${index}` : `firstexamplediv servicsecard-${index}`} type="button" onClick={() => handleCard(index, "e-app")}>
                           <img src={item.image} className={item.className} />
                         </div>
@@ -473,7 +473,7 @@ const GlobeImage = () => {
                   <p className="cardexample">Examples:-</p>
                   <div className="row appexamplecarddes">
                     {aimlApp.map((item, index) => (
-                      <div className="col-lg-3 col-md-3 col-2 position-relative">
+                      <div className="col-lg-3 col-md-3 col-2 position-relative" key={index}>
                         <div className={count5 === index && active5 ? `firstexampledivactive servicsecard-${index}` : count5 !== index && count5 !== null && active5 ? `carddeactive servicsecard-${index}` : !active5 ? `firstexamplediv servicsecard-${index}` : `firstexamplediv servicsecard-${index}`} type="button" onClick={() => handleCard(index, "aiapp")}>
                           <img src={item.image} className={item.className} />
                         </div>
@@ -526,7 +526,7 @@ const GlobeImage = () => {
                   <p className="cardexample">Examples:-</p>
                   <div className="row appexamplecarddes">
                     {chatApp.map((item, index) => (
-                      <div className="col-lg-3 col-md-3 col-2 position-relative">
+                      <div className="col-lg-3 col-md-3 col-2 position-relative" key={index}>
                         <div className={count6 === index && active6 ? `firstexampledivactive card6 servicsecard-${index}` : count6 !== index && count6 !== null && active6 ? `carddeactive card6 servicsecard-${index}` : !active6 ? `firstexamplediv card6 servicsecard-${index}` : `firstexamplediv card6 servicsecard-${index}`} type="button" onClick={() => handleCard(index, "chatapp")}>
                           <img src={item.image} className={item.className} />
                         </div>
@@ -557,13 +557,13 @@ const GlobeImage = () => {
               </div>
             </div>
           </div>
-          <div className="secondscrolldiv  cool-link2" ref={el => boxItemsRef.current[6] = el}>
-            <div className="container-search">
+          <div className={"secondscrolldiv2" } ref={el => boxItemsRef.current[6] = el}>
+            <div className="container-search cool-link2">
               <input placeholder="Search for something..." className="searchbar" />
               <div className="marquee-conteiner">
                 <div className="cardmarquee">
-                  <div class="Marquee22">
-                    <div class={activeAni2 || activeAni1 || activeAni3 ? "Marquee-content22 stopanimate22" : "Marquee-content22"}>
+                  <div className="Marquee22">
+                    <div className={activeAni2 || activeAni1 || activeAni3 ? "Marquee-content22 stopanimate22" : "Marquee-content22"}>
                       {wmApp.map((item, index) => (
                         <div className="Marquee-tag" key={index}>
                           <div
@@ -587,8 +587,8 @@ const GlobeImage = () => {
                       ))}
                     </div>
                   </div>
-                  <div class="Marquee33">
-                    <div class={activeAni2 || activeAni1 || activeAni3 ? "Marquee-content22 stopanimate22" : "Marquee-content22"}>
+                  <div className="Marquee33">
+                    <div className={activeAni2 || activeAni1 || activeAni3 ? "Marquee-content22 stopanimate22" : "Marquee-content22"}>
                       {decApp.map((item, index) => (
                         <div className="Marquee-tag" key={index}>
                           <div
@@ -612,8 +612,8 @@ const GlobeImage = () => {
                       ))}
                     </div>
                   </div>
-                  <div class="Marquee44">
-                    <div class={activeAni2 || activeAni1 || activeAni3 ? "Marquee-content22 stopanimate22" : "Marquee-content22"}>
+                  <div className="Marquee44">
+                    <div className={activeAni2 || activeAni1 || activeAni3 ? "Marquee-content22 stopanimate22" : "Marquee-content22"}>
                       {aiChatApp.map((item, index) => (
                         <div className="Marquee-tag" key={index}>
                           <div
@@ -642,8 +642,8 @@ const GlobeImage = () => {
               <div>
                 <a className="extrabutton"
                   ref={elementRef}
-                  // onMouseEnter={handleMouseEnter}
-                  // onMouseLeave={handleMouseLeave}
+                // onMouseEnter={handleMouseEnter}
+                // onMouseLeave={handleMouseLeave}
                 >
                   <PiCaretRightBold />
                 </a>

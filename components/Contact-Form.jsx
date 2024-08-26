@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "./Service";
 import { useForm } from "react-hook-form";
-import "../app/styles/bg.css"
+import "../public/styles/bg.css"
 
 const ContactForm = () => {
   const form = useForm();

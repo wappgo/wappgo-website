@@ -1,3 +1,5 @@
+"use client"
+
 import Announcement from "@/components/Announcement";
 import Blogs from "@/components/Blogs";
 import Footer from "@/components/Footer";
@@ -11,6 +13,7 @@ import Testimonial from "@/components/Testimonial";
 import Testing, { Slider } from "@/components/Testing";
 import Vision from "@/components/Vision";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function Home() {
   return (

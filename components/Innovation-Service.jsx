@@ -1,4 +1,4 @@
-import "../styles/InnovationService.css";
+import "../public/styles/InnovationService.css";
 const InnovationService = () => {
   return (
     <main className="innovation-service-container">

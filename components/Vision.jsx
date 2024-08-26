@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import '../styles/Vision.css';
+import '../public/styles/Vision.css';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 

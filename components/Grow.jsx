@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import "../styles/Grow.css";
+import "../public/styles/Grow.css";
 import { useEffect, useState } from "react";
 const Grow = () => {
   const [br, setBr] = useState(false);

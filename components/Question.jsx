@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import "../styles/Question.css";
+import "../public/styles/Question.css";
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 

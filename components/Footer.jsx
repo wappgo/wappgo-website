@@ -64,35 +64,35 @@ const Footer = () => {
         <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 mt-3">
           <ul className="feature-list">
             <li>Services</li>
-            <li>Managed IT Services</li>
-            <li>Cyber Security</li>
-            <li>IT Compliance</li>
-            <li>Network Connectivity</li>
-            <li>Cloud Services</li>
+            <li className='footer-items-route'>Managed IT Services</li>
+            <li className='footer-items-route'>Cyber Security</li>
+            <li className='footer-items-route'>IT Compliance</li>
+            <li className='footer-items-route'>Network Connectivity</li>
+            <li className='footer-items-route'>Cloud Services</li>
           </ul>
         </div>
         <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 mt-3">
           <ul className="feature-list">
             <li>Developement</li>
-            <li>Website Development</li>
-            <li>App Development</li>
-            <li>Desktop Application</li>
-            <li>AI / ML</li>
-            <li>Chat Bots</li>
+            <li className='footer-items-route'>Website Development</li>
+            <li className='footer-items-route'>App Development</li>
+            <li className='footer-items-route'>Desktop Application</li>
+            <li className='footer-items-route'>AI / ML</li>
+            <li className='footer-items-route'>Chat Bots</li>
           </ul>
         </div>
         <div className="col-xl-2 col-lg-3 col-md-3 col-sm-6 col-12 mt-3">
           <ul className="feature-list">
             <li>Other Services</li>
-            <li>UI/UX Design</li>
-            <li>Graphics Design</li>
-            <li>Video Editing</li>
+            <li className='footer-items-route'>UI/UX Design</li>
+            <li className='footer-items-route'>Graphics Design</li>
+            <li className='footer-items-route'>Video Editing</li>
           </ul>
         </div>
         <div className="col-xl-2 col-lg-12 col-md-3 col-sm-6 col-12 mt-3">
           <ul className="feature-list">
             <li>More Info</li>
-            <li>Blogs</li>
+            <li className='footer-items-route'>Blogs</li>
             <li className='footer-items-route' onClick={() => router.push("/terms-condition")}  >Terms & Conditions</li>
             <li className='footer-items-route' onClick={() => router.push('/privacy-policy')} >Privacy Policy</li>
             <li className='footer-items-route' onClick={() => router.push('/cookies-policy')} >Cookie Policy</li>

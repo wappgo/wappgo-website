@@ -1,7 +1,6 @@
 
 import Image from "next/image";
-import "../app/styles/bg.css"
-
+import "../public/styles/bg.css"
 const AboutHero = () => {
 
   return (

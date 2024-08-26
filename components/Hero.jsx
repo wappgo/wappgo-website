@@ -1,8 +1,8 @@
 "use client"
 
 import Image from "next/image";
-import "../styles/Hero.css";
-import "../styles/CyberHero.css";
+import "../public/styles/Hero.css";
+import "../public/styles/CyberHero.css";
 import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";

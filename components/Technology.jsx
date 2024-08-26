@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useRef } from 'react'
 import animationData from '../public/mobile.json';
-import "../styles/Global.css";
+import "../public/styles/Global.css";
 import Lottie from 'react-lottie';
 import gsap from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -17,6 +17,7 @@ function Technology() {
             preserveAspectRatio: 'xMidYMid slice'
         }
     };
+
     useEffect(() => {
         const timeline = gsap.timeline({
             scrollTrigger: {
@@ -43,6 +44,8 @@ function Technology() {
         };
     }, []);
 
+
+
     return (
         <>
             <div className="techmaindiv" ref={verticalRef}>
@@ -58,10 +61,8 @@ function Technology() {
                                 <br />
                                 Technology Stack...
                             </p>
-                            <div className='lottie-play'>
-                                <Lottie options={defaultOptions} height={350} width={400} 
-                                style={{"margin": '0' }}
-                                />
+                            <div className="lottie-animation">
+                                <Lottie options={defaultOptions} />
                             </div>
                         </div>
                         <div className="col-lg-7 techcol2 ">

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState,useCallback } from "react";
 import { FaChevronDown, FaAngleRight } from "react-icons/fa6";
 import { RxCross1 } from "react-icons/rx";
 import { useRouter } from "next/navigation";
@@ -50,14 +50,15 @@ const Navbar = ({ NavStyle, Route, }) => {
   };
 
 
-  const handleCurrentPage = () => {
-    if (pathname == "/information-technology") {
-      router.push("/")
+  const handleCurrentPage = useCallback(() => {
+    if (pathname === "/information-technology") {
+      router.push("/");
     } else {
       router.push("/information-technology");
     }
+  }, [pathname, router]);
 
-  }
+
   useGSAP(() => {
     tl.from(".toggleimg", {
       x: 8,
@@ -117,13 +118,14 @@ const Navbar = ({ NavStyle, Route, }) => {
           >
             Industries
           </li>
-          <li onClick={() => router.push("/about")}>About</li>
+          <li onClick={() => {
+            router.push("/about")
+          }} className={pathname ==="/about"? "active-navbar" :""}>About</li>
           <li>Career</li>
-          <li onClick={() => router.push("/contact")}>Contact</li>
-          <li className="togglingitem">
+          <li onClick={() => router.push("/contact")} className={pathname ==="/contact"? "active-navbar" :""}>Contact</li>
+          <li className={pathname ==="/information-technology"? "active-navbar togglingitem1" :"togglingitem"}>
             <span>CYBER</span>
             <img
-
               className="toggleimg"
               onClick={() => handleCurrentPage()}
               height={20}
@@ -158,7 +160,8 @@ export const Slider = ({ NavStyle, showNavSlider, setShowNavSlider }) => {
   const [showManagement, setShowManagement] = useState(false);
   const [showOperation, setShowOperation] = useState(false);
   const [showDesign, setShowDesign] = useState(false);
-
+  const pathname = usePathname()
+  const router = useRouter();
   return (
     <main className="nav-slider">
       <div className="logo-cross">
@@ -362,9 +365,13 @@ export const Slider = ({ NavStyle, showNavSlider, setShowNavSlider }) => {
             </div>
           )}
         </div>
-        <li>About</li>
-        <li>Career</li>
-        <li>Contact</li>
+        <li className={pathname ==="/about"? "active-navbar" :""} onClick={() => {
+            router.push("/about")
+          }}>About</li>
+        <li >Career</li>
+        <li className={pathname ==="/contact"? "active-navbar" :""} onClick={() => {
+            router.push("/contact")
+          }}>Contact</li>
       </article>
     </main>
   );

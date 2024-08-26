@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import "../app/globals.css";
-import "../styles/Testimonial.css";
+import "../public/globals.css";
+import "../public/styles/Testimonial.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
