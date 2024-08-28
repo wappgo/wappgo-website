@@ -744,7 +744,26 @@
         left: -3vw;
     }
 }
-
+@media (max-width: 425px){
+    .cardsectionhrheading{
+        font-size: 7vw;
+    }
+    .cardsectionhr1{
+        display: none;
+    }
+    .cardsectionhr2{
+        display: none;
+    }
+    .letshandleheading{
+      font-size: 4vw;
+    }
+    .text-animate{
+      font-size: 5.2vw;
+    }
+    .or{
+        display: none;
+    }
+}
 @media (max-width: 320px) {
     .pin-spacer {
         padding: 0 !important;

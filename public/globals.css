@@ -144,6 +144,20 @@ li {
 /* Responsive Nav Slider */
 
 /* Navbar CSS */
+.toggleimgMob{
+  display: none;
+  @media (max-width: 1024px) {
+    display: flex;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar-logo{
+    height: 24px;
+    width: 100px;
+    margin: 0 2vw;
+  }
+}
 
 .navbar-container {
   padding: 16px 80px;
@@ -212,9 +226,10 @@ li {
   display: none;
 
   @media (max-width: 1024px) {
-    display: flex;
+    /* display: flex;
     flex: 1;
-    justify-content: flex-end;
+    justify-content: flex-start; */
+    display: flex;
   }
 }
 
@@ -245,6 +260,7 @@ li {
 .toggleimg {
   transform: rotate(180deg);
 }
+
 
 .cyber-masterpiece {
   background: var(--wap-grad,

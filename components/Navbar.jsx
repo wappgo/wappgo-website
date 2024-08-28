@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef, useState,useCallback } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { FaChevronDown, FaAngleRight } from "react-icons/fa6";
 import { RxCross1 } from "react-icons/rx";
 import { useRouter } from "next/navigation";
@@ -21,7 +21,7 @@ const Navbar = ({ NavStyle, Route, }) => {
   const pathname = usePathname()
   const tl = gsap.timeline()
   const handleShow = () => {
-   
+
     setServiceVisible(true);
     setIndustriesVisible(false);
   };
@@ -90,6 +90,9 @@ const Navbar = ({ NavStyle, Route, }) => {
   return (
     <>
       <main style={{ backgroundColor: NavStyle && NavStyle.backgroundColor }} className="navbar-container">
+        <div onClick={handleNavSlider} className="menu-btn">
+          <img src={NavStyle ? "/assets/cyber-hamburger.svg" : "/assets/ham-burger.png"} />
+        </div>
         <article>
           <img
             style={{ cursor: "pointer" }}
@@ -97,11 +100,20 @@ const Navbar = ({ NavStyle, Route, }) => {
             src={
               NavStyle ? "/assets/Group 1 (1).svg" : "/assets/Group 1.svg"
             }
+            className="navbar-logo"
           />
         </article>
-        <div onClick={handleNavSlider} className="menu-btn">
-          <img src={NavStyle ? "/assets/cyber-hamburger.svg" : "/assets/ham-burger.png"} />
+        <div className="text-end">
+          <img
+            className="toggleimg toggleimgMob"
+            onClick={() => handleCurrentPage()}
+            height={20}
+            src={
+              NavStyle ? "/assets/dark-mode.svg" : "/assets/light-mode.svg"
+            }
+          />
         </div>
+
 
         <div style={{ color: NavStyle && NavStyle.color }} className="navbar-items ">
           <li
@@ -120,10 +132,10 @@ const Navbar = ({ NavStyle, Route, }) => {
           </li>
           <li onClick={() => {
             router.push("/about")
-          }} className={pathname ==="/about"? "active-navbar" :""}>About</li>
+          }} className={pathname === "/about" ? "active-navbar" : ""}>About</li>
           <li>Career</li>
-          <li onClick={() => router.push("/contact")} className={pathname ==="/contact"? "active-navbar" :""}>Contact</li>
-          <li className={pathname ==="/information-technology"? "active-navbar togglingitem1" :"togglingitem"}>
+          <li onClick={() => router.push("/contact")} className={pathname === "/contact" ? "active-navbar" : ""}>Contact</li>
+          <li className={pathname === "/information-technology" ? "active-navbar togglingitem1" : "togglingitem"}>
             <span>CYBER</span>
             <img
               className="toggleimg"
@@ -365,13 +377,13 @@ export const Slider = ({ NavStyle, showNavSlider, setShowNavSlider }) => {
             </div>
           )}
         </div>
-        <li className={pathname ==="/about"? "active-navbar" :""} onClick={() => {
-            router.push("/about")
-          }}>About</li>
+        <li className={pathname === "/about" ? "active-navbar" : ""} onClick={() => {
+          router.push("/about")
+        }}>About</li>
         <li >Career</li>
-        <li className={pathname ==="/contact"? "active-navbar" :""} onClick={() => {
-            router.push("/contact")
-          }}>Contact</li>
+        <li className={pathname === "/contact" ? "active-navbar" : ""} onClick={() => {
+          router.push("/contact")
+        }}>Contact</li>
       </article>
     </main>
   );
