@@ -6,6 +6,6 @@
     background-position: right top;
   }
   @media (max-width: 1024px){
-    background-size: 20%;
+    background-image: none;
   }
 }

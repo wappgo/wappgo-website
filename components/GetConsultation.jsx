@@ -18,25 +18,7 @@ const GetConsultation = () => {
 
                     <div className="consultationform p-3 ">
                         <div className=" consultationform2">
-                            {/* <h3 className="needConsultation">Need Consultation Form <span className="text-danger">*</span></h3> */}
-
-                            {/* <div class="flex items-center">
-                                <div>
-                                    <input type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                    <label for="default-radio-2" class="ms-2 itself ">Kanhaiya Itself</label>
-                                </div>
-                                <span className="oneofindia">(One of India's top Ethical Hacker & Cyber Security Expert)</span>
-
-                            </div>
-                            <div class="flex items-center">
-                                <div>
-                                    <input type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                    <label for="default-radio-2" class="ms-2 itself">Expert from Kanhaiya’s Team</label>
-                                </div>
-
-
-                            </div> */}
-
+                        
                             <form>
                                 <div className="form-group pb-3">
                                     <label for="exampleInputEmail1">Name<span className="text-danger">*</span></label>
@@ -138,38 +120,7 @@ const GetConsultation = () => {
                                         </div>
                                     </div>
                                 </div>
-{/* 
-                                <div className="py-3">
-                                    <h3 className="whatkind d-flex">How much time you required ?<span className="text-danger">*</span></h3>
 
-                                    <div className="row py-3">
-                                        <div className="col-md-6 py-2">
-                                            <div class="form-check whatkind-items">
-                                                <input class="form-check-input" type="radio" value="" id="flexCheckDefault" />
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                    60 Mins / 1 Hr : <span className="fw-bold">Rs.1999/-</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6 py-2">
-                                            <div class="form-check whatkind-items">
-                                                <input class="form-check-input" type="radio" value="" id="flexCheckDefault" />
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                    120 Mins / 2 Hr: <span className="fw-bold">Rs 2999/-</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6 py-2">
-                                            <div class="form-check whatkind-items">
-                                                <input class="form-check-input" type="radio" value="" id="flexCheckDefault" />
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                    180 Mins / 3 Hr:<span className="fw-bold">Rs.3999/-</span>
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div> */}
 
                                 <div>
                                     {/* <p className="aftersuccessful pb-2">After successful payment you will be reditected to select preferred meeting time slot page.</p> */}

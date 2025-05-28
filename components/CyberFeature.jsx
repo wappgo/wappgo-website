@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import "../public/styles/CyberFeature.css"
 const CyberFeature = () => {
+    const titleRef = useRef(null);
+    const fadeRefs = useRef([]);
   const [count, setCount] = useState(1);
 
   useEffect(() => {

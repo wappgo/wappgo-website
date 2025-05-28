@@ -1,0 +1,123 @@
+.devops-hero {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    background-color:black;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+    padding: 6rem;
+    position: relative;
+  }
+  
+  /* .image-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s ease-in-out;
+    z-index: 1;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .image-wrapper.to-right {
+    left: 70%;
+    transform: translate(-50%, -50%);
+  } */
+  .image-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(2);
+    transition: all 1s ease-in-out;
+    z-index: 1;
+    /* max-width: 600px; */
+    /* width: 100%; */
+    /* object-fit: cover; */
+  }
+
+  .image-wrapper.to-right {
+    left: 100%;
+    transform: translate(-95%, -50%) scale(0.9); /* Smaller when on right */
+  }
+
+  
+  .image-wrapper.to-right img {
+    height: 112vh;
+    width: auto;
+    object-fit: contain;
+  }
+ .image-wrapper .img2{
+    height: 100%;
+    width: 100%;
+ }
+  
+  /* .image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+  } */
+  
+  .text-content {
+    font-family: "Poppins";
+    max-width: 500px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+    z-index: 2;
+  }
+  
+  .text-content.fade-in-up {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .text-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 1rem 0;
+  }
+  
+  .text-content h2 {
+    font-size: 1.5rem;
+    color: #ccc;
+  }
+  
+  .text-content p {
+    color: #aaa;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+  
+  .buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .consult-btn {
+    background: white;
+    color: black;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .icons .icon {
+    background-color: #222;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+  
+  .icons .icon:hover {
+    background-color: #333;
+  }
+  

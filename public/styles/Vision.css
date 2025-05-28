@@ -1,13 +1,15 @@
 .vision-container {
-  background-color: #121417;
-  background-image: url("../assets/Metacap.svg"), url("../assets/Cone_01.png");
+  background-color: #000;
+  /* background-image: url("../assets/Metacap.svg"), url("../assets/Cone_01.png"); */
   background-repeat: no-repeat;
   background-position: 114% -150px, -20px bottom;
-  @media (max-width: 1200px) {
+  position: relative;
+  z-index: 3;
+  /* @media (max-width: 1200px) {
     background-image:  url('../assets/vision-md-f1.png'),url("../assets/vision-md-bg.png");
   }
   @media (max-width: 580px){
     background-image:  url('../assets/vision-sm1-bg.png'),url("../assets/vision-sm2-bg.png");
     background-position: right top, left bottom;
-  }
+  } */
 }

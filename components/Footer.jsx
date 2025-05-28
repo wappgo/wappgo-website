@@ -100,17 +100,167 @@ const Footer = () => {
         </div>
       </div>
       <article className="media-icons">
-        <img src="/assets/linkedin.svg" />
+        {/* <img src="/assets/linkedin.svg" /> */}
         <img src="/assets/discord.svg" />
         <img src="/assets/twitter.svg" />
         <img src="/assets/youtube.svg" />
         <img src="/assets/fb.svg" />
       </article>
       <p className="copyright">
-        Copyright © 2023 Wappgo IT Services Pvt. Ltd. All rights reserved
+        Copyright © 2025 Wappgo IT Services Pvt. Ltd. All rights reserved
       </p>
     </main>
   );
 };
 
 export default Footer;
+
+// import React from "react";
+// import "../public/styles/Footer.css";
+// // import Video from '../assets/ai-videos.mp4';
+// const Footer = () => {
+//   return (
+//     <div className="footer-container5">
+//       <video autoPlay loop muted className="footer-video5">
+//         <source src='/assets/ai-videos.mp4'  type="video/mp4" />
+//       </video>
+//       <div className="footer-overlay5">
+//         <div className="footer-content5">
+//           <div className="footer-left5">
+//             <img src="/logo.png" alt="Logo" className="footer-logo" />
+//             <p className="footer-address5">
+//               <img src="/india-flag.png" alt="India" className="flag5" />
+//               305 CORPORATE HOUSE 169 R.N.T MARG, INDORE 452001, MADHYA PRADESH
+//             </p>
+//             <p>
+//               📞 +0731-4240330 &nbsp;&nbsp; ✉️ info@wappgo.com
+//             </p>
+//             <div className="footer-social-icons5">
+//               <i className="fab fa-linkedin"></i>
+//               <i className="fab fa-discord"></i>
+//               <i className="fab fa-twitter"></i>
+//               <i className="fab fa-youtube"></i>
+//               <i className="fab fa-facebook"></i>
+//             </div>
+//           </div>
+
+//           <div className="footer-right5">
+//             <div className="footer-links5">
+//               <div>
+//                 <h4>Company</h4>
+//                 <p>About us</p>
+//                 <p>Contact us</p>
+//                 <p>Features</p>
+//               </div>
+//               <div>
+//                 <h4>Services</h4>
+//                 <p>Managed IT Services</p>
+//                 <p>Cyber Security</p>
+//                 <p>IT Compliance</p>
+//                 <p>Network Connectivity</p>
+//                 <p>Cloud Services</p>
+//               </div>
+//               <div>
+//                 <h4>Development</h4>
+//                 <p>Website Development</p>
+//                 <p>App Development</p>
+//                 <p>Desktop Application</p>
+//                 <p>AI / ML</p>
+//                 <p>Chat Bots</p>
+//               </div>
+//               <div>
+//                 <h4>Other Services</h4>
+//                 <p>UI/UX Design</p>
+//                 <p>Graphics Design</p>
+//                 <p>Video Editing</p>
+//               </div>
+//             </div>
+//             <div className="footer-bottom-links5">
+//               <p>Blogs</p>
+//               <p>Terms & Conditions</p>
+//               <p>Privacy Policy</p>
+//               <p>Cookie Policy</p>
+//             </div>
+//           </div>
+//         </div>
+//         <p className="footer-copyright5">© 2025 Wappgo IT Services Pvt. Ltd. All rights reserved</p>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Footer;
+
+// import React from "react";
+// import "../public/styles/Footer.css";
+
+// const Footer = () => {
+//   return (
+//     <div className="footer-container5">
+//       <video autoPlay loop muted className="footer-video5">
+//         <source src='/assets/ai-videos.mp4' type="video/mp4" />
+//       </video>
+//       <div className="footer-overlay5">
+//         <div className="footer-content5">
+//           <div className="footer-left5">
+//             <div className="footer-logo5"><img src="/assets/logo.svg"/></div>
+//             <p className="footer-address5">
+//             305 CORPORATE HOUSE 169 R.N.T MARG,
+//             INDORE 452001 , MADHYA PRADESH
+//             </p>
+//             <p>
+//               +0731-4240330 &nbsp;&nbsp; info@wappoo.com
+//             </p>
+//           </div>
+
+//           <div className="footer-right5">
+//             <div className="footer-links5">
+//               <div>
+//                 <h4>Company</h4>
+//                 <p>About us</p>
+//                 <p>Contact us</p>
+//                 <p>Features</p>
+//               </div>
+//               <div>
+//                 <h4>Services</h4>
+//                 <p>Managed IT Services</p>
+//                 <p>Cyber Security</p>
+//                 <p>IT Compliance</p>
+//                 <p>Network Connectivity</p>
+//                 <p>Cloud Services</p>
+//               </div>
+//               <div>
+//                 <h4>Development</h4>
+//                 <p>Website Development</p>
+//                 <p>App Development</p>
+//                 <p>Desktop Application</p>
+//                 <p>AI / ML</p>
+//                 <p>Chat Bots</p>
+//               </div>
+//               <div>
+//                 <h4>Other Services</h4>
+//                 <p>UI/UX Design</p>
+//                 <p>Graphics Design</p>
+//                 <p>Video Editing</p>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+        
+//         <div className="footer-bottom5">
+//           <p className="footer-copyright5">
+//             Copyright © 2023 Wappoo IT Services Pvt. Ltd. All rights reserved
+//           </p>
+//           <div className="footer-bottom-links5">
+//             <p>Blogs</p>
+//             <p>Terms & Conditions</p>
+//             <p>Privacy Policy</p>
+//             <p>Cookie Policy</p>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Footer;

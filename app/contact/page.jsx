@@ -9,10 +9,10 @@ import React from 'react'
 const Contact = () => {
   return (
     <main>
-        <Announcement/>
+        {/* <Announcement/> */}
         <Navbar/>
         <ContactHero/>
-        <AnimateText/>
+        {/* <AnimateText/> */}
         {/* <ContactForm/> */}
         <Footer/>
     </main>
