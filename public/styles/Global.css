@@ -1,0 +1,1055 @@
+.cool-link2 {
+    background-image: url("../assets/Mask_Group_11.png");
+    background-repeat: no-repeat;
+    background-size: 55vw 100vh;
+    position: relative;
+    overflow: hidden;
+    left: -110px;
+    z-index: 9999;
+}
+.secondscrolldiv2 {
+    height: 100vh;
+    display: flex;
+    padding-left: 1.75vw;
+    padding-right: 1.75vw;
+    width: 58.8vw;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 91%, rgba(253, 253, 254, 1) 100%);
+    margin-left: -1px;
+  }
+.searchbar {
+    backdrop-filter: blur(3px);
+    height: 3.5vw;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .22);
+    border: none;
+    border-radius: .5vw 0 0 .5vw;
+    color: #FFF;
+    font-size: 1.2vw;
+    background-image: url('../assets/Groups2533.svg');
+    background-repeat: no-repeat;
+    background-position: 18px 18px;
+    padding: 0 58px;
+    position: absolute;
+    margin-top: 20vh;
+}
+
+.container-search {
+    padding: 0 10vw 0 10vw;
+    width: 52vw;
+}
+
+.btnimg {
+    width: 1.4vw;
+}
+
+.scroll-morquecont::before {
+    background: linear-gradient(to right, #2B1E68 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 15vw;
+    display: block;
+    position: absolute;
+    width: 7vw;
+}
+
+.smallcard {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.commontech1 {
+    background: #fff;
+    box-shadow: 5px 5px 15px #00000042;
+    width: 16vw;
+    height: 16vw;
+    border-radius: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: absolute; */
+}
+
+.techformob {
+    display: none;
+}
+
+.mobappimg {
+    width: 15vw;
+    margin-top: 3vw;
+    margin-left: 1vw;
+}
+
+.desktopappimage {
+    width: 12vw;
+    margin-top: 3vw;
+    margin-left: 3vw;
+}
+
+.ecommerceappimage {
+    width: 16vw;
+    margin-top: 3vw;
+    margin-left: 2vw;
+}
+
+.chatappimag {
+    width: 18vw;
+    margin-top: 3vw;
+    margin-left: 2vw;
+}
+
+.card6 {
+    background: linear-gradient(135deg, rgba(28, 107, 244, 1) 0%, rgba(0, 229, 245, 1) 100%) !important;
+}
+
+.marquee1::before {
+    background: linear-gradient(to right, #2B1E68 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 15vw;
+    display: block;
+    position: absolute;
+    width: 7vw;
+    z-index: 99;
+}
+
+.marquee1::after {
+    background: linear-gradient(to left, #2B1E68 18%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 15vw;
+    display: block;
+    position: absolute;
+    width: 18vw;
+    top: 0;
+    right: -2vw;
+}
+
+.appexamplecard {
+    display: none;
+}
+
+.extrabutton {
+    width: 3vw;
+    height: 3vw;
+    border: .17vw solid #fff;
+    display: block;
+    position: absolute;
+    bottom: 13vh;
+    margin-left: 18vw;
+    border-radius: 100%;
+    background-color: transparent;
+    text-align: center;
+    animation-name: bounce;
+    transform-origin: center bottom;
+    animation-duration: 4s;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    text-decoration: none !important;
+    font-size: 2vw;
+    transition-property: all;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.extrabutton:hover {
+    background-color: #FFF;
+    color: #34116d;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 1s;
+    transition-delay: 0.1s;
+}
+
+.examplecardcon {
+    position: relative;
+}
+
+.cardtextexample {
+    position: absolute;
+    top: 4.7vw;
+    box-shadow: 3px 3px 6px #0000002e;
+    left: -1.5vw;
+    z-index: 9;
+    background-color: #FFF;
+    border-radius: 2px;
+    padding: 2px;
+    width: 6vw;
+    overflow: hidden;
+}
+
+.caroselproductname {
+    font-size: 1vw;
+    font-family: "Manrope";
+    color: #2b1e68 !important;
+    line-height: 1.2;
+    display: block;
+    margin: 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+.appexamoolediv {
+    opacity: 0.5;
+}
+
+.carddeactive {
+    cursor: pointer;
+    opacity: .6;
+    box-shadow: 3px 3px 6px #0000002e;
+    margin: 0 .4vw 0 0;
+    padding: 0;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #fff;
+    border: none;
+    width: 2.9vw;
+    text-align: center;
+    height: 2.9vw;
+    position: relative;
+    z-index: 1;
+    transition-duration: 0.8;
+    transition-delay: 0.2;
+}
+
+.animatecard {
+    transform: scale(2);
+    transition-duration: 1s;
+    transition-delay: 0.3s;
+}
+
+.boutton-chat {
+    padding: 0 65px;
+}
+
+.hidden-con {
+    position: absolute;
+    width: 1vw;
+    background: #2B1E68;
+    z-index: 9999999;
+    height: 15vw;
+}
+
+/* .lottieImag{
+    margin: 0 60px !important;
+} */
+.col-onehalf {
+    width: 10%;
+    margin: 5px 0;
+}
+
+.marquee1 {
+    white-space: nowrap;
+    height: 14.9vw;
+    width: 38vw;
+    color: #FFF;
+    font-size: 30px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.marquee1::-webkit-scrollbar {
+    display: none;
+}
+
+.marquee-inner1 {
+    display: flex;
+    align-items: center;
+    gap: 1.2vw;
+    will-change: transform;
+    animation: marqueeScroll 6s linear infinite;
+    width: 45vw;
+}
+
+.stopanimate {
+    animation: none;
+}
+
+.marquee-inner1:hover {
+    animation-play-state: paused;
+}
+
+.marquee-inner1 img:hover {
+    transform: scale(1.03);
+}
+@media (max-width: 1440px) {
+    .scrollcardtext-offermaring{
+        margin: 0 !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .downloadimga {
+        height: 100px;
+        margin-bottom: -12px;
+    }
+}
+
+@media (max-width: 992px) {
+    .commontech10 {
+        margin-left: 8vw;
+    }
+
+    .commontech11 {
+        margin-top: 10vw;
+    }
+
+    .commontech13 {
+        margin-right: 9vw;
+    }
+
+    .techfordes {
+        display: none;
+    }
+
+    .techformob {
+        display: block;
+    }
+
+    .everreadyplayheading {
+        font-size: 6vw;
+        margin-left: 40px;
+    }
+
+    .techicon188 {
+        width: 7.5vw;
+    }
+
+
+    .tech1 {
+        margin-left: 0;
+        margin-top: 4vw;
+    }
+
+    .tech2 {
+        margin-left: 33vw;
+        margin-top: 17vw;
+    }
+
+    .tech3 {
+        margin-left: 65vw;
+        margin-top: 5vw;
+    }
+
+    .tech4 {
+        margin-left: 0;
+        margin-top: 32vw;
+    }
+
+    .tech5 {
+        margin-left: 33.1vw;
+        margin-top: 42vw;
+    }
+
+    .tech6 {
+        margin-left: 63vw;
+        margin-top: 23vw;
+    }
+
+    .tech7 {
+        margin-left: 0;
+        margin-top: 54vw;
+    }
+
+    .tech8 {
+        margin-left: 35vw;
+        margin-top: 72vw;
+    }
+
+    .tech9 {
+        margin-left: 63vw;
+        margin-top: 47vw;
+    }
+
+    .tech10 {
+        margin-left: 9vw;
+        margin-top: 30vw;
+        display: none;
+    }
+
+    .tech11 {
+        margin-left: 32vw;
+        margin-top: 34vw;
+        display: none;
+    }
+
+    .tech12 {
+        margin-left: 52vw;
+        margin-top: 28vw;
+        display: none;
+    }
+
+    .tech13 {
+        margin-left: 64vw;
+        margin-top: 37vw;
+        display: none;
+    }
+
+    .tech14 {
+        margin-left: 0;
+        margin-top: 47vw;
+        display: none;
+    }
+
+    .tech15 {
+        margin-left: 18.5vw;
+        margin-top: 47vw;
+        display: none;
+    }
+
+    .tech16 {
+        margin-left: 42vw;
+        margin-top: 44vw;
+        display: none;
+    }
+
+    .tech17 {
+        margin-left: 75vw;
+        margin-top: 50vw;
+        display: none;
+    }
+
+    .tech18 {
+        left: 0;
+        margin-left: -.5vw;
+        margin-top: 63vw;
+        display: none;
+    }
+
+    .tech19 {
+        margin-left: 10vw;
+        margin-top: 55vw;
+        display: none;
+    }
+
+    .tech20 {
+        margin-left: 34vw;
+        margin-top: 57vw;
+        display: none;
+    }
+
+    .tech21 {
+        margin-left: 55vw;
+        margin-top: 52vw;
+        display: none;
+    }
+
+    .techicon1 {
+        width: 7.5vw;
+        margin-top: 4.4vw;
+    }
+
+    .techicon2 {
+        width: 6.5vw;
+        margin-top: 4vw;
+    }
+
+    .techicon3 {
+        width: 7.4vw;
+        margin-top: 4.2vw;
+    }
+
+    .techicon4 {
+        width: 8vw;
+        margin-top: 4vw;
+    }
+
+    .techicon5 {
+        width: 9vw;
+        margin-top: 4.5vw;
+    }
+
+    .techicon6 {
+        width: 10vw;
+        margin-top: 5vw;
+    }
+
+    .techicon7 {
+        width: 7.5vw;
+        margin-top: 4vw;
+    }
+
+    .techicon8 {
+        width: 9.7vw;
+        margin-top: 4.8vw;
+    }
+
+    .techicon9 {
+        width: 9vw;
+        margin-top: 4.3vw;
+    }
+
+    .techicon10 {
+        width: 4vw;
+        margin-top: 2.2vw;
+        display: none;
+    }
+
+    .techicon11 {
+        width: 3.8vw;
+        margin-top: 2vw;
+        display: none;
+    }
+
+    .techicon12 {
+        width: 4.5vw;
+        margin-top: 2.2vw;
+        display: none;
+    }
+
+    .techicon13 {
+        width: 5.5vw;
+        margin-top: 2.9vw;
+        display: none;
+    }
+
+    .techicon14 {
+        width: 4vw;
+        margin-top: 1.5vw;
+        display: none;
+    }
+
+    .techicon15 {
+        width: 4vw;
+        margin-top: 2.2vw;
+        display: none;
+    }
+
+    .techicon16 {
+        width: 4.4vw;
+        margin-top: 2vw;
+        display: none;
+    }
+
+    .techicon17 {
+        width: 4.4vw;
+        margin-top: 1.8vw;
+        display: none;
+    }
+
+    .techicon18 {
+        width: 3vw;
+        margin-top: .8vw;
+        display: none;
+    }
+
+    .techicon19 {
+        width: 5vw;
+        margin-top: 2.35vw;
+        display: none;
+    }
+
+    .techicon20 {
+        width: 3.5vw;
+        margin-top: 2.1vw;
+        display: none;
+    }
+
+    .techicon21 {
+        width: 5vw;
+        margin-top: 2.4vw;
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .pin-spacer {
+        padding: 0 !important;
+    }
+
+    .firstscrolldiv {
+        width: 100vw;
+    }
+
+    .cool-link {
+        height: 108vw;
+        width: 80vw;
+    }
+
+    .secondscrolldiv {
+        width: 100vw;
+    }
+    .secondscrolldiv2 {
+        width: 100vw;
+    }
+
+    .changewidthcol7 {
+        max-width: 100%;
+        width: 100%;
+        height: 47vw;
+        text-align: center;
+    }
+
+    .webappimage,
+    .aiappimage {
+        width: 45vw;
+    }
+
+    .changewidthcol5 {
+        max-width: 100%;
+        padding: 20px 20px;
+    }
+
+    .scrollcardheading {
+        font-size: 5vw;
+    }
+
+    .scrollcardsubheading {
+        font-size: 2.8vw;
+    }
+
+    .scrollcardtext {
+        font-size: 2.8vw;
+        font-weight: 700;
+    }
+
+    .cardexample {
+        font-size: 4vw;
+        font-weight: 700;
+    }
+
+    .vertrectangleproductlogo {
+        height: 4.5vw;
+        margin-top: 2.6vw;
+    }
+
+    .horitrectangleproductlogo {
+        /* height: 6.5dvw; */
+        width: 5.5vw;
+        margin-top: 3.2vw;
+    }
+
+    .firstexamplediv {
+        width: 9.2vw;
+        height: 9.2vw;
+    }
+
+    .servicsecard-6,
+    .servicsecard-7 {
+        display: none;
+    }
+
+    .boutton-chat {
+        padding: 0 20px;
+        /* bottom: 40vw; */
+    }
+
+    .cardexample {
+        display: none;
+    }
+
+    .getstartedwithgobutton {
+        height: 8vw !important;
+        box-shadow: 3px 3px 6px #0000002e;
+        border-radius: 1.4vw;
+        border: 2px solid #fff;
+        font-family: montserrat, sans-serif;
+        font-size: 3.8vw;
+        padding-top: 1vw;
+        color: #fff;
+        margin-top: 4vw;
+        font-weight: 800;
+        background-color: #080b51;
+        width: 45vw;
+    }
+
+    .getstartedwithgobuttonimg {
+        width: 3.2vw;
+        margin-top: -2.4vw;
+    }
+
+    .callbutton {
+        height: 8vw;
+        box-shadow: 3px 3px 6px #0000002e;
+        border-radius: 1.4vw;
+        border: 2px solid #fff;
+        font-family: montserrat, sans-serif;
+        font-size: 4vw;
+        color: #fff;
+        margin-top: 4vw;
+        background-color: #080b51;
+        width: 9vw;
+        padding: 0;
+    }
+
+    .btnimg {
+        width: 4vw;
+    }
+
+    .mobappimg {
+        width: 30vw;
+    }
+
+    .desktopappimage {
+        width: 28vw;
+    }
+
+    .chatappimag {
+        width: 35vw;
+    }
+
+    .ecommerceappimage {
+        width: 38vw;
+    }
+
+    .smallcard {
+        margin-top: 15px;
+    }
+
+    .appexamplecard {
+        display: flex;
+    }
+
+    .everreadyplayheading {
+        font-size: 8vw;
+    }
+
+    .firstexampledivactive {
+        width: 10.7vw;
+        height: 10vw;
+    }
+
+    .carddeactive {
+        width: 9vw;
+        height: 9vw;
+    }
+
+    .cardtextexample {
+        box-shadow: 3px 3px 6px #0000002e;
+        width: 16.3vw;
+        top: 14vw;
+        left: -2vw;
+        padding: 10px 0;
+    }
+
+    .caroselproductname {
+        font-size: 3vw;
+    }
+
+}
+
+@media (max-width: 590px) {
+    .cool-link {
+        height: 126vw;
+    }
+
+    .cool-link2 {
+        display: none;
+    }
+
+    .changewidthcol5 {
+        padding: 20px 20px 2px 20px;
+    }
+
+    .cardtextexample {
+        top: 16vw;
+        left: -3vw;
+    }
+}
+@media (max-width: 425px){
+    .cardsectionhrheading{
+        font-size: 7vw;
+    }
+    .cardsectionhr1{
+        display: none;
+    }
+    .cardsectionhr2{
+        display: none;
+    }
+    .letshandleheading{
+      font-size: 4vw;
+    }
+    .text-animate{
+      font-size: 5.2vw;
+    }
+    .or{
+        display: none;
+    }
+}
+@media (max-width: 320px) {
+    .pin-spacer {
+        padding: 0 !important;
+    }
+
+    .downloadimga {
+        height: 100px;
+        margin-bottom: -35px;
+    }
+}
+
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-20%);
+    }
+}
+
+.animated-text {
+    background-color: white;
+    width: 3.2vw;
+    box-shadow: 3px 3px 6px #0000002e;
+    border-radius: 2px;
+    overflow: hidden;
+    padding: 2px;
+    position: absolute;
+    z-index: 999999999 !important;
+    top: 3.2vw;
+}
+
+.firstexamplediv1 {
+    box-shadow: 3px 3px 6px #0000002e;
+    padding: 0;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #fff;
+    border: none;
+    width: 2.9vw;
+    text-align: center;
+    height: 2.9vw;
+    position: relative;
+    transition: 0.6s;
+    transition-delay: 0.3;
+    top: 1vw;
+}
+
+.firstexampledivactive1 {
+    background: #fff;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 6px #0000002e;
+    width: 2.9vw;
+    height: 2.9vw;
+    transform: scale(2);
+    position: relative;
+    z-index: 99999999;
+    top: 0.7vw;
+    transition: all .3s cubic-bezier(0.25, 0.1, 0.29, 1)
+}
+
+.anicarddeactive {
+    opacity: .5;
+    transform: scale(.88);
+}
+
+.hideanimate-30,
+.hideanimate-31,
+.hideanimate-32,
+.hideanimate-33,
+.hideanimate-34,
+.hideanimate-35,
+.hideanimate-36,
+.hideanimate-37,
+.hideanimate-38,
+.hideanimate-39,
+.hideanimate-40,
+.hideanimate-41,
+.hideanimate-42,
+.hideanimate-43,
+.hideanimate-44,
+.hideanimate-45,
+.hideanimate-46,
+.hideanimate-47 {
+    display: none;
+}
+
+.animated-text-10,
+.animated-text-11,
+.animated-text-12,
+.animated-text-13,
+.animated-text-14,
+.animated-text-15,
+.animated-text-16,
+.animated-text-17,
+.animated-text-18,
+.animated-text-19 {
+    /* left: 0.5vw !important */
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-inner55 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1.2vw;
+}
+
+.marquee-conteiner {
+    margin-top: 18px;
+    font-size: 30px;
+    margin-top: 28vh;
+}
+
+.Marquee22 {
+    width: 35vw;
+    box-sizing: border-box;
+    color: white;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    margin-top: 1.8vw;
+}
+
+.Marquee22-card {
+    position: relative;
+    z-index: 99;
+}
+
+.Marquee33 {
+    width: 35vw;
+    box-sizing: border-box;
+    color: white;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    margin-top: 1.8vw;
+    position: relative;
+    z-index: 2;
+}
+
+.Marquee44 {
+    width: 35vw;
+    box-sizing: border-box;
+    color: white;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 1.8vw;
+}
+
+.Marquee-content22 {
+    display: flex;
+    animation: marquee 40s linear infinite running;
+    gap: 1.7vw;
+    margin-top: -1vw;
+}
+
+.Marquee-content22:hover {
+    animation-play-state: paused;
+}
+
+.Marquee-tag22 {
+    width: 200px;
+    margin: 0 0.5em;
+    padding: 0.5em;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.Marquee-tag22:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.lottie-animation{
+    margin: 0 !important;
+    height: 400px;
+    width: 400px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee-conteiner::before {
+    background: linear-gradient(to right, #2B1E68 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 15vw;
+    display: block;
+    position: absolute;
+    width: 7vw;
+    z-index: 99;
+    left: 9.7vw;
+    top: 14vw;
+}
+
+.marquee-conteiner::after {
+    background: linear-gradient(to left, #2B1E68 18%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 15vw;
+    display: block;
+    position: absolute;
+    width: 7vw;
+    top: 14vw;
+    right: 9vw;
+    z-index: 99;
+}
+
+.stopanimate22 {
+    animation-play-state: paused !important;
+    display: flex;
+    gap: 1.7vw;
+}
+
+.Marquee-tag {
+    position: relative;
+}
+
+.caroselproductname1 {
+    font-size: 0.5vw;
+    font-family: "Manrope";
+    color: #2b1e68 !important;
+    line-height: 1.2;
+    display: block;
+    margin: 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+.cardmarquee {
+    overflow: hidden;
+    height: 60vh;
+}
+
+.caroselproductname:hover {
+    text-decoration: underline;
+}
+
+.caroselproductname1:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1399px) {
+    .marquee-conteiner::before {
+        top: 16vw;
+    }
+
+    .marquee-conteiner::after {
+        top: 16vw;
+    }
+}
+
+@media (max-width: 1280px) {
+    .marquee-conteiner::before {
+        top: 16vw;
+    }
+
+    .marquee-conteiner::after {
+        top: 16vw;
+    }
+}

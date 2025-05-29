@@ -1,0 +1,317 @@
+.ai-section5 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  padding:100px 50px 50px 50px;
+  background: black;
+}
+
+.video-overlay6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #010101 0%, rgba(0, 0, 0, 0) 35.89%);
+  z-index: 1;
+}
+
+.ai-section5-container{
+    position: relative;
+    width: 1450px;
+    border-radius: 20px;
+    /* padding:0px 30px 30px 50px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.video-container6 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.overlay-image6 {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  z-index: 1;
+}
+
+.background-video {
+  width: 557.64px;
+  height: 418.23px;
+  object-fit: cover;
+}
+
+.dev-content {
+  padding: 40px 0;
+  position: relative;
+  z-index: 2;
+  /* display: flex; */
+  flex-wrap: wrap;
+  gap: 40px;
+  text-align: left;
+}
+
+.choose-ai {
+  font-size: 44px;
+  font-weight: 400;
+  font-family: "Gilroy-SemiBold";
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.domain {
+  font-family: "Gilroy";
+  font-size: 16px;
+  flex: 1;
+}
+
+.dev-card p {
+  margin-bottom: 40px;
+}
+
+.dev-cards {
+  display: flex;
+  margin-top: 150px;
+  gap: 40px;
+  /* justify-content: center;
+  flex-wrap: wrap; */
+}
+
+.dev-card {
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(45px);
+  -webkit-backdrop-filter: blur(45px);
+  border: 1px solid #787A7A;
+  padding: 17px;
+  border-radius: 12px;
+  /* width: 312px; */
+  height: 200px !important;
+  transform: translateY(50px) scale(0.6);
+  opacity: 0;
+  transition: all 1.2s ease;
+  text-align: left;
+  /* transition: 0.3s ease-in-out; */
+}
+.dev-card.animate {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+.dev-card h3 {
+  font-family: "Gilroy-SemiBold";
+  font-size: 16px;
+}
+
+.dev-card p {
+  font-family: "Gilroy";
+  color: #bbb;
+  font-size: 13px;
+}
+
+.dev-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
+  .ai-section5 {
+    padding: 20px;
+  }
+
+  .video-container6 {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 20px;
+  }
+
+  .background-video {
+    width: 100%;
+    height: auto;
+  }
+
+  .overlay-image6 {
+    width: 90%;
+    left: 50%;
+  }
+
+  .dev-content {
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .choose-ai {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .domain {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .dev-cards {
+    margin-top: 30px;
+    /* gap: 20px; */
+  }
+
+  .dev-card {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .ai-section5 {
+    padding: 30px;
+  }
+
+  .choose-ai {
+    font-size: 32px;
+  }
+
+  .domain {
+    font-size: 15px;
+  }
+
+  .dev-cards {
+    margin-top: 50px;
+  }
+
+  .dev-card {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .ai-section5 {
+    padding: 40px;
+  }
+
+  .background-video {
+    width: 450px;
+    height: 337px;
+  }
+
+  .choose-ai {
+    font-size: 36px;
+  }
+
+  .dev-cards {
+    margin-top: 80px;
+    gap: 30px;
+  }
+
+  /* .dev-card {
+    width: 45%;
+    height: auto;
+  } */
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .background-video {
+    width: 500px;
+    height: 375px;
+  }
+
+  .choose-ai {
+    font-size: 40px;
+  }
+
+  .dev-cards {
+    margin-top: 100px;
+  }
+/* 
+  .dev-card {
+    width: 45%;
+  } */
+}
+
+
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+  .background-video {
+    width: 520px;
+    height: 390px;
+  }
+.dev-cards{
+  gap: 12px;
+}
+  /* .dev-card {
+    width: 280px;
+  } */
+}
+
+
+@media screen and (min-width: 1440px) {
+  .background-video {
+    width: 557px;
+    height: 418px;
+  }
+
+  /* .dev-card {
+    width: 312px;
+  } */
+
+}
+
+@media screen and (min-width: 1920px) {
+  .ai-section5 {
+    padding: 80px;
+  }
+
+  .background-video {
+    width: 650px;
+    height: 488px;
+  }
+
+  .choose-ai {
+    font-size: 48px;
+  }
+
+  .dev-card {
+    width: 350px;
+    height: 200px;
+  }
+}
+
+/* ========== Special Cases for Landscape Mobile Devices ========== */
+@media (max-height: 480px) and (orientation: landscape) {
+  .ai-section5 {
+    padding: 20px;
+  }
+
+  .dev-content {
+    padding: 15px;
+  }
+
+  .dev-cards {
+    margin-top: 30px;
+    gap: 15px;
+  }
+
+  .dev-card {
+    height: auto;
+    padding: 10px;
+  }
+}

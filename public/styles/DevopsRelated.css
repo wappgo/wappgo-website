@@ -1,0 +1,297 @@
+/* .workflow-section {
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .workflow-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 33px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .workflow-header h2 {
+    font-size:48px;
+    font-family: "Poppins";
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  
+  .workflow-header h2 span {
+    color: #fff;
+  }
+  
+  .workflow-header p {
+    font-family: "Poppins";
+    font-size: 20px;
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .workflow-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  
+  .workflow-left {
+    padding-right: 2rem;
+  }
+  
+  .workflow-left img {
+
+    height: auto;
+  }
+  
+  .workflow-right {
+    width: 50%;
+    padding-right: 6rem;
+  }
+  
+  .workflow-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .workflow-accordion-item {
+    padding: 1rem;
+    border-bottom: 1px solid #757575;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .workflow-accordion-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins";
+    font-size: 20px;
+    align-items: center;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  
+  .workflow-accordion-item .icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .workflow-accordion-item.active .icon.rotate {
+    transform: rotate(180deg);
+  }
+  
+  .consult-button {
+    margin-top: 2rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    font-weight: 500;
+    border-radius: 999px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: background-color 0.3s;
+  }
+  
+  .consult-button:hover {
+    background-color: #e4e4e4;
+  }
+  
+
+  @media (max-width: 768px) {
+    .workflow-content {
+      flex-direction: column;
+    }
+  
+    .workflow-left,
+    .workflow-right {
+      width: 100%;
+      padding: 0;
+    }
+  
+    .workflow-left {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+  } */
+
+  .workflow-section {
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+    font-family: "Poppins";
+    overflow: hidden;
+  }
+  
+  .workflow-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 33px;
+    /* max-width: 800px; */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .workflow-header h2 {
+    font-size: 48px;
+    font-family: "Poppins";
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .workflow-header h2 span {
+    color: #fff;
+  }
+  
+  .workflow-header p {
+    font-family: "Poppins";
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ccc;
+  }
+  
+  .workflow-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  
+  .workflow-left {
+    padding-right: 2rem;
+  }
+  
+  .workflow-left img {
+    height: auto;
+  }
+  
+  .workflow-right {
+    /* width: 50%;
+    padding-right: 6rem; */
+    padding: 0 30px;
+  }
+  
+  .workflow-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .workflow-accordion-item {
+    padding: 1rem;
+    border-bottom: 1px solid #757575;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .workflow-accordion-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins";
+    font-size: 20px;
+    align-items: center;
+    font-weight: 500;
+  }
+  
+  .workflow-accordion-item .icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .workflow-accordion-item.active .icon.rotate {
+    transform: rotate(180deg);
+  }
+  
+  .workflow-accordion-content {
+    margin-top: 1rem;
+  }
+  
+  .workflow-accordion-content p {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  .main-video2 {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .hover-video {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    width: 160px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    pointer-events: none;
+  }
+  
+  .consult-button {
+    margin-top: 2rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background-color: #fff;
+    color: #1925ff;
+    font-weight: 500;
+    border-radius: 999px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: background-color 0.3s;
+  }
+  
+  .consult-button:hover {
+    background-color: #e4e4e4;
+  }
+
+  .workflow-accordion-content.side-by-side {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .workflow-accordion-content.side-by-side p {
+    flex: 1;
+    margin: 0;
+  }
+  
+  .workflow-accordion-content.side-by-side .main-video2 {
+    flex-shrink: 0;
+    width: 180px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+
+  @media (max-width: 768px) {
+    .workflow-content {
+      flex-direction: column;
+    }
+  
+    .workflow-left,
+    .workflow-right {
+      /* width: 100%; */
+      padding: 0;
+    }
+  
+    .workflow-left {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+  
+    .hover-video {
+      display: none;
+    }
+  }
+  

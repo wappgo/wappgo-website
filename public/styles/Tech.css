@@ -1,0 +1,81 @@
+/* Container styling */
+.tech-partner-section {
+    padding: 60px 0;
+  }
+  
+  /* India Map Styling */
+  .india-map {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Indore Marker Styling */
+  .indore-marker {
+    position: absolute;
+    top: 40%; /* Adjust based on map positioning */
+    left: 55%; /* Adjust based on map positioning */
+    display: flex;
+    align-items: center;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #1d4ed8;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .indore-text {
+    color: #1d4ed8;
+    font-weight: 500;
+  }
+  
+  /* Heading Styling */
+  .heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .highlight {
+    color: #1d4ed8;
+  }
+  
+  /* Description Styling */
+  .description,
+  .sub-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Info Box Styling */
+  .info-box {
+    margin-bottom: 20px;
+  }
+  
+  .info-box p {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* CTA Button Styling */
+  .cta-button {
+    background-color: #1d4ed8;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #1e40af;
+  }
+  

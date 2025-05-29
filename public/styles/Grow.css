@@ -1,0 +1,25 @@
+.grow-container {
+  background: var(
+    --Primary,
+    linear-gradient(0deg, #1925ff -0.68%, #1925ff 110.1%)
+  );
+  background-image: url("../assets/grow-first-bg.png"),
+    url("../assets/grow-circle.png");
+  background-repeat: no-repeat;
+  background-position: left bottom, right center;
+  @media (min-width: 992px) and (max-width: 1200px) {
+    background-image: url("../assets/grow-md-f1.png"),
+      url("../assets/grow-sec-md.png");
+  }
+}
+.grow-container-inside{
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .grow-container {
+    background-image: url("../assets//grow-bg-lg1.png");
+    padding: 1.5rem 1rem;
+  }
+}

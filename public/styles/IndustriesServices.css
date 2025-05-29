@@ -1,0 +1,333 @@
+/* .ecom-services-section {
+   
+    font-family: Poppins;
+    color: #fff;
+  }
+  
+  .ecom-services-container {
+    max-width: 1316px;
+    margin: auto;
+    background: #020204;
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    gap: 30px;
+  }
+  
+  .ecom-heading {
+    width: 100%;
+    font-size: 48px;
+    font-weight: 600;
+    font-family: Poppins;
+    text-align: center;
+    margin-bottom: 30px;
+    z-index: 2;
+  }
+  
+  .ecom-heading h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+  }
+  
+  .ecom-services-left {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 40px;
+    z-index: 2;
+  }
+  
+  .service-list {
+    list-style: none;
+    font-size: 20px;
+    font-family: Poppins;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .service-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .service-list li:hover {
+    color: #3f51ff;
+  }
+  
+  .arrows3 img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+  
+  
+  .ecom-services-right {
+    flex: 1;
+    min-width: 300px;
+    z-index: 2;
+  }
+  
+  .ecom-icon {
+    width:253px;
+    height: 124px;
+    margin-bottom: 20px;
+  }
+  
+  .ecom-services-right p {
+    font-family: Poppins;
+    font-size:16px;
+    line-height: 1.6;
+    color: #ccc;
+  }
+  
+  .corner-video {
+    position: absolute;
+    top: -53px;
+    right: -131px;
+    width: 537px;
+    height: 411px;
+    border-top-right-radius: 20px;
+    z-index: 1;
+    object-fit: cover;
+  }
+   */
+
+   .ecom-services-section {
+    font-family: Poppins;
+    color: #fff;
+}
+
+.ecom-services-container {
+    max-width: 1316px;
+    margin: auto;
+    background: #020204;
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    gap: 30px;
+}
+
+.ecom-heading {
+    width: 100%;
+    font-size: 48px;
+    font-weight: 600;
+    font-family: Poppins;
+    text-align: center;
+    margin-bottom: 30px;
+    z-index: 2;
+}
+
+.ecom-heading h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+}
+
+.ecom-services-left {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 40px;
+    z-index: 2;
+}
+
+.service-list2 {
+    list-style: none;
+    font-size: 20px;
+    font-family: Poppins;
+    padding: 0;
+    margin: 0;
+}
+
+.service-list2 li {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.service-list2 li:hover {
+    color: #3f51ff;
+}
+
+.arrows3 img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.ecom-services-right {
+    flex: 1;
+    min-width: 300px;
+    z-index: 2;
+}
+
+.ecom-icon {
+    width: 253px;
+    height: 124px;
+    margin-bottom: 20px;
+}
+
+.ecom-services-right p {
+    font-family: Poppins;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.corner-video {
+    position: absolute;
+    top: -53px;
+    right: -131px;
+    width: 537px;
+    height: 411px;
+    border-top-right-radius: 20px;
+    z-index: 1;
+    object-fit: cover;
+}
+
+
+@media (max-width: 1200px) {
+  .ecom-services-section {
+  padding: 40px;
+}
+    .ecom-services-container {
+        padding: 30px;
+    }
+    
+    .ecom-heading {
+        font-size: 42px;
+    }
+    
+    .ecom-services-left {
+        padding-right: 20px;
+    }
+    
+    .service-list2 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 992px) {
+    .ecom-heading {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    
+    .ecom-heading h2 {
+        font-size: 2rem;
+    }
+    
+    .ecom-services-left,
+    .ecom-services-right {
+        flex: 100%;
+        min-width: 100%;
+    padding-right: 0;
+    margin-bottom: 20px;
+    }
+    
+    .corner-video {
+        width: 400px;
+        height: 300px;
+        top: -40px;
+        right: -100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ecom-services-container {
+        padding: 25px;
+        gap: 20px;
+    }
+    
+    .ecom-heading {
+        font-size: 32px;
+    }
+    
+    .service-list2 {
+        font-size: 16px;
+    }
+    
+    .ecom-services-right p {
+        font-size: 14px;
+    }
+    
+    .ecom-icon {
+        width: 200px;
+        height: auto;
+    }
+    
+    .corner-video {
+        width: 300px;
+        height: 230px;
+        top: -30px;
+        right: -80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .ecom-services-container {
+        padding: 20px;
+        border-radius: 15px;
+    }
+    
+    .ecom-heading {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .ecom-heading h2 {
+        font-size: 1.75rem;
+    }
+    
+    .service-list2 li {
+        padding: 10px 0;
+    }
+    
+    .corner-video {
+        width: 250px;
+        height: 190px;
+        top: -20px;
+        right: -60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ecom-heading {
+        font-size: 24px;
+    }
+    
+    .service-list2 {
+        font-size: 15px;
+    }
+    
+    .ecom-icon {
+        width: 180px;
+    }
+    
+    .corner-video {
+        width: 200px;
+        height: 150px;
+    }
+}

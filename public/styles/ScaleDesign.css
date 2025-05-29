@@ -1,0 +1,100 @@
+.build-section {
+    display: flex;
+    justify-content: space-around;
+    font-family: "Poppins";
+    align-items: center;
+    padding: 4rem 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .build-text {
+    flex: 1;
+    max-width: 600px;
+  }
+  
+  .build-text h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+  }
+  
+  .build-text p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+  }
+  
+  .build-image {
+    flex: 1;
+    max-width: 500px;
+  }
+  
+  .build-image img {
+ 
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  /* Tablet screens (<= 1024px) */
+@media (max-width: 1024px) {
+  .build-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .build-text {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .build-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .build-text p {
+    font-size: 1rem;
+  }
+
+  .build-image {
+    max-width: 80%;
+  }
+
+  .build-image img {
+    width: 100%;
+  }
+}
+
+/* Mobile screens (<= 768px) */
+@media (max-width: 768px) {
+  .build-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .build-text h2 {
+    font-size: 2rem;
+  }
+
+  .build-text p {
+    font-size: 0.95rem;
+  }
+
+  .build-image {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .build-text h2 {
+    font-size: 1.7rem;
+  }
+
+  .build-text p {
+    font-size: 0.9rem;
+  }
+
+  .build-image img {
+    border-radius: 12px;
+  }
+}

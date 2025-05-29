@@ -1,0 +1,200 @@
+.ecommerce-hero {
+  background: linear-gradient(90deg, #f5f8ff 0%, #ffffff 100%);
+  padding: 60px 20px;
+  font-family: Poppins;
+}
+
+.indushero-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.indushero-left {
+  position: relative;
+  flex: 1;
+  height: 502px;
+  width: 580px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.mobile {
+  max-width: 100%;
+  padding-top: 25px;
+  border-radius: 24px;
+}
+
+.mobile1 {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  transform: rotate(-8deg);
+  z-index: 1;
+}
+
+.mobile2 {
+  position: absolute;
+  right: 0;
+  top: -20px;
+  transform: rotate(8deg);
+  z-index: 2;
+}
+
+.indushero-right {
+  flex: 1;
+  min-width: 320px;
+  padding: 20px;
+}
+
+.indushero-right h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.indushighlight {
+  color: #3f51ff;
+}
+
+.indushero-right h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.indushero-right p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 24px;
+  max-width: 600px;
+}
+
+.indushero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.indusprimary-btn {
+  background-color: #3f51ff;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 32px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.indusprimary-btn:hover {
+  background-color: #2c3ee5;
+}
+
+.indussecondary-btn {
+  padding: 12px 24px;
+  border: 2px solid #3f51ff;
+  color: #3f51ff;
+  background-color: transparent;
+  border-radius: 32px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.indussecondary-btn:hover {
+  background-color: #eef0ff;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.indushero-right-animate {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+@media (max-width: 730px) {
+  .indushero-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .indushero-left {
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+  }
+
+  .mobile {
+    position: static;
+    transform: none;
+    margin: 0 10px;
+    max-width: 71%;
+  }
+
+  .indushero-left {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .indushero-right {
+    text-align: center;
+    padding: 0px;
+  }
+
+  .indushero-right h1 {
+    font-size: 2.2rem;
+  }
+
+  .indushero-right h3 {
+    font-size: 1.1rem;
+  }
+
+  .indushero-right p {
+    margin: 0 auto 24px;
+  }
+
+  .indushero-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .indushero-right h1 {
+    font-size: 1.8rem;
+  }
+
+  .indushero-right h3 {
+    font-size: 1rem;
+  }
+
+  .indushero-right p {
+    font-size: 0.95rem;
+  }
+
+  .indusprimary-btn,
+  .indussecondary-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .mobile1,
+  .mobile2 {
+    max-width: 80%;
+  }
+}
