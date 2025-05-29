@@ -30,24 +30,24 @@ const IndustriesDropdown = ({ hideServices }) => {
                <div className="services-items">
                  <div
                   onClick={(e) =>{  e.stopPropagation(); router.push("/chatsystem")}}
-                  className="instries-content"
+                  className="instries-content active-item-service"
                   style={{ cursor: "pointer" }}
                 >
                   <img src="/assets/chatsystem.svg" />
                   <h6>Chatsystem</h6>
                 </div>
                 <div onClick={() => router.push("/industries")}
-                  className="instries-content"
+                  className="instries-content active-item-service"
                   style={{ cursor: "pointer" }}>
                   <img src="/assets/online-shopping.svg" />
                   <h6>E-Commerce</h6>
                 </div>
-                <div  onClick={() => router.push("/projectmanagement")} className="instries-content">
+                <div  onClick={() => router.push("/projectmanagement")} className="instries-content active-item-service">
                   <img src="/assets/rocket.svg" />
                   <h6>Project Management</h6>
                 </div>
                 <div  onClick={() => router.push("/social-media")}
-                  className="instries-content"
+                  className="instries-content active-item-service"
                   style={{ cursor: "pointer" }}>
                   <img src="/assets/social-media.svg" />
                   <h6>Social Media</h6>
@@ -55,52 +55,52 @@ const IndustriesDropdown = ({ hideServices }) => {
               </div>
               <div className="services-items">
                 <div onClick={() => router.push("/ERP")}
-                  className="instries-content"
+                  className="instries-content active-item-service"
                   style={{ cursor: "pointer" }}>
                   <img src="/assets/crm-erp.svg" />
                   <h6>ERP / CRM</h6>
                 </div>
-                <div  onClick={() => router.push("/contact")} className="instries-content">
+                <div  onClick={() => router.push("/contact")} className="instries-content active-item-service">
                   <img src="/assets/health-insurance.svg" />
                   <h6>Healthcare</h6>
                 </div>
-                <div  onClick={() => router.push("/contact")} className="instries-content">
+                <div  onClick={() => router.push("/contact")} className="instries-content active-item-service">
                   <img src="/assets/checklist.svg" />
                   <h6>Logistics</h6>
                 </div>
-                <div  onClick={() => router.push("/contact")} className="instries-content">
+                <div  onClick={() => router.push("/contact")} className="instries-content active-item-service">
                   <img src="/assets/chat-bot.svg" />
                   <h6>Chatbot</h6>
                 </div>
               </div>
-              <div  onClick={() => router.push("/contact")} className="services-items">
-                <div className="instries-content">
+              <div  onClick={() => router.push("/contact")} className="services-items ">
+                <div className="instries-content active-item-service">
                   <img src="/assets/agriculture.svg" />
                   <h6>Agriculture</h6>
                 </div>
-                <div  onClick={() => router.push("/contact")} className="instries-content">
+                <div  onClick={() => router.push("/contact")} className="instries-content active-item-service">
                   <img src="/assets/insurance.svg" />
                   <h6>Security</h6>
                 </div>
-                <div  onClick={() => router.push("/contact")} className="instries-content">
+                <div  onClick={() => router.push("/contact")} className="instries-content active-item-service">
                   <img src="/assets/law.svg" />
                   <h6>Law-tech</h6>
                 </div>
-                <div  onClick={() => router.push("/contact")} className="instries-content">
+                <div  onClick={() => router.push("/contact")} className="instries-content active-item-service">
                   <img src="/assets/university.svg" />
                   <h6>Ed-Tech</h6>
                 </div>
               </div>
                <div className="services-items">
-                <div onClick={() => router.push("/contact")} className="instries-content">
+                <div onClick={() => router.push("/contact")} className="instries-content active-item-service">
                   <img src="/assets/travel.svg" />
                   <h6>Travel</h6>
                 </div>
-                <div  onClick={() => router.push("/contact")} className="instries-content">
+                <div  onClick={() => router.push("/contact")} className="instries-content active-item-service">
                   <img src="/assets/cloud.svg" />
                   <h6>Cloud</h6>
                 </div>
-                <div onClick={() => router.push("/contact")} className="instries-content">
+                <div onClick={() => router.push("/contact")} className="instries-content active-item-service">
                   <img src="/assets/shopping-cart.svg" />
                   <h6>Marketplace</h6>
                 </div>

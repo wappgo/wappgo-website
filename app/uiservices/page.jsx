@@ -1,34 +1,33 @@
-"use client"
 
+"use client"
 import NavbarAI from "@/components/NavbarAI";
 import Partners from "@/components/Partners";
-import WebExpertise from "@/components/WebExpertise";
-import ScaleDesign from "@/components/ScaleDesign";
-import CaseStudies from "@/components/CaseStudies";
-import RelatedServices from "@/components/RelatedServices";
-import Footer2 from "@/components/Footer2";
-import UserIntefaceServices from "@/components/UserInterfaceServices";
-import ProductDesign from "@/components/ProductDesign";
-import FaqSection from "@/components/FaqSection";
 import Services from "@/components/Service";
+import CaseStudies from "@/components/CaseStudies";
+import DevopsRelated from "@/components/DevopsRelated";
 import Footer from "@/components/Footer";
+import FaqSection from "@/components/FaqSection";
+import UserIntefaceServices from "@/components/UserInterfaceServices";
+import WebExpertise from "@/components/WebExpertise";
+import ProductDesign from "@/components/ProductDesign";
 
-
-
-function page() {
+export default function Home() {
     return (
         <main>
+
             <NavbarAI />
             <UserIntefaceServices />
             <Partners />
             <WebExpertise title={"Our Expertise in"} nexttitle={"UI/ UX Services"} />
+            <CaseStudies />
+            <DevopsRelated />
             <CaseStudies />
             <ProductDesign />
             <div className="overlap-container">
                 <div className="card-layer card-layer--first"
                     style={{
                         boxShadow: "none",
-                        paddingBottom:"20px"
+                        paddingBottom: "20px"
                     }}
                 >
                     <h2 className="section-title">Other Related Services</h2>
@@ -79,8 +78,7 @@ function page() {
             <FaqSection />
             <Services />
             <Footer />
-        </main>
-    )
-}
 
-export default page
+        </main>
+    );
+}

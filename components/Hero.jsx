@@ -4,98 +4,15 @@ import Image from "next/image";
 import "../public/styles/Hero.css";
 import "../public/styles/CyberHero.css";
 import Link from "next/link";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { useEffect } from "react";
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-
+import devAnimation from '../public/assets/herosection.json';
+import Lottie from 'lottie-react';
 const Hero = ({ HeroStyle, HeroTexts }) => {
-
-  // var tl = gsap.timeline()
-
-
-  // useGSAP(() => {
-  //   if (HeroStyle) {
-  //     tl.from(".hero-items-wrapper", {
-  //       y: 100,
-  //       opacity: 0,
-  //       duration: 0.8
-  //     })
-  //   }
-  //   else {
-  //     tl.from(".hero-items-wrapper", {
-  //       y: 100,
-  //       opacity: 0,
-  //       duration: 0.8
-  //     })
-  //   }
-
-
-  // })
-
-
   return (
-
-    // <main
-    //   style={{
-    //     backgroundColor: HeroStyle && HeroStyle.backgroundColor,
-    //     backgroundImage: HeroStyle && "",
-    //     transition: "all 4s ease-in-out"
-
-    //   }}
-    //   className={`row ${HeroStyle ? 'cyber-container1' : 'hero-container'}`}
-
-    // >
-    //    <video autoPlay loop muted className="hero-video">
-    //     <source src='/assets/hero-main-video.mp4' type="video/mp4" />
-    //   </video>
-
-    //   <article className="row hero-items-wrapper">
-    //     <div className="col-lg-12 hero-items">
-    //       <div className="row">
-    //         <div className="col-lg-9">
-    //           {HeroTexts ? (
-    //             <h1
-    //               className="hero-heading"
-    //               style={{ color: HeroStyle && HeroStyle.textColor }}
-    //             >
-    //               {HeroTexts.heading}
-    //               <span className="cyber-masterpiece"> Masterpiece</span>
-    //             </h1>
-    //           ) : (
-    //             <h1 className="hero-heading">
-    //               Technology and design serve as our means to create
-    //               <span className="masterpiece"> MASTERPIECE</span>{" "}
-    //               <span> .</span>
-    //             </h1>
-    //           )}
-    //         </div>
-    //       </div>
-
-    //       <div className="row">
-    //         <div className="col-lg-6 col-md-9">
-    //           <p
-    //             className="desc"
-    //             style={{ color: HeroStyle && HeroStyle.subHeadingColor }}
-    //           >
-    //             {HeroTexts
-    //               ? HeroTexts.desc
-    //               : "By applying innovative approaches, we collaborate with corporations and stakeholders to transform and enhance their experience"}
-    //           </p>
-    //         </div>
-    //       </div>
-    //       <ButtonMedia HeroStyle={HeroStyle} HeroTexts={HeroTexts} />
-    //     </div>
-    //     <div className="round-text-container">
-    //       {HeroTexts ? "" : <HeroLogo />}
-    //     </div>
-    //   </article>
-    // </main>
-
     <div className="hero-container">
       {/* Video Background on the Right */}
-      <div className="video-container video-container">
+      {/* <div className="video-container video-container">
         <video className="video2" autoPlay loop muted playsInline preload="auto">
           <source src="/assets/hero-main-video.mp4" type="video/mp4" />
         </video>
@@ -103,14 +20,20 @@ const Hero = ({ HeroStyle, HeroTexts }) => {
         <div className="blurfixer">
           <img src="/assets/bluer-fix.svg" />
         </div>
-      </div>
+        <Lottie
+          animationData={devAnimation}
+          loop={true}
+        />
+      </div> */}
+
+
 
       {/* Content on the Left */}
       <div className="content2">
         <article className="row hero-items-wrapper">
           <div className="col-lg-12 hero-items">
             <div className="row masterpiecediv">
-              <div className="col-xl-9 col-lg-12 col-md-12">
+              <div className="col-xl-12 col-lg-12 col-md-12">
                 {HeroTexts ? (
                   <h1
                     className="hero-heading"
@@ -148,6 +71,9 @@ const Hero = ({ HeroStyle, HeroTexts }) => {
           </div>
         </article>
       </div>
+      <Lottie
+        animationData={devAnimation}
+        loop={true} />
     </div>
 
 
@@ -270,9 +196,6 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
         centered
         aria-labelledby="example-modal-sizes-title-xl"
       >
-        {/* <Modal.Header closeButton>
-          <Modal.Title>React Bootstrap Modal</Modal.Title>
-        </Modal.Header> */}
         <Modal.Body>
           <div className='d-flex justify-content-center align-items-center'>
             <div className='get-in-touch2 '>
@@ -361,7 +284,7 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
                 <div className="col-lg-7">
                   <div className='contact-form'>
                     <Button className="contactcross-btn" onClick={handleClose}>
-                       <img src="/assets/btn-cross.svg" alt="cross" />
+                      <img src="/assets/btn-cross.svg" alt="cross" />
                     </Button>
                     <form>
                       <div className="row g-3">
@@ -400,14 +323,6 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
             </div>
           </div>
         </Modal.Body>
-        {/* <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer> */}
       </Modal>
     </>
   );

@@ -43,7 +43,7 @@ const settings = {
   slidesToShow: 3,
   speed: 500,
   autoplay: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 1000,
   focusOnSelect: true,
   responsive: [
     {

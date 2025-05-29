@@ -162,7 +162,7 @@ const SpecialPage = () => {
                   <p>We seek the craziest ideas and eagerly wait to bring them into existence, the ideas that create an eternal difference. Let's start working on them and mend realities.</p>
                 </div>
               </div>
-              <button ref={(el) => (fadeRefs.current[2] = el)} className="common-btn fadeInUp-animation">
+              <button ref={(el) => (fadeRefs.current[2] = el)} className="common-btn mt-2">
                 Know About Us
                 <img src="/assets/loader.svg" />
               </button>

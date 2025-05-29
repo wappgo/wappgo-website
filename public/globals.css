@@ -116,20 +116,21 @@ li {
 }
 
 .marquee-track-left {
-  animation: scroll-marquee-ltr 12s linear infinite;
-  white-space: nowrap;
   display: inline-flex;
+  white-space: nowrap;
+  animation: scroll-marquee-ltr-partner 20s linear infinite;
 }
 
-@keyframes scroll-marquee-ltr {
+@keyframes scroll-marquee-ltr-partner {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
-
   100% {
     transform: translateX(0%);
   }
 }
+
+
 
 .marquee-track-left-ai {
   animation: scroll-marquee-ltr-ai 25s linear infinite;
@@ -1191,7 +1192,7 @@ li {
 .partners-container {
   display: flex;
   flex-direction: column;
-  padding: 50px 80px 80px 80px;
+  padding: 36px 0px;
 
   @media (max-width: 1024px) {
     padding: 40px 0px;
@@ -5853,7 +5854,7 @@ li {
 }
 
 .accounty-container {
-  background-image: url("/assets/accounty-bg.svg");
+  background-image: url("/assets/accounty-bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -5865,7 +5866,7 @@ li {
 }
 
 .gis-container {
-  background-image: url("/assets/gis-bg.svg");
+  background-image: url("/assets/gis-bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
@@ -6412,7 +6413,7 @@ li {
 }
 
 .contact-bg {
-  background-image: url('/assets/get-in-touch.svg');
+    background-image: url('/assets/get-in-touch.webp');
   background-size: cover;
   background-position: center;
   border-radius: 12px;
