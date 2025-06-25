@@ -45,74 +45,35 @@ const HeroSection = () => {
           </span>{' '}
           INNOVATION FOR <br /> YOUR BUSINESS
         </h1> */}
-        <p className="hero-subtitle">
-          <span className="text-reveal">SMARTER . FASTER . LIMITLESS</span>
-        </p>
-        <h1 className='text-reveal hero-title'>
-          <span className="ai-powered">
-            <span className="text-reveal ai-gradient">AI-</span>
-            <span className="text-reveal powered-gradient">POWERED</span>
-          </span>{' '}
-          INNOVATION FOR <br /> YOUR BUSINESS
-        </h1>
-        {/* <h1 className='hero-title'>
-  <span className="ai-powered">
-    <span className="text-reveal ai-gradient">AI-</span>
-    <span className="text-reveal powered-gradient">POWERED</span>
-  </span>{' '}
-  <br />
-  <span className="text-reveal">INNOVATION FOR</span>
-  <br />
-  <span className="text-reveal">YOUR BUSINESS</span>
-</h1> */}
-
-        <p ref={(el) => (fadeRefs.current[0] = el)} className="hero-description fadeInUp-animation">
-          Tired Of Slow, Manual Processes? Wappgo AI Transforms The Way You Work—Automating,
-          Optimizing, And Predicting So You Can Focus On What Truly Matters. Whether It's
-          AI-Driven Chatbots, Predictive Analytics, Or Intelligent Automation, We Build AI
-          Solutions That Actually Deliver Results.
-        </p>
-        <div ref={(el) => (fadeRefs.current[1] = el)} className="hero-buttons">
-          {/* <button className="btn btn-light">Talk To An Expert</button> */}
-          <button class="btn-light ai-btn-width">
-            {/* <img src="/assets/phone-icon.svg" className="btn-icon2"/> */}
-            <span className="btn-icon2" />
-            <span>Talk to Expert</span>
-          </button>
-          <button className="animated-btn ai-btn-width">Deck For Wappgo AI
-            <img src="/assets/ai-deck-download.svg" className="btn-icon"/>
-          </button>
+        <div className='hero-content-inside'>
+          <p className="hero-subtitle">
+            <span className="text-reveal">SMARTER . FASTER . LIMITLESS</span>
+          </p>
+          <h1 className='text-reveal hero-title'>
+            <span className="ai-powered">
+              <span className="text-reveal ai-gradient">AI-</span>
+              <span className="text-reveal powered-gradient">POWERED</span>
+            </span>{' '}
+            INNOVATION FOR <br /> YOUR BUSINESS
+          </h1>
+          <p ref={(el) => (fadeRefs.current[0] = el)} className="hero-description fadeInUp-animation">
+            Tired Of Slow, Manual Processes? Wappgo AI Transforms The Way You Work—Automating,
+            Optimizing, And Predicting So You Can Focus On What Truly Matters. Whether It's
+            AI-Driven Chatbots, Predictive Analytics, Or Intelligent Automation, We Build AI
+            Solutions That Actually Deliver Results.
+          </p>
+          <div ref={(el) => (fadeRefs.current[1] = el)} className="hero-buttons">
+            {/* <button className="btn btn-light">Talk To An Expert</button> */}
+            <button class="btn-light ai-btn-width">
+              {/* <img src="/assets/phone-icon.svg" className="btn-icon2"/> */}
+              <span className="btn-icon2" />
+              <span>Talk to Expert</span>
+            </button>
+            <button className="animated-btn ai-btn-width">Deck For Wappgo AI
+              <img src="/assets/ai-deck-download.svg" className="btn-icon" />
+            </button>
+          </div>
         </div>
-        {/* <div  ref={(el) => (fadeRefs.current[2] = el)} className="hero-features fadeInUp-animation">
-          <div className="feature-card5">
-            <div className="feature-icon5"><img src='/assets/settings.svg' /></div>
-            <div className="feature-text5">
-              <h4 className='text5'>AI-Powered Automation</h4>
-              <p>Cut the manual work & let AI handle all your repetitive tasks.</p>
-            </div>
-          </div>
-          <div className="feature-card5">
-            <div className="feature-icon5"><img src='/assets/message.svg' /></div>
-            <div className="feature-text5">
-              <h4 className='text5' >Smart Chatbots & Virtual Assistants</h4>
-              <p>Engage customers 24/7 with AI-driven conversations.</p>
-            </div>
-          </div>
-          <div className="feature-card5">
-            <div className="feature-icon5"><img src='/assets/graph-two.svg' /></div>
-            <div className="feature-text5">
-              <h4 className='text5'>Predictive Analytics</h4>
-              <p>Make data-driven decisions with AI-powered insights.</p>
-            </div>
-          </div>
-          <div className="feature-card5">
-            <div className="feature-icon5"><img src='/assets/layer.svg' /></div>
-            <div className="feature-text5">
-              <h4 className='text5'>Computer Vision</h4>
-              <p>AI that sees, detects, and understands images & videos.</p>
-            </div>
-          </div>
-        </div> */}
         <div className="hero-features overflow-hidden">
           <div className="marquee-wrapper">
             <div className="marquee-track">
@@ -183,61 +144,7 @@ const HeroSection = () => {
       </div>
     </div>
 
-    // <div className="footer-container5">
-    //   <video autoPlay loop muted className="footer-video5">
-    //     <source src='/assets/ai-videos.mp4' type="video/mp4" />
-    //   </video>
-    //   <div className="hero-content">
-    //     <p className="hero-subtitle">SMARTER . FASTER . LIMITLESS</p>
-    //     <h1 className='hero-title'>
-    //       <span className="ai-powered">
-    //         <span className="ai-gradient">AI-</span>
-    //         <span className="powered-gradient">POWERED</span>
-    //       </span>{' '}
-    //       INNOVATION FOR <br /> YOUR BUSINESS
-    //     </h1>
-    //     <p className="hero-description">
-    //       Tired Of Slow, Manual Processes? Wappgo AI Transforms The Way You Work—Automating,
-    //       Optimizing, And Predicting So You Can Focus On What Truly Matters. Whether It's
-    //       AI-Driven Chatbots, Predictive Analytics, Or Intelligent Automation, We Build AI
-    //       Solutions That Actually Deliver Results.
-    //     </p>
-    //     <div className="hero-buttons">
-    //       <button className="animated-btn">Contact Us</button>
-    //       <button className="btn btn-light">Talk To An Expert</button>
-    //     </div>
-    //     <div className="hero-features">
-    //       <div className="feature-card5">
-    //         <div className="feature-icon5"><img src='/assets/settings.svg' /></div>
-    //         <div className="feature-text5">
-    //           <h4 className='text5'>AI-Powered Automation</h4>
-    //           <p>Cut the manual work & let AI handle all your repetitive tasks.</p>
-    //         </div>
-    //       </div>
-    //       <div className="feature-card5">
-    //         <div className="feature-icon5"><img src='/assets/message.svg' /></div>
-    //         <div className="feature-text5">
-    //           <h4 className='text5' >Smart Chatbots & Virtual Assistants</h4>
-    //           <p>Engage customers 24/7 with AI-driven conversations.</p>
-    //         </div>
-    //       </div>
-    //       <div className="feature-card5">
-    //         <div className="feature-icon5"><img src='/assets/graph-two.svg' /></div>
-    //         <div className="feature-text5">
-    //           <h4 className='text5'>Predictive Analytics</h4>
-    //           <p>Make data-driven decisions with AI-powered insights.</p>
-    //         </div>
-    //       </div>
-    //       <div className="feature-card5">
-    //         <div className="feature-icon5"><img src='/assets/layer.svg' /></div>
-    //         <div className="feature-text5">
-    //           <h4 className='text5'>Computer Vision</h4>
-    //           <p>AI that sees, detects, and understands images & videos.</p>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
+
   );
 };
 

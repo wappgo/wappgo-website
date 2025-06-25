@@ -13,7 +13,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 const Testimonial = () => {
   const titleRef = useRef(null);
   const fadeRefs = useRef([]);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries, observer) => {
@@ -26,17 +26,17 @@ const Testimonial = () => {
       },
       { threshold: 0.5 }
     );
-  
+
     const titleEl = titleRef.current;
     if (titleEl) {
       observer.observe(titleEl);
     }
-  
+
     return () => {
       if (titleEl) observer.unobserve(titleEl);
     };
   }, []);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries, observer) => {
@@ -49,11 +49,11 @@ const Testimonial = () => {
       },
       { threshold: 0.5 }
     );
-  
+
     fadeRefs.current.forEach((el) => {
       if (el) observer.observe(el);
     });
-  
+
     return () => {
       fadeRefs.current.forEach((el) => {
         if (el) observer.unobserve(el);
@@ -86,143 +86,146 @@ const Testimonial = () => {
               }
             </h5>
             <div ref={(el) => (fadeRefs.current[1] = el)} className='fadeInUp-animation'>
-            <Swiper
-              grabCursor={false}
-              pagination={{
-                clickable: true,
-              }}
-              loop={true}
-              // modules={[Pagination]}
-              autoplay={{ delay: 3000 }} // Autoplay with 3 seconds delay
+              <Swiper
+                grabCursor={false}
+                pagination={{
+                  clickable: true,
+                }}
+                loop={true}
+                // modules={[Pagination]}
+                autoplay={{ delay: 3000 }} // Autoplay with 3 seconds delay
               modules={[Pagination, Autoplay]}
-            >
-              <SwiperSlide>
-                <article className="review-logo-container">
-                  <div className="review-items">
-                    <p>
-                      Social media has become the food for everyone today. We had
-                      a business model in mind and wanted to take it on digital
-                      platforms.
-                    </p>
-                    <div className="client-details">
-                      <div className="details">
-                        <div className="image-items">
-                          <img
-                            className="client-outer"
-                            src="/assets/Ellipse-5.png"
-                          />
-                          <img
-                            className="client-image"
-                            src="/assets/client-image.png"
-                          />
-                        </div>
-                        <div className="name-review-container">
-                          <div className="name-designation">
-                            <h4>JOHN BROOKS</h4>
-                            <span>CEO, Metalite Industries</span>
+              >
+                <SwiperSlide>
+                  <article className="review-logo-container">
+                    <div className="review-items">
+                      <p style={{ fontSize: "18px", lineHeight: "28px" }}>
+                        In construction, where timelines are tight and coordination is complex, having a reliable ERP system is non-negotiable. This solution has brought clarity, control, and speed to our projects. From procurement to on-site execution, every team now works in sync with real-time data. It’s not just software — it’s a backbone for modern construction operations.
+                      </p>
+                      <div className="client-details">
+                        <div className="details">
+                          <div className="image-items">
+                            <img
+                              className="client-outer"
+                              src="/assets/Ellipse-5.png"
+                            />
+                            <img
+                              className="client-image"
+                              src="/assets/owener-lc-laxman.png"
+                             style={{ borderRadius: "50px" }}
+                              height="65px"
+                              width="65px"
+                            />
                           </div>
-                          <div className="review-frames">
-                            <img src="/assets/full-review.svg" />
-                            <img src="/assets/full-review.svg" />
-                            <img src="/assets/full-review.svg" />
-                            <img src="/assets/full-review.svg" />
-                            <img src="/assets/full-review.svg" />
+                          <div className="name-review-container">
+                            <div className="name-designation">
+                              <h4>Mr. LC Laxman</h4>
+                              <span>Chairman & Director Laxman Construction</span>
+                            </div>
+                            <div className="review-frames">
+                              <img src="/assets/full-review.svg" />
+                              <img src="/assets/full-review.svg" />
+                              <img src="/assets/full-review.svg" />
+                              <img src="/assets/full-review.svg" />
+                              <img src="/assets/full-review.svg" />
+                            </div>
                           </div>
                         </div>
+                        <img
+                          className="testimonial-icon"
+                          src="/assets/testimonial-icon.svg"
+                        />
                       </div>
-                      <img
-                        className="testimonial-icon"
-                        src="/assets/testimonial-icon.svg"
-                      />
                     </div>
-                  </div>
-                </article>
-              </SwiperSlide>
-              <SwiperSlide>
-                <article className="review-logo-container">
-                  <div className="review-items">
-                    <p>
-                      Social media has become the food for everyone today. We had
-                      a business model in mind and wanted to take it on digital
-                      platforms.
-                    </p>
-                    <div className="client-details">
-                      <div className="details">
-                        <div className="image-items">
-                          <img
-                            className="client-outer"
-                            src="/assets/Ellipse-5.png"
-                          />
-                          <img
-                            className="client-image"
-                            src="/assets/client-image.png"
-                          />
-                        </div>
-                        <div className="name-review-container">
-                          <div className="name-designation">
-                            <h4>JOHN BROOKS</h4>
-                            <span>CEO, Metalite Industries</span>
+                  </article>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <article className="review-logo-container">
+                    <div className="review-items">
+                      <p style={{ fontSize: "18px", lineHeight: "28px" }}>
+                        Business Tectis has redefined how we operate at scale. From automation to analytics, it connects the dots across our departments effortlessly. What stood out was the adaptability — it molded itself around our existing workflows rather than forcing us to change. For any growing organization aiming to stay ahead, this solution is a strategic asset
+                      </p>
+                      <div className="client-details">
+                        <div className="details">
+                          <div className="image-items">
+                            <img
+                              className="client-outer"
+                              src="/assets/Ellipse-5.png"
+                            />
+                            <img
+                              className="client-image"
+                              src="/assets/owner-mukesh.png"
+                              style={{ borderRadius: "50px" }}
+                              height="65px"
+                              width="65px"
+                            />
                           </div>
-                          <div className="review-frames">
-                            <img src="/assets/full-review.svg" />
-                            <img src="/assets/full-review.svg" />
-                            <img src="/assets/full-review.svg" />
-                            <img src="/assets/full-review.svg" />
-                            <img src="/assets/full-review.svg" />
+                          <div className="name-review-container">
+                            <div className="name-designation">
+                              <h4>Mr. Mukesh Hajela</h4>
+                              <span>Managing Director, NICT</span>
+                            </div>
+                            <div className="review-frames">
+                              <img src="/assets/full-review.svg" />
+                              <img src="/assets/full-review.svg" />
+                              <img src="/assets/full-review.svg" />
+                              <img src="/assets/full-review.svg" />
+                              <img src="/assets/full-review.svg" />
+                            </div>
                           </div>
                         </div>
+                        <img
+                          className="testimonial-icon"
+                          src="/assets/testimonial-icon.svg"
+                        />
                       </div>
-                      <img
-                        className="testimonial-icon"
-                        src="/assets/testimonial-icon.svg"
-                      />
                     </div>
-                  </div>
-                </article>
-              </SwiperSlide>
-              <SwiperSlide>
-                <article className="review-logo-container">
-                  <div className="review-items">
-                    <p>
-                      Social media has become the food for everyone today. We had
-                      a business model in mind and wanted to take it on digital
-                      platforms.
-                    </p>
-                    <div className="client-details">
-                      <div className="details">
-                        <div className="image-items">
-                          <img
-                            className="client-outer"
-                            src="/assets/Ellipse-5.png"
-                          />
-                          <img
-                            className="client-image"
-                            src="/assets/client-image.png"
-                          />
-                        </div>
-                        <div className="name-review-container">
-                          <div className="name-designation">
-                            <h4>JOHN BROOKS</h4>
-                            <span>CEO, Metalite Industries</span>
+                  </article>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <article className="review-logo-container">
+                    <div className="review-items">
+                      <p style={{ fontSize: "18px", lineHeight: "28px" }}>
+                        As a venture capitalist deeply involved in fast-paced investments and financial structuring, I’ve seen many fintech platforms claim to simplify finance. But this solution genuinely delivers. It’s intuitive, secure, and surprisingly agile for our operational needs. From real-time insights to seamless fund management, it’s become an integral part of how we scale our portfolio companies. Kudos to the team behind this innovation.
+                      </p>
+                      <div className="client-details">
+                        <div className="details">
+                          <div className="image-items">
+                            <img
+                              className="client-outer"
+                              src="/assets/Ellipse-5.png"
+                            />
+                            <img
+                              className="client-image"
+                              style={{ borderRadius: "50px" }}
+                              src="/assets/jitendra-owner.jpeg"
+                              height="65px"
+                              width="65px"
+                            />
                           </div>
-                          <div className="review-frames">
-                            <img src="/assets/full-review.svg" />
-                            <img src="/assets/full-review.svg" />
-                            <img src="/assets/full-review.svg" />
-                            <img src="/assets/full-review.svg" />
-                            <img src="/assets/full-review.svg" />
+                          <div className="name-review-container">
+                            <div className="name-designation">
+                              <h4>Jeetendra Choudhary</h4>
+                              <span>Managing Director, JC Ventures</span>
+                            </div>
+                            <div className="review-frames">
+                              <img src="/assets/full-review.svg" />
+                              <img src="/assets/full-review.svg" />
+                              <img src="/assets/full-review.svg" />
+                              <img src="/assets/full-review.svg" />
+                              <img src="/assets/full-review.svg" />
+                            </div>
                           </div>
                         </div>
+                        <img
+                          className="testimonial-icon"
+                          src="/assets/testimonial-icon.svg"
+                        />
                       </div>
-                      <img
-                        className="testimonial-icon"
-                        src="/assets/testimonial-icon.svg"
-                      />
                     </div>
-                  </div>
-                </article>
-              </SwiperSlide>
-            </Swiper>
+                  </article>
+                </SwiperSlide>
+              </Swiper>
             </div>
           </article>
           <article ref={(el) => (fadeRefs.current[2] = el)} className="col-xl-6 col-lg-12 fadeInUp-animation">

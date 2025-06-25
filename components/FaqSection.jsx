@@ -1,39 +1,24 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
+import { FaChevronDown } from "react-icons/fa";
+
+const accordionData = [
+    {
+        title: " How can I be certain of the progress in my project development?",
+        content:
+            " Wappgo provides complete transparency throughout the project lifecycle. Our dedicated project manager ensures that you have the most up-to-date data and visibility via emails, reports, or phone calls. They will plan time-to-time meetings and let you know about the progress of your project",
+    },
+    { title: " What is the requirement document?", content: "A requirement document is a document containing all the requirements for a certain product. It is written to allow people to understand what a product should do. Starting from your home page to all the functionality that you want in your product. Requirement Document helps us to understand your needs & it also helps you in having the right vision related to your product" },
+    { title: " What payment method we prefer?", content: " We prefer Bank Wire Transfers & Cheque as well." },
+    { title: "Which is the best option? hiring a dedicated developer or fixed cost project", content: "Fixed cost project is suitable when you need a perfect team for handling all of the Information Technology parts for you .!! whereas hiring developers gives you complete control over your resource and they will work as per your commands daily. So if you or your team have good knowledge in the IT domain and can plan the development process well then go for dedicated developers else a fixed-cost project is the best fit for you" },
+];
 const FaqSection = () => {
-    // const fadeRefs = useRef([]);
-    // const titleRef = useRef(null);
-
-    // useEffect(() => {
-    //   const observer = new IntersectionObserver(
-    //     (entries) => {
-    //       entries.forEach((entry) => {
-    //         if (entry.isIntersecting) {
-    //           entry.target.classList.add('animate');
-    //         } else {
-    //           entry.target.classList.remove('animate');
-    //         }
-    //       });
-    //     },
-    //     { threshold: 0.5 }
-    //   );
-
-    //   const titleEl = titleRef.current;
-    //   if (titleEl) observer.observe(titleEl);
-
-    //   // Observe both fade elements (h6 and p)
-    //   fadeRefs.current.forEach((el) => {
-    //     if (el) observer.observe(el);
-    //   });
-
-    //   return () => {
-    //     if (titleEl) observer.unobserve(titleEl);
-    //     fadeRefs.current.forEach((el) => {
-    //       if (el) observer.unobserve(el);
-    //     });
-    //   };
-    // }, []);
     const fadeRefs = useRef([]);
+    const [openIndex, setOpenIndex] = useState(0);
+    const toggleAccordion = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
+
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -76,52 +61,29 @@ const FaqSection = () => {
                             <div className='faq-rightdiv position-relative'>
                                 {/* <div className="faq-videodiv">
                                     <video autoPlay loop muted className="video">
-                                        <source src="public\assets\faq-section.mp4" type="video/mp4" />
-                                    </video>
-                                    <div className="video-overlay-faq"></div>
-                                </div> */}
-                                <div className="faq-videodiv">
-                                    <video autoPlay loop muted className="video">
                                         <source src="/assets/faq-sectiona.mp4" type="video/mp4" />
                                     </video>
                                     <div className="video-overlay-faq"></div>
-                                </div>
+                                </div> */}
                                 <h6 ref={(el) => (fadeRefs.current[0] = el)} className="fadeInUp-animation">FOR CURIOUS MINDS</h6>
                                 <div ref={(el) => (fadeRefs.current[1] = el)} className='questiondiv fadeInUp-animation'>
                                     <h5>Frequently</h5>
                                     <h5 className='askeddiv'><span className='asked-text'>ASKED</span> Questions</h5>
                                 </div>
                                 <div ref={(el) => (fadeRefs.current[2] = el)} className='faq-accordian fadeInUp-animation'>
-                                    <div className="accordion" id="accordionExample">
-                                        <div className="accordion-item">
-                                            <h2 className="accordion-header" id="headingOne">
-                                                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    01 How can I be certain of the progress in my project development?
-                                                </button>
-                                            </h2>
+                                    {accordionData.map((item, index) => (
+                                        <div key={index} className="accordion-item">
+                                            <div className="d-flex justify-content-between mt-3" onClick={() => toggleAccordion(index)}>
+                                                <h5 className='text-black text-base'>{item.title}</h5>
+                                                <FaChevronDown className={`arrow transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
+                                                    }`} />
+                                            </div>
+
+                                            {openIndex === index && (
+                                                <p className="text-black mt-2">{item.content}</p>
+                                            )}
                                         </div>
-                                        <div className="accordion-item">
-                                            <h2 className="accordion-header" id="headingTwo">
-                                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    02 Will I be served with both design and development services?
-                                                </button>
-                                            </h2>
-                                        </div>
-                                        <div className="accordion-item">
-                                            <h2 className="accordion-header" id="headingThree">
-                                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                    03 How will I get to know about the status of my project?
-                                                </button>
-                                            </h2>
-                                        </div>
-                                        <div className="accordion-item">
-                                            <h2 className="accordion-header" id="headingThree">
-                                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                    04 Which is the best? Dedicated developer or fixed cost project.
-                                                </button>
-                                            </h2>
-                                        </div>
-                                    </div>
+                                    ))}
                                 </div>
                             </div>
 

@@ -138,7 +138,7 @@ export default function InnerPage() {
             <div ref={(el) => (fadeRefs.current[0] = el)} className="project-scope-section fadeInUp-animation">
                 <div className="row align-items-center justify-content-center gisoscope-right"
                 style={{rowGap:"20px"}}>
-                    <div className="col-xxl-5 col-xl-6 col-lg-12">
+                    <div className="col-xxl-6 col-xl-6 col-lg-12">
                         <img  src="/assets/project-scope.svg" alt='the-lal' className='project-scope-img'/>
                     </div>
 

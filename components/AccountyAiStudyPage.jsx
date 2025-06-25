@@ -121,7 +121,7 @@ export default function AccountyAiStudyPage() {
                                 </p>
                             </div>
                         </div>
-                        <div className="col-xxl-5 col-xl-6 col-lg-12 col-md-12 account-hero-right">
+                        <div className="col-xxl-6 col-xl-6 col-lg-12 col-md-12 account-hero-right text-xxl-end">
                             <img src="/assets/account-group.svg" alt='accounty' />
                         </div>
                     </div>
@@ -132,7 +132,7 @@ export default function AccountyAiStudyPage() {
                 <div className="row align-items-center justify-content-center gisoscope-right"
                 style={{rowGap:"20px"}}
                 >
-                    <div className="col-xxl-4 col-xl-5 col-lg-6">
+                    <div className="col-xxl-5 col-xl-5 col-lg-6 text-xxl-center">
                         <div className='accountimgdiv'>
                             <img src="/assets/account-voice-chat.svg" alt="Voice-chat" className='account-voice-chat'/>
                             <img src="/assets/account-phone.svg" alt="phone" />

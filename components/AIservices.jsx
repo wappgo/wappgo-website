@@ -481,7 +481,7 @@ const AIServiceSection = () => {
                         </div>
                       ))}
                     </div> */}
-                    <div className="overflow-hidden">
+                    <div className="overflow-hidden showinmobile">
                       <Slider {...settings} className="custom-slick-slider">
                         {selectedCategory.cards.map((card, index) => (
                           <div className="col-md-6">

@@ -123,7 +123,7 @@ export default function GisStudyPage() {
                         </div>
                         <div className="col-xxl-4 col-xl-12 col-lg-12">
                             <div className="">
-                                <video className="video2 gis-videostag" autoPlay loop muted
+                                <video className="gis-videostag" autoPlay loop muted
                                 >
                                     <source src="/assets/gis-videos.mp4" type="video/mp4" />
                                 </video>

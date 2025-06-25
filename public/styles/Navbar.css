@@ -95,7 +95,13 @@
   transition: color 0.3s ease;
 }
 
-.active-item::after {
+
+
+.active-item:hover {
+  color: #1925FF;
+}
+
+.active-item-service::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -109,10 +115,15 @@
   transform-origin: center;
 }
 
-.active-item:hover {
-  color: #1925FF;
+.active-item-service:hover {
+   text-decoration: underline #1925FF 3px;
+   text-underline-offset: 4px;
 }
 
+.active-item-service-ai:hover {
+   text-decoration: underline #fff 3px;
+   text-underline-offset: 4px;
+}
 .active-item:hover::after {
   transform: translateX(-50%) scaleX(1);
 }
@@ -528,7 +539,7 @@ height: 383px;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    z-index: 100000 !important;
+    z-index: 9 !important;
     padding: 0;
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
