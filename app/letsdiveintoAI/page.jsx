@@ -27,20 +27,7 @@ import FaqSection2 from "@/components/FaqSection2";
 import { useEffect } from "react";
 
 export default function Home() {
-  // const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   // Simulate loading time (e.g., API or assets)
-  //   const timer = setTimeout(() => {
-  //     setLoading(false);
-  //   }, 2000); 
-
-  //   return () => clearTimeout(timer); // Cleanup
-  // }, []);
-
-  // if (loading) {
-  //   return <Loader />;
-  // }
   return (
     <main>
       <NavbarAI />
@@ -57,33 +44,30 @@ export default function Home() {
         <div className="brands overflow-hidden mt-5">
           <div className="marqeedivcontent marquee-track">
             {[
-              "/assets/army.svg",
-              "/assets/science-tech.svg",
-              "/assets/singpure.svg",
-              "/assets/medi-caps.svg",
-              "/assets/mp-dc.svg",
-              "/assets/joonify.svg",
-              "/assets/nict.svg",
-              "/assets/policy.svg",
-              "/assets/gis-logo-mp.svg",
-              "/assets/legal.svg",
+              "/assets/been-logo.svg",
+              "/assets/fair-concects.svg",
+              "/assets/Netlink-logo.svg",
+              "/assets/qutar-airways.svg",
+              "/assets/agrawal-group-logo.svg",
+              "/assets/jc-benchar.svg",
+              "/assets/laxman-con-logo.svg",
+              "/assets/isa-logo.svg",
+              "/assets/vaishnav-college.svg",
             ].map((src, idx) => (
               <div key={idx} className="d-flex justify-content-center align-items-center mx-4" style={{ minWidth: '195px' }}>
-                <img src={src} alt={`brand-${idx}`} className="img-fluid" style={{ maxHeight: '80px',borderRadius:"8px" }} />
+                <img src={src} alt={`brand-${idx}`} className="img-fluid" style={{ maxHeight: '80px', borderRadius: "8px" }} />
               </div>
             ))}
-            {/* Duplicate set for infinite effect */}
             {[
-              "/assets/army.svg",
-              "/assets/science-tech.svg",
-              "/assets/singpure.svg",
-              "/assets/medi-caps.svg",
-              "/assets/mp-dc.svg",
-              "/assets/joonify.svg",
-              "/assets/nict.svg",
-              "/assets/policy.svg",
-              "/assets/gis-logo-mp.svg",
-              "/assets/legal.svg",
+              "/assets/been-logo.svg",
+              "/assets/fair-concects.svg",
+              "/assets/Netlink-logo.svg",
+              "/assets/qutar-airways.svg",
+              "/assets/agrawal-group-logo.svg",
+              "/assets/jc-benchar.svg",
+              "/assets/laxman-con-logo.svg",
+              "/assets/isa-logo.svg",
+              "/assets/vaishnav-college.svg",
             ].map((src, idx) => (
               <div key={`dup-${idx}`} className="d-flex justify-content-center align-items-center mx-4" style={{ minWidth: '195px' }}>
                 <img src={src} alt={`brand-${idx}`} className="img-fluid" style={{ maxHeight: '80px' }} />
@@ -91,7 +75,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-         <div className="brands overflow-hidden  mt-4">
+        <div className="brands overflow-hidden  mt-4">
           <div className="marqeedivcontent marquee-track-left-ai">
             {[
               "/assets/army.svg",
@@ -106,7 +90,7 @@ export default function Home() {
               "/assets/legal.svg",
             ].map((src, idx) => (
               <div key={idx} className="d-flex justify-content-center align-items-center mx-4" style={{ minWidth: '195px' }}>
-                <img src={src} alt={`brand-${idx}`} className="img-fluid" style={{ maxHeight: '80px',borderRadius:"8px" }} />
+                <img src={src} alt={`brand-${idx}`} className="img-fluid" style={{ maxHeight: '80px', borderRadius: "8px" }} />
               </div>
             ))}
             {/* Duplicate set for infinite effect */}

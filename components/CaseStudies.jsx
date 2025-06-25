@@ -6,61 +6,12 @@ import "slick-carousel/slick/slick-theme.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
 export default function CaseStudies() {
-    // const titleRef = useRef(null);
-
-    // useEffect(() => {
-    //     const observer = new IntersectionObserver(
-    //         (entries) => {
-    //             entries.forEach((entry) => {
-    //                 if (entry.isIntersecting) {
-    //                     entry.target.classList.add('animate');
-    //                 } else {
-    //                     entry.target.classList.remove('animate');
-    //                 }
-    //             });
-    //         },
-    //         { threshold: 0.5 }
-    //     );
-
-    //     const el = titleRef.current;
-    //     if (el) {
-    //         observer.observe(el);
-    //     }
-
-    //     return () => {
-    //         if (el) observer.disconnect();
-    //     };
-    // }, []);
-
-    // const fadeRefs = useRef([]);
-
-    // useEffect(() => {
-    //   const observer = new IntersectionObserver(
-    //     (entries) => {
-    //       entries.forEach((entry) => {
-    //         if (entry.isIntersecting) {
-    //           entry.target.classList.add('animate');
-    //         } else {
-    //           entry.target.classList.remove('animate');
-    //         }
-    //       });
-    //     },
-    //     { threshold: 0.5 }
-    //   );
-
-    //   fadeRefs.current.forEach((el) => {
-    //     if (el) observer.observe(el);
-    //   });
-
-    //   return () => {
-    //     fadeRefs.current.forEach((el) => {
-    //       if (el) observer.unobserve(el);
-    //     });
-    //   };
-    // }, []);
     const titleRef = useRef(null);
     const fadeRefs = useRef([]);
+    const router = useRouter()
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -68,7 +19,7 @@ export default function CaseStudies() {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animate');
-                        observer.unobserve(entry.target); // 👈 Unobserve after first trigger
+                        observer.unobserve(entry.target);
                     }
                 });
             },
@@ -155,12 +106,6 @@ export default function CaseStudies() {
             <div className='questiondiv case-container'>
 
                 <h6 ref={(el) => (fadeRefs.current[0] = el)} className='comman-title text-center fadeInUp-animation'>Case Studies</h6>
-                {/* <h5  className='text-center'>
-                    Real Success Stories, <span className='real-text'>Real Impact</span>
-                </h5> */}
-                {/* <h5 className='text-center'>
-                        Real Success Stories, <span className='real-text'>Real Impact</span>
-                    </h5> */}
                 <div className='animated-wrapper'>
                     <h5 ref={titleRef} className="text-center animated-title">
                         {/* First line: Real Success Stories */}
@@ -198,7 +143,7 @@ export default function CaseStudies() {
 
                 <div ref={(el) => (fadeRefs.current[1] = el)} className="slider-wrapper mt-5 fadeInUp-animation">
                     <Slider {...settings}>
-                        <Link href="/caseinner" passHref>
+                        <div type="button" onClick={() => router.push('/caseinner')} >
                             <div className="carousel-slide">
                                 <div className='thelal-container'>
                                     <div className='d-flex justify-content-between'>
@@ -217,8 +162,7 @@ export default function CaseStudies() {
                                     </div>
                                 </div>
                             </div>
-                        </Link>
-
+                        </div>
                         <div className="carousel-slide">
                             <div className='accounty-container'>
                                 <div className='d-flex justify-content-between'>
@@ -242,7 +186,7 @@ export default function CaseStudies() {
                             </div>
                         </div>
 
-                        <Link href="/gis-study" passHref>
+                        <div type="button" onClick={() => router.push('/gis-study')}>
                             <div className="carousel-slide">
                                 <div className='gis-container'>
                                     <div className='row justify-content-between'>
@@ -266,7 +210,7 @@ export default function CaseStudies() {
                                     </div>
                                 </div>
                             </div>
-                        </Link>
+                        </div>
 
                         <div className="carousel-slide">
                             <div className='policys-container'>

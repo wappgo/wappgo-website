@@ -517,6 +517,7 @@ h1 {
 
   .hero-buttons {
     gap: 7px;
+    display: block;
   }
 
   .animated-btn {
@@ -530,6 +531,9 @@ h1 {
   .hero-title {
     font-size: 27px;
     line-height: 38px;
+  }
+  .hero-content-inside{
+    padding: 12px !important;
   }
 }
 

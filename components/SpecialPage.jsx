@@ -114,7 +114,8 @@ const SpecialPage = () => {
           </video> */}
           <div className="video-overlay-faq"></div>
         </div>
-        <div ref={(el) => (fadeRefs.current[2] = el)} className='specail-content fadeInUp-animation'>
+        <div ref={(el) => (fadeRefs.current[2] = el)} className='specail-content '>
+          {/* fadeInUp-animation */}
           <div className='row align-items-center'>
             <div className='col-md-5'>
               <div className='specail-leftdiv' ref={sectionRef}>

@@ -2,41 +2,40 @@
 import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import "../public/styles/Navbar.css";
 
-// Dynamically import heavy components
+// Dynamic Imports
 const ServicesDropdown = dynamic(() => import('./ServicesDropdown'), {
   loading: () => <div className="services-container"></div>,
   ssr: false
 });
-
 const IndustriesDropdown = dynamic(() => import('./IndustriesDropdown'), {
   loading: () => <div className="services-container-indus"></div>,
   ssr: false
 });
-
 const NavSlider = dynamic(() => import('./NavSlider'), {
   ssr: false
 });
 
 const Navbar = () => {
-  
   const [dropdowns, setDropdowns] = useState({
     services: false,
     industries: false,
     mobileMenu: false,
     navSlider: false
   });
-  
-  const containerRef = useRef(null);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const pathname = usePathname();
-  const [isServices , setIsService] = useState(false)
-   const [isIndustries , setIsIndustries] = useState(false)
+  const containerRef = useRef(null);
+  const [isServices, setIsService] = useState(false);
+  const [isIndustries, setIsIndustries] = useState(false);
+
   const handleDropdown = useCallback((key, value) => {
     setDropdowns(prev => ({
       ...prev,
@@ -55,18 +54,16 @@ const Navbar = () => {
     });
   }, []);
 
-  const handleServices=()=>{
-    setIsService(!isServices)
-    handleDropdown('services', isServices)
-  }
+  const handleServices = () => {
+    setIsService(!isServices);
+    handleDropdown('services', isServices);
+  };
 
-   const handleIndustries=()=>{
-    setIsIndustries(!isIndustries)
-    handleDropdown('industries', isIndustries)
-  }
-  
+  const handleIndustries = () => {
+    setIsIndustries(!isIndustries);
+    handleDropdown('industries', isIndustries);
+  };
 
-  
   const roateiconStyle = useMemo(() => ({
     transition: "all 0.3s ease-in-out",
     color: dropdowns.services ? "#1925FF" : undefined,
@@ -83,28 +80,30 @@ const Navbar = () => {
     });
   }, []);
 
-  
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (containerRef.current && !containerRef.current.contains(event.target)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target) &&
+        !dropdowns.mobileMenu // Don’t close on mobile menu interactions
+      ) {
         closeAllDropdowns();
       }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [closeAllDropdowns]);
- 
+  }, [closeAllDropdowns, dropdowns.mobileMenu]);
+
   return (
     <>
- 
-       <nav className="navbar">
+      <nav className="navbar">
         <div className="navbar-container navbar-container-border">
           <div className="logo">
             <Link href="/" prefetch>
-              <Image 
-                src='/assets/wappgologo1.svg' 
-                alt="Logo" 
+              <Image
+                src='/assets/wappgologo1.svg'
+                alt="Logo"
                 width={150}
                 height={50}
                 priority
@@ -116,81 +115,148 @@ const Navbar = () => {
             {dropdowns.mobileMenu ? <FaTimes /> : <FaBars />}
           </div>
 
-          <ul className={`nav-links ${dropdowns.mobileMenu ? 'mobile-menu-active' : ''}`}>
+          {/* Desktop Menu */}
+          <ul className={`nav-links ${dropdowns.mobileMenu ? 'mobile-menu-active d-none' : ''}`}>
             <li className={pathname === "/" ? "activepath" : "active-item"}>
-              <Link href="/" >Home</Link>
+              <Link href="/">Home</Link>
             </li>
+
             <li
               onMouseEnter={() => handleDropdown('services', true)}
-              onClick={()=>handleServices()}
+              onClick={handleServices}
               className="active-item"
             >
               Services
               <FaChevronDown style={roateiconStyle} />
             </li>
+
             <li
               onMouseEnter={() => handleDropdown('industries', true)}
-              onClick={()=>handleIndustries()}
+              onClick={handleIndustries}
               className="active-item"
             >
               Industries
             </li>
+
             <li className="active-item">
-              <Link 
-                href="/letsdiveintoAI" 
-                className="active" 
-                // onClick={closeAllDropdowns}
-                
-                prefetch
-              >
+              <Link href="/letsdiveintoAI" className="active" prefetch>
                 <span className="gradient-text">Let's Dive Into AI</span>
               </Link>
             </li>
-            <li className={pathname === "/case-study" ? "activepath" : "active-item"}
-           >
-              <Link href="/case-study"  prefetch>Case studies</Link>
+
+            <li className={pathname === "/case-study" ? "activepath" : "active-item"}>
+              <Link href="/case-study" prefetch>Case studies</Link>
             </li>
 
             <li className="notexpose active-item">
-              <Image 
-                src='/assets/noexpose-logo.svg' 
-                alt="NotExpose Icon" 
+              <Image
+                src='/assets/noexpose-logo.svg'
+                alt="NotExpose Icon"
                 className="notexpose-icon"
                 width={24}
                 height={24}
               />
               <span className="notexpose-text">NoExpose</span>
             </li>
+
             <li className={pathname === "/about" ? "activepath" : "active-item"}>
-              <Link href="/about"  prefetch>About us</Link>
+              <Link href="/about" prefetch>About us</Link>
             </li>
+
             <li className={pathname === "/career" ? "activepath" : "active-item"}>
               <Link href="/career" prefetch>Careers</Link>
             </li>
-
-            {dropdowns.mobileMenu && (
-              <li className="mobile-contact-btn">
-                <Link href="/contact" onClick={closeAllDropdowns} prefetch>CONTACT US</Link>
-              </li>
-            )}
           </ul>
+
           {!dropdowns.mobileMenu && (
-            <Link href="/contact" className="desktop-contact-btn" onClick={closeAllDropdowns} prefetch>Contact Us</Link>
+            <Link href="/contact" className="desktop-contact-btn start-btn " onClick={closeAllDropdowns} prefetch>
+              Contact Us
+            </Link>
           )}
         </div>
       </nav>
+
+      {/* Mobile and Dropdown Menus */}
       <div ref={containerRef}>
+        {/* Mobile Menu Items */}
+        {dropdowns.mobileMenu && (
+          <ul className="nav-links mobile-menu-active">
+            <li onClick={closeAllDropdowns}><Link href="/">Home</Link></li>
+
+            {/* Services */}
+            <li
+              onClick={() => {
+                setMobileServicesOpen(prev => {
+                  if (!prev) setMobileIndustriesOpen(false);
+                  return !prev;
+                });
+              }}
+              className="dropdown-toggle"
+              style={{ fontSize: "14px" }}
+            >
+              Services
+            </li>
+            {mobileServicesOpen && (
+              <ul className="mobile-submenu p-0 m-0">
+                <li onClick={closeAllDropdowns}><Link href="/servicepages">Web Development</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/uiservices">UI/UX Design</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/devops">DevOps Services</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/testing">QA / Testing</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/chatbot">Chatbot Services</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/data-services">Data Engineering</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/appsevices">App Development</Link></li>
+              </ul>
+            )}
+
+            {/* Industries */}
+            <li
+              onClick={() => {
+                setMobileIndustriesOpen(prev => {
+                  if (!prev) setMobileServicesOpen(false);
+                  return !prev;
+                });
+              }}
+              className="dropdown-toggle"
+              style={{ fontSize: "14px" }}
+            >
+              Industries
+            </li>
+            {mobileIndustriesOpen && (
+              <ul className="mobile-submenu p-0 m-0">
+                <li onClick={closeAllDropdowns}><Link href="/chatsystem">Chatsystem</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/ecommerce">E-Commerce</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/projectmanagement">Project Management</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/social-media">Social Media</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/erp-crm">ERP / CRM</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/healthcare">Healthcare</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/logistics">Logistics</Link></li>
+              </ul>
+            )}
+
+            {/* Other links */}
+            <li onClick={closeAllDropdowns}><Link href="/letsdiveintoAI"><span className="gradient-text">Let's Dive Into AI</span></Link></li>
+            <li onClick={closeAllDropdowns}><Link href="/case-study">Case studies</Link></li>
+            <li onClick={closeAllDropdowns}><Link href="/about">About us</Link></li>
+            <li onClick={closeAllDropdowns}><Link href="/career">Careers</Link></li>
+            <li className="desktop-contact-btn start-btn mt-2" style={{ width: "200px" }} onClick={closeAllDropdowns}>
+              <Link href="/contact">CONTACT US</Link>
+            </li>
+          </ul>
+        )}
+
+
+        {/* Desktop Dropdowns */}
         {dropdowns.services && <ServicesDropdown hideServices={closeAllDropdowns} />}
         {dropdowns.industries && <IndustriesDropdown hideServices={closeAllDropdowns} />}
       </div>
-      
+
+      {/* NavSlider */}
       {dropdowns.navSlider && (
         <NavSlider
           showNavSlider={dropdowns.navSlider}
           setShowNavSlider={(val) => handleDropdown('navSlider', val)}
         />
       )}
-
     </>
   );
 };

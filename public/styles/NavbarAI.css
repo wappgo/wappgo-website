@@ -90,7 +90,7 @@
   color: #ffff;
 } */
 
-.active-item2 {
+.active-item {
   position: relative;
   display: inline-block;
   font-weight: 500;
@@ -98,7 +98,7 @@
   transition: color 0.3s ease;
 }
 
-.active-item2::after {
+.active-item::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -112,11 +112,11 @@
   transform-origin: center;
 }
 
-.active-item2:hover {
+.active-item:hover {
   color: #ffff;
 }
 
-.active-item2:hover::after {
+.active-item:hover::after {
   transform: translateX(-50%) scaleX(1);
 }
 /* Logo */
@@ -567,9 +567,9 @@ padding: 20px;
     visibility: hidden;
   }
 
-  .nav-links5.mobile-menu-active {
+  /* .nav-links5.mobile-menu-active {
     display: flex !important;
-  }
+  } */
 
   .nav-links5.mobile-menu-active {
     color: #ffff !important;

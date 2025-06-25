@@ -23,8 +23,8 @@ const About = () => {
           <div className="d-flex marquee-track">
             {[
               "/assets/army.svg",
-              "/assets/science-tech.svg",
-              "/assets/singpure.svg",
+              "/assets/been-icon.svg",
+              "/assets/fair-concects.svg",
               "/assets/medi-caps.svg",
               "/assets/mp-dc.svg",
               "/assets/joonify.svg",
