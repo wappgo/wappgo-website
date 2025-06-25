@@ -162,11 +162,13 @@ import React, { useEffect, useRef, useState } from "react";
 import "../public/styles/ServiceSection.css";
 import { FaWhatsapp, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import gsap from "gsap";
+import { useRouter } from "next/navigation";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
+  const router = useRouter()
   const videoRef = useRef(null);
   const [isMobile, setIsMobile] = useState(null); // Start with null for SSR
   const [isLoading, setIsLoading] = useState(true);
@@ -247,12 +249,21 @@ const HeroSection = () => {
             </p>
 
             <div className="mobile-hero-buttons">
-              <a href="#" className="mobile-hero-cta-btn">Get Consultation ⚡</a>
+              <button className="consult-btn" onClick={() => router.push('/contact')}>Get Consultation ⚡</button>
               <span className="mobile-hero-or">or</span>
               <div className="mobile-hero-icon-buttons">
-                <a href="#"><FaWhatsapp /></a>
+                {/* <a href="#"><FaWhatsapp /></a>
                 <a href="#"><FaEnvelope /></a>
-                <a href="#"><FaPhoneAlt /></a>
+                <a href="#"><FaPhoneAlt /></a> */}
+                <a target="_blank" href="https://wa.me/917000581635?text=Hello%20Team%20Wappgo!">
+                  <FaWhatsapp style={{ color: "green" }} />
+                </a>
+                <a href="mailto:info@wappgo.com">
+                  <FaEnvelope />
+                </a>
+                <a href="tel:917000581635">
+                  <FaPhoneAlt />
+                </a>
               </div>
             </div>
           </div>
@@ -289,12 +300,22 @@ const HeroSection = () => {
             </p>
 
             <div className="home-hero-buttons">
-              <a href="#" className="home-hero-cta-btn">Get Consultation ⚡</a>
+              {/* <a href="#" className="home-hero-cta-btn">Get Consultation ⚡</a> */}
+               <button className="home-hero-cta-btn" onClick={() => router.push('/contact')}>Get Consultation ⚡</button>
               <span className="home-hero-or">or</span>
               <div className="home-hero-icon-buttons">
-                <a href="#"><FaWhatsapp /></a>
+                {/* <a href="#"><FaWhatsapp /></a>
                 <a href="#"><FaEnvelope /></a>
-                <a href="#"><FaPhoneAlt /></a>
+                <a href="#"><FaPhoneAlt /></a> */}
+                <a target="_blank" href="https://wa.me/917000581635?text=Hello%20Team%20Wappgo!">
+                  <FaWhatsapp style={{ color: "green" }} />
+                </a>
+                <a href="mailto:info@wappgo.com">
+                  <FaEnvelope />
+                </a>
+                <a href="tel:917000581635">
+                  <FaPhoneAlt />
+                </a>
               </div>
             </div>
           </div>

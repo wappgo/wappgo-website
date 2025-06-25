@@ -238,7 +238,7 @@ export default function CaseStudies() {
                     </Slider>
                 </div>
                 <div className='d-flex justify-content-center start-btndiv mt-5'>
-                    <button className="start-btn " >
+                    <button className="start-btn " onClick={()=>router.push("/case-study")} >
                         View all case studies
                         <img src="/assets/btn-icon.svg" />
                     </button>

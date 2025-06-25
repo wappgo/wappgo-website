@@ -84,9 +84,9 @@
     transition: all 0.3s ease;
   }
   
-  .consult-btn:hover {
+  /* .consult-btn:hover {
     background-color: #1c22cc;
-  }
+  } */
   
   /* Animations */
   @keyframes fadeInUp {

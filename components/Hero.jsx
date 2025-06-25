@@ -117,7 +117,7 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
   return (
     <>
       <div className="btn-icon-container zoom-in-once delay-3">
-        <Link href="/Consultation" style={{ textDecoration: "none" }}>
+        <Link href="/contact" style={{ textDecoration: "none" }}>
           <button className="start-btn front-btn-with" >
             {HeroTexts ? HeroTexts.btnText : "Get Consultation"}
             <img src="/assets/btn-icon.svg" />
@@ -150,37 +150,43 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
       </div>
       <div className="media-container">
         <div className="media-btns">
-          <button
-            style={{
-              backgroundColor: HeroStyle && HeroStyle.iconsBg,
-              border: HeroStyle && HeroStyle.border,
-            }}
-            className="icon-container"
-          >
-            <img src="/assets/wp.svg" />
-          </button>
-          <button
-            style={{
-              backgroundColor: HeroStyle && HeroStyle.iconsBg,
-              border: HeroStyle && HeroStyle.border,
-            }}
-            className="icon-container"
-          >
-            <img
-              src={HeroStyle ? "/assets/cyber-mail-icon.svg" : "/assets/mail.svg"}
-            />
-          </button>
-          <button
-            style={{
-              backgroundColor: HeroStyle && HeroStyle.iconsBg,
-              border: HeroStyle && HeroStyle.border,
-            }}
-            className="icon-container"
-          >
-            <img
-              src={HeroStyle ? "/assets/cyber-call-icon.svg" : "/assets/call.svg"}
-            />
-          </button>
+          <a target="_blank" href="https://wa.me/917000581635?text=Hello%20Team%20Wappgo!">
+            <button
+              style={{
+                backgroundColor: HeroStyle && HeroStyle.iconsBg,
+                border: HeroStyle && HeroStyle.border,
+              }}
+              className="icon-container"
+            >
+              <img src="/assets/wp.svg" />
+            </button>
+          </a>
+          <a href="mailto:info@wappgo.com">
+            <button
+              style={{
+                backgroundColor: HeroStyle && HeroStyle.iconsBg,
+                border: HeroStyle && HeroStyle.border,
+              }}
+              className="icon-container"
+            >
+              <img
+                src={HeroStyle ? "/assets/cyber-mail-icon.svg" : "/assets/mail.svg"}
+              />
+            </button>
+          </a>
+          <a href="tel:917000581635">
+            <button
+              style={{
+                backgroundColor: HeroStyle && HeroStyle.iconsBg,
+                border: HeroStyle && HeroStyle.border,
+              }}
+              className="icon-container"
+            >
+              <img
+                src={HeroStyle ? "/assets/cyber-call-icon.svg" : "/assets/call.svg"}
+              />
+            </button>
+          </a>
         </div>
         <div className="downloadbtndiv">
           <button className="download-btn" onClick={handleShow}>

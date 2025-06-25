@@ -89,8 +89,7 @@ const GetInTouch = () => {
                     </div>
 
                     {/* Address */}
-                    <div className="contact-item">
-                      {/* <img src="/assets/map-pin-line.svg" alt="Location" className="icon" /> */}
+                    {/* <div className="contact-item">
                       <div className="icon-wrapper">
                         <img src="/assets/map-pin-line.svg" alt="Location" className="icon" />
                       </div>
@@ -100,7 +99,7 @@ const GetInTouch = () => {
                           403, The View Tower,<br /> Yashwant Niwas Road,<br /> Indore MP 452001
                         </p>
                       </div>
-                    </div>
+                    </div> */}
 
 
                     <div className="social-section">

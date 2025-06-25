@@ -12,13 +12,13 @@ const ServiceDropdown2 = ({ hideServices }) => {
   const router = useRouter();
 
   const services = [
-    { name: 'Web Development', path: '/servicepages' },
-    { name: 'UI / UX Design', path: '/uiservices' },
-    { name: 'DevOps Services', path: '/devops' },
-    { name: 'QA / Testing', path: '/testing' },
-    { name: 'Chatbot Services', path: '/chatbot' },
-    { name: 'Data Engineering', path: '/data-services' },
-    { name: 'App Development', path: '/appsevices' }
+    { name: 'Web Development', path: '/web-development-services' },
+    { name: 'UI / UX Design', path: '/ui-ux-services' },
+    { name: 'DevOps Services', path: '/devops-services' },
+    { name: 'QA / Testing', path: '/qa-testing-services' },
+    { name: 'Chatbot Services', path: '/chatbot-development-services' },
+    { name: 'Data Engineering', path: '/data-engineering-services' },
+    { name: 'App Development', path: '/app-development-services' }
   ];
 
   const handleServiceHover = (serviceName) => {
