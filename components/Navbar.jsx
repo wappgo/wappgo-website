@@ -198,13 +198,13 @@ const Navbar = () => {
             </li>
             {mobileServicesOpen && (
               <ul className="mobile-submenu p-0 m-0">
-                <li onClick={closeAllDropdowns}><Link href="/servicepages">Web Development</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/uiservices">UI/UX Design</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/devops">DevOps Services</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/testing">QA / Testing</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/chatbot">Chatbot Services</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/data-services">Data Engineering</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/appsevices">App Development</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/web-development-services">Web Development</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/ui-ux-services">UI/UX Design</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/devops-services">DevOps Services</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/qa-testing-services">QA / Testing</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/chatbot-development-services">Chatbot Services</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/data-engineering-services">Data Engineering</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/app-development-services">App Development</Link></li>
               </ul>
             )}
 

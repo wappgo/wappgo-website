@@ -23,9 +23,9 @@ const Footer = () => {
           <div className="col-xxl-6 col-xl-12 mt-5">
             <div className="footer-address">
               <h4>Contact Us At</h4>
-              <span className="address">
+              {/* <span className="address">
                 403, The View Tower, Yashwant Niwas Road , Indore MP 452001
-              </span>
+              </span> */}
               <div className="row mt-2">
                 <div className="col-lg-4">
                   <p className="text-white phone-icon">
@@ -57,7 +57,7 @@ const Footer = () => {
             <li className='footer-items-route' onClick={() => router.push("/about")} >About us</li>
             <li className='footer-items-route' onClick={() => router.push("/contact")}>Contact us</li>
             <li className='footer-items-route'>Features</li>
-            <li className='footer-items-route' onClick={() => router.push("/Consultation")}>Get-Consultation</li>
+            <li className='footer-items-route' onClick={() => router.push("/contact")}>Get-Consultation</li>
 
           </ul>
         </div>
@@ -74,17 +74,17 @@ const Footer = () => {
         <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 mt-3">
           <ul className="feature-list">
             <li>Developement</li>
-            <li className='footer-items-route'>Website Development</li>
-            <li className='footer-items-route'>App Development</li>
+            <li className='footer-items-route' type="button" onClick={()=>router.push("/web-development-services")}>Website Development</li>
+            <li className='footer-items-route' type="button" onClick={()=>router.push("/app-development-services")}>App Development</li>
             <li className='footer-items-route'>Desktop Application</li>
             <li className='footer-items-route'>AI / ML</li>
-            <li className='footer-items-route'>Chat Bots</li>
+            <li className='footer-items-route' type="button" onClick={()=>router.push("/chatbot-development-services")}>Chat Bots</li>
           </ul>
         </div>
         <div className="col-xl-2 col-lg-3 col-md-3 col-sm-6 col-12 mt-3">
           <ul className="feature-list">
             <li>Other Services</li>
-            <li className='footer-items-route'>UI/UX Design</li>
+            <li className='footer-items-route'  type="button" onClick={()=>router.push("/ui-ux-services")}>UI/UX Design</li>
             <li className='footer-items-route'>Graphics Design</li>
             <li className='footer-items-route'>Video Editing</li>
           </ul>

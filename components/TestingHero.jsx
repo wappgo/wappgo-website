@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import "../public/styles/Devops.css";
 import "../public/styles/Appdev.css";
 import { FaWhatsapp, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
-
+import { useRouter } from "next/navigation";
 const TestingHero = () => {
+    const router = useRouter()
     const [showScene, setShowScene] = useState(false);
     const [animateText, setAnimateText] = useState(false);
 
@@ -36,7 +37,8 @@ const TestingHero = () => {
                     Our QA game is built for the modern digital world: fast, flexible, and totally relentless.
                 </p>
                 <div className="buttons">
-                    <button className="consult-btn">Get Consultation ⚡</button>
+                       <button className="consult-btn" onClick={() => router.push('/contact')}>Get Consultation ⚡</button>
+                    {/* <button className="consult-btn">Get Consultation ⚡</button> */}
                     {/* <span>or</span>
           <div className="icons">
             <button className="icon whatsapp">🟢</button>
@@ -45,9 +47,18 @@ const TestingHero = () => {
           </div> */}
                     <span>or</span>
                     <div className="home-hero-icon-buttons">
-                        <a href="#"><FaWhatsapp style={{ color: "green" }} /></a>
+                        {/* <a href="#"><FaWhatsapp style={{ color: "green" }} /></a>
                         <a href="#"><FaEnvelope /></a>
-                        <a href="#"><FaPhoneAlt /></a>
+                        <a href="#"><FaPhoneAlt /></a> */}
+                        <a target="_blank" href="https://wa.me/917000581635?text=Hello%20Team%20Wappgo!">
+                 <FaWhatsapp style={{ color: "green" }} />
+                </a>
+                <a href="mailto:info@wappgo.com">
+                  <FaEnvelope />
+                </a>
+                <a href="tel:917000581635">
+                  <FaPhoneAlt />
+                </a>
                     </div>
                 </div>
             </div>
