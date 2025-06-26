@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 // import "../public/styles/AIhero.css";
+import { useRouter } from 'next/navigation';
 const HeroSection = () => {
   const fadeRefs = useRef([]);
-
+  const router = useRouter()
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries, observer) => {
@@ -50,11 +51,11 @@ const HeroSection = () => {
             Solutions That Actually Deliver Results.
           </p>
           <div className="hero-buttons">
-            <button class="btn-light ai-btn-width">
+            <button class="btn-light ai-btn-width" onClick={()=>router.push("/contact")}>
               <span className="btn-icon2" />
               <span>Talk to Expert</span>
             </button>
-            <button className="animated-btn ai-btn-width">Deck For Wappgo AI
+            <button className="animated-btn ai-btn-width" onClick={()=>router.push("/contact")}>Deck For Wappgo AI
               <img src="/assets/ai-deck-download.svg" className="btn-icon" />
             </button>
           </div>

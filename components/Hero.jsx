@@ -212,8 +212,7 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
                       </div>
 
                       {/* Address */}
-                      <div className="contact-item">
-                        {/* <img src="/assets/map-pin-line.svg" alt="Location" className="icon" /> */}
+                      {/* <div className="contact-item">
                         <div className="icon-wrapper">
                           <img src="/assets/map-pin-line.svg" alt="Location" className="icon" />
                         </div>
@@ -223,34 +222,48 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
                             403, The View Tower,<br /> Yashwant Niwas Road,<br /> Indore MP 452001
                           </p>
                         </div>
-                      </div>
+                      </div> */}
 
 
                       <div className="social-section">
                         <p>- Connect with us:</p>
                         <div className="social-icons">
 
-                          <a href="#" aria-label="Facebook">
+                          <a
+                            href="https://www.facebook.com/share/1HfgkXq5Hn/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook"
+                          >
                             <div className='socialdiv'>
                               <img src="/assets/facebook-contact.svg" alt='facebook' />
                             </div>
                           </a>
 
 
-                          <a href="#" aria-label="Twitter">
+                          <a
+                            href="https://www.linkedin.com/company/wappgo/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                          >
                             <div className='socialdiv'>
                               <img src="/assets/linkedin-contact.svg" alt='linkedin' />
                             </div>
                           </a>
 
-                          <a href="#" aria-label="LinkedIn">
-                            <div className='socialdiv'>
-                              <img src="/assets/x-contact.svg" alt='x' />
-                            </div>
-                          </a>
+
+                           <a href="https://www.instagram.com/wappgo/?igsh=Y3M2ZWR4NWNxNWFq"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Instagram">
+                          <div className='socialdiv'>
+                            <img src="/assets/instagram-contact.svg" alt='x' />
+                          </div>
+                        </a>
 
 
-                          <a href="#" aria-label="Instagram">
+                          {/* <a href="#" aria-label="Instagram">
                             <div className='socialdiv'>
                               <img src="/assets/instagram-contact.svg" alt='x' />
                             </div>
@@ -259,7 +272,7 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
                             <div className='socialdiv'>
                               <img src="/assets/driven-contact.svg" alt='x' />
                             </div>
-                          </a>
+                          </a> */}
                         </div>
 
                       </div>
