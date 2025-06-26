@@ -2,12 +2,13 @@
 import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import "../public/styles/NavbarAI.css";
+
 
 // Lazy load heavy dropdowns
 const ServicesDropdown = dynamic(() => import('./ServiceDropdown2'), {
@@ -24,6 +25,7 @@ const NavSlider = dynamic(() => import('./NavSlider'), {
 
 const Navbar = () => {
   const pathname = usePathname();
+  const router = useRouter()
   const containerRef = useRef(null);
 
   const [dropdowns, setDropdowns] = useState({
@@ -102,10 +104,8 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="navbar-container5 navbar-container-border3">
-          <div className="logo">
-            <Link href="/" prefetch>
+          <div className="logo" type="button" onClick={()=>router.push('/')}>
               <Image src='/assets/logo.svg' alt="Logo" width={150} height={50} priority />
-            </Link>
           </div>
 
           <div className="mobile-menu-btn2" onClick={() => handleDropdown('mobileMenu', !dropdowns.mobileMenu)}>
@@ -113,8 +113,8 @@ const Navbar = () => {
           </div>
 
           <ul className={`nav-links5 ${dropdowns.mobileMenu ? 'd-none mobile-menu-active' : ''}`}>
-            <li className={pathname === "/" ? "activepath" : "active-item"}>
-              <Link href="/">Home</Link>
+            <li className={pathname === "/" ? "activepath" : "active-item"} type="button" onClick={()=>router.push('/')}>
+              Home
             </li>
             <li
               onMouseEnter={() => handleDropdown('services', true)}
@@ -131,10 +131,8 @@ const Navbar = () => {
             >
               Industries
             </li>
-            <li className="active-item">
-              <Link href="/letsdiveintoAI" prefetch>
+            <li className="active-item" type="button" onClick={()=>router.push('/letsdiveintoAI')}>
                 <span className="gradient-text">Let's Dive Into AI</span>
-              </Link>
             </li>
             <li className={pathname === "/case-study" ? "activepath" : "active-item"}>
               <Link href="/case-study" prefetch>Case studies</Link>
@@ -143,22 +141,22 @@ const Navbar = () => {
               <Image src='/assets/noexpose-logo.svg' alt="NotExpose Icon" className="notexpose-icon" width={24} height={24} />
               <span className="notexpose-text">NoExpose</span>
             </li>
-            <li className={pathname === "/about" ? "activepath" : "active-item"}>
-              <Link href="/about" prefetch>About us</Link>
+            <li className={pathname === "/about" ? "activepath" : "active-item"} type="button" onClick={()=>router.push('/about')}>
+              About us
             </li>
-            <li className={pathname === "/career" ? "activepath" : "active-item"}>
-              <Link href="/career" prefetch>Careers</Link>
+            <li className={pathname === "/career" ? "activepath" : "active-item"} type="button" onClick={()=>router.push('/career')}>
+              Careers
             </li>
 
             {dropdowns.mobileMenu && (
-              <li className="mobile-contact-btn">
-                <Link href="/contact" onClick={closeAllDropdowns} prefetch>CONTACT US</Link>
+              <li className="mobile-contact-btn" type="button" onClick={()=>{router.push('/contact'), closeAllDropdowns}}>
+                CONTACT US
               </li>
             )}
           </ul>
 
           {!dropdowns.mobileMenu && (
-            <Link href="/contact" className="desktop-contact-btn" onClick={closeAllDropdowns} prefetch>Contact Us</Link>
+            <span  type="button" onClick={()=>{router.push('/contact'), closeAllDropdowns}} className="desktop-contact-btn">Contact Us</span>
           )}
         </div>
       </nav>
@@ -207,13 +205,11 @@ const Navbar = () => {
             </li>
             {mobileIndustriesOpen && (
               <ul className="mobile-submenu p-0 m-0">
-                <li onClick={closeAllDropdowns}><Link href="/chatsystem">Chatsystem</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/ecommerce">E-Commerce</Link></li>
+              <li onClick={closeAllDropdowns}><Link href="/chatsystem">Chatsystem</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/industries">E-Commerce</Link></li>
                 <li onClick={closeAllDropdowns}><Link href="/projectmanagement">Project Management</Link></li>
                 <li onClick={closeAllDropdowns}><Link href="/social-media">Social Media</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/erp-crm">ERP / CRM</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/healthcare">Healthcare</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/logistics">Logistics</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/ERP">ERP / CRM</Link></li>
               </ul>
             )}
 

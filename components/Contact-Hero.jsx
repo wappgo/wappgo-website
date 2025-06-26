@@ -1,43 +1,4 @@
-// import ContactForm from "./Contact-Form";
 
-// const ContactHero = () => {
-//   return (
-
-//     <div className="row">
-//       <div className="col-lg-6">
-
-//         <div className="contact-hero-container">
-
-
-//           <div className="website-hero-texts">
-//             <h4>Contact Us</h4>
-//             <h2 className="herosubheadingtext">
-//               We Would Love to Hear From
-//               <span> You !</span>
-//             </h2>
-//             <p className="contactparatext">
-//               Please provide your contact details, and our Team’s person will get
-//               back to you promptly.
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//       {/* <div className="col-lg-1">
-
-//       </div> */}
-//       <div className="col-lg-6">
-//         <div className="contactheroimg">
-//           {/* <img className="img-fluid" src="/assets/innovation-hero-img.png" /> */}
-//           <ContactForm/>
-//         </div>
-
-//       </div>
-//     </div>
-
-//   );
-// };
-
-// export default ContactHero;
 
 import React from 'react';
 import Image from 'next/image';
@@ -106,36 +67,49 @@ const GetInTouch = () => {
                       <p>- Connect with us:</p>
                       <div className="social-icons">
 
-                        <a href="#" aria-label="Facebook">
+                        <a
+                          href="https://www.facebook.com/share/1HfgkXq5Hn/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Facebook"
+                        >
                           <div className='socialdiv'>
                             <img src="/assets/facebook-contact.svg" alt='facebook' />
                           </div>
                         </a>
 
 
-                        <a href="#" aria-label="Twitter">
+                        <a
+                          href="https://www.linkedin.com/company/wappgo/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="LinkedIn"
+                        >
                           <div className='socialdiv'>
                             <img src="/assets/linkedin-contact.svg" alt='linkedin' />
                           </div>
                         </a>
 
-                        <a href="#" aria-label="LinkedIn">
+                        {/* <a href="#" aria-label="LinkedIn">
                           <div className='socialdiv'>
                             <img src="/assets/x-contact.svg" alt='x' />
                           </div>
-                        </a>
+                        </a> */}
 
 
-                        <a href="#" aria-label="Instagram">
-                           <div className='socialdiv'>
+                        <a href="https://www.instagram.com/wappgo/?igsh=Y3M2ZWR4NWNxNWFq"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Instagram">
+                          <div className='socialdiv'>
                             <img src="/assets/instagram-contact.svg" alt='x' />
                           </div>
                         </a>
-                        <a href="#" aria-label="Instagram">
+                        {/* <a href="#" aria-label="Instagram">
                           <div className='socialdiv'>
                             <img src="/assets/driven-contact.svg" alt='x' />
                           </div>
-                        </a>
+                        </a> */}
                       </div>
 
                     </div>

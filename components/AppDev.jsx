@@ -1,14 +1,10 @@
 import React, { useEffect, useRef,useLayoutEffect } from "react";
 import "../public/styles/Appdev.css";
 import { FaWhatsapp, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
-import gsap from "gsap";
+
 
 
 const HeroSection = () => {
- 
-
- 
-  
   return (
     <>
       <section className="home-hero-section">

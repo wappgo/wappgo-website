@@ -3,13 +3,7 @@ import React from "react";
 import Slider from "react-slick";
 import '../public/styles/IndustriesSlider.css';
 
-// const industries = [
-//   { title: "eCommerce", image: "/assets/fashion.svg" },
-//   { title: "Luxury & Jewellery", image: "/assets/fashion.svg" },
-//   { title: "Fashion & Apparel", image: "/assets/fashion.svg" },
-//   { title: "Electronics & Gadgets", image: "/assets/fashion.svg"},
-//   { title: "Grocery &MC FG", image: "/assets/fashion.svg" }
-// ];
+
 const industries = [
   { 
     title: "Short-Video & Live Streaming", 
@@ -112,22 +106,7 @@ const ProjectSlider = () => {
           </button>
         </div>
       </section>
-      {/* <div className="industry-slider-container">
-        <Slider {...settings} className="industry-slider">
-          {industries.map((item, index) => (
-            <div className="industry-card" key={index}>
-              <div
-                className="industry-card-inner"
-                style={{ 
-                  backgroundImage: `url(${item.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              ></div>
-            </div>
-          ))}
-        </Slider>
-      </div> */}
+     
        <div className="industry-slider-container">
         <Slider {...settings} className="industry-slider">
           {industries.map((item, index) => (

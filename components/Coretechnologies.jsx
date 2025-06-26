@@ -1,9 +1,6 @@
 import React, { useEffect,useRef } from "react";
 import "../public/styles/Coretechnologies.css";
-// import CoreVid from '../assets/core-tech-vid.mp4';
-// import Bot from '../assets/bot.svg';
-// import Deep from '../assets/deep-learning.svg';
-// import Group1 from '../assets/Group (1).svg';
+
 
 const CoreTechnologies = () => {
   useEffect(() => {

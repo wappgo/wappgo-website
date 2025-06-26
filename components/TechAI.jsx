@@ -1,35 +1,4 @@
-// import React from "react";
-// import "../public/styles/TechAI.css";
 
-// const techIcons = [
-//   "ai-computing.png", "python.png", "cloud.png", "automation.png", "databricks.png",
-//   "opencv.png", "tensorflow.png", "grafana.png", "azure.png", "aws.png",
-//   "data-science.png", "oracle.png", "jupyter.png", "api.png"
-// ];
-
-// const TechStack = () => {
-//   return (
-//     <div className="tech-stack-section5">
-//       <video autoPlay loop muted className="background-video5">
-//         <source src="/assets/tech.mp4" type="video/mp4" />
-//       </video>
-//       <div className="tech-stack-content5">
-//         <h2>
-//           Tech Stack We Use to Deliver <br /> Top-Notch <span className="ai">AI</span> <span className="services5">Services</span>
-//         </h2>
-//         <div className="tech-icons-grid5">
-//           {techIcons.map((icon, index) => (
-//             <div key={index} className="tech-icon5">
-//               <img src={`/assets/${icon}`} alt="Tech Icon5" />
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default TechStack;
 import React from "react";
 import "../public/styles/TechAI.css";
 

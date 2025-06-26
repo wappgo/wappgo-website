@@ -1,16 +1,8 @@
 "use client";
 import React,{useRef,useState,useEffect} from 'react'
-import Image from "next/image";
 import "../public/styles/bg.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Autoplay } from "swiper/modules";
-import Partners from './Partners';
 const AboutHero = () => {
   useGSAP(() => {
     gsap.to(".marque", {
@@ -71,87 +63,6 @@ const AboutHero = () => {
             />
           </div>
         </div>
-
-       {/* <Partners /> */}
-        {/* <main className="partners-container2 mt-4">
-
-          <div className="brands">
-            <p className="heading">Trusted partners</p>
-            <Swiper
-              className="brand-name-container"
-              autoplay={{
-                delay: 1000,
-              }}
-              breakpoints={{
-                320: {
-                  slidesPerView: 2
-                },
-                375: {
-                  slidesPerView: 2
-                },
-                425: {
-                  slidesPerView: 2
-                },
-                640: {
-                  slidesPerView: 3,
-                },
-                768: {
-                  slidesPerView: 4,
-                },
-                1024: {
-                  slidesPerView: 6,
-                },
-                1280: {
-                  slidesPerView: 7,
-                },
-              }}
-              loop={true}
-              modules={[Autoplay]}
-            >
-              <SwiperSlide>
-                <div className="d-flex justify-content-center">
-                  <img src="/assets\nuxt.png" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="d-flex justify-content-center">
-                  <img src="/assets/miro.svg" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="d-flex justify-content-center">
-                  <img src="/assets/LottieFiles.svg" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="d-flex justify-content-center">
-                  <img src="/assets/wise.svg" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="d-flex justify-content-center">
-                  <img src="/assets/dribble.svg" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="d-flex justify-content-center">
-                  <img src="/assets/kinsta.svg" />
-                </div>
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <div className="d-flex justify-content-center">
-                  <img src="/assets/angleList.svg" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="d-flex justify-content-center">
-                  <img src="/assets/behance.svg" />
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </main> */}
       </div>
     </>
   );

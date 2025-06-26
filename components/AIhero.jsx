@@ -1,13 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import "../public/styles/AIhero.css";
-// import Video from '/assets/ai-videos.mp4';
-// import Settingsicon from '../assets/settings.svg'
-// import Graph from '../assets/graph.svg'
-// import Message from '../assets/message.svg';
-// import Layer from '../assets/layer.svg';
+// import "../public/styles/AIhero.css";
+import { useRouter } from 'next/navigation';
 const HeroSection = () => {
   const fadeRefs = useRef([]);
-
+  const router = useRouter()
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries, observer) => {
@@ -37,14 +33,6 @@ const HeroSection = () => {
         <source src='/assets/ai-videos.mp4' type="video/mp4" />
       </video>
       <div className="hero-content">
-        {/* <p className="hero-subtitle">SMARTER . FASTER . LIMITLESS</p>
-        <h1 className='hero-title'>
-          <span className="ai-powered">
-            <span className="ai-gradient">AI-</span>
-            <span className="powered-gradient">POWERED</span>
-          </span>{' '}
-          INNOVATION FOR <br /> YOUR BUSINESS
-        </h1> */}
         <div className='hero-content-inside'>
           <p className="hero-subtitle">
             <span className="text-reveal">SMARTER . FASTER . LIMITLESS</span>
@@ -62,14 +50,12 @@ const HeroSection = () => {
             AI-Driven Chatbots, Predictive Analytics, Or Intelligent Automation, We Build AI
             Solutions That Actually Deliver Results.
           </p>
-          <div ref={(el) => (fadeRefs.current[1] = el)} className="hero-buttons">
-            {/* <button className="btn btn-light">Talk To An Expert</button> */}
-            <button class="btn-light ai-btn-width">
-              {/* <img src="/assets/phone-icon.svg" className="btn-icon2"/> */}
+          <div className="hero-buttons">
+            <button class="btn-light ai-btn-width" onClick={()=>router.push("/contact")}>
               <span className="btn-icon2" />
               <span>Talk to Expert</span>
             </button>
-            <button className="animated-btn ai-btn-width">Deck For Wappgo AI
+            <button className="animated-btn ai-btn-width" onClick={()=>router.push("/contact")}>Deck For Wappgo AI
               <img src="/assets/ai-deck-download.svg" className="btn-icon" />
             </button>
           </div>

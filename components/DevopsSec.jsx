@@ -56,43 +56,6 @@ const OverlapCards = () => {
                     </div>
                 </div>
             </div>
-
-            {/* <div className="card-layer card-layer--second">
-                <h2>Second Card</h2>
-                <p>This is the second card. It will overlap and cover the first one while scrolling.</p>
-            </div> */}
-            {/* <div className="card-layer card-layer--second">
-                <div className="second-card-content column-layout">
-                    <div className="intro-text">
-                        <h2 className="process-title3">What We Build<br />
-                            Real Products. Real Users. Real Fast.</h2>
-                        <p className="process-subtitle">we craft digital products that launch fast, feel great, and grow with you.</p>
-                        <p className="process-description">
-                            Whether you're validating a bold new idea or scaling an app to thousands, we’ve got your back.
-                        </p>
-                        <div className="blue-divider"></div>
-                    </div>
-                    <div className="mobile-solutions8">
-                        <div className="cards-container8">
-                            {services2.map((service, index) => (
-                                <div className="service-card8" key={index}>
-                                    <img src={service.icon} alt={service.title} className="service-icon" />
-                                    <h4>{service.title}</h4>
-                                    <p>{service.description}</p>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="cta-container8">
-                            <button className="cta-button8">
-                                Get Consultation <span className="lightning8">⚡</span>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-            </div> */}
-
-
         </div>
     );
 };

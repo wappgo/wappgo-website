@@ -8,27 +8,12 @@ import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import devAnimation from '../public/assets/herosection.json';
 import Lottie from 'lottie-react';
+import { useRouter } from "next/navigation";
 const Hero = ({ HeroStyle, HeroTexts }) => {
+
   return (
     <div className="hero-container">
-      {/* Video Background on the Right */}
-      {/* <div className="video-container video-container">
-        <video className="video2" autoPlay loop muted playsInline preload="auto">
-          <source src="/assets/hero-main-video.mp4" type="video/mp4" />
-        </video>
-        <div className="overlay"></div>
-        <div className="blurfixer">
-          <img src="/assets/bluer-fix.svg" />
-        </div>
-        <Lottie
-          animationData={devAnimation}
-          loop={true}
-        />
-      </div> */}
 
-
-
-      {/* Content on the Left */}
       <div className="content2">
         <article className="row hero-items-wrapper">
           <div className="col-lg-12 hero-items">
@@ -114,6 +99,7 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+    const router = useRouter()
   return (
     <>
       <div className="btn-icon-container zoom-in-once delay-3">
@@ -124,10 +110,6 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
           </button>
         </Link>
         <Link href="/letsdiveintoAI" style={{ textDecoration: "none" }}>
-          {/* <button className="btn-diveai btn-diveai-text gradient-text-btn front-btn-with btn-diveai-inner" >
-            {HeroTexts ? HeroTexts.btnText : "Wappgo For Your AI"}
-            <img src="/assets/divebtn.svg" className="mx-3" />
-          </button> */}
           <button className="btn-diveai front-btn-with">
             <div className="btn-diveai-inner gradient-text-btn"
               style={{
@@ -189,7 +171,7 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
           </a>
         </div>
         <div className="downloadbtndiv">
-          <button className="download-btn" onClick={handleShow}>
+          <button className="download-btn" onClick={()=>router.push('/contact')}>
             Download Wappgo Deck
             <img
               src="/assets/download-deck.svg"
@@ -233,8 +215,7 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
                       </div>
 
                       {/* Address */}
-                      <div className="contact-item">
-                        {/* <img src="/assets/map-pin-line.svg" alt="Location" className="icon" /> */}
+                      {/* <div className="contact-item">
                         <div className="icon-wrapper">
                           <img src="/assets/map-pin-line.svg" alt="Location" className="icon" />
                         </div>
@@ -244,34 +225,48 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
                             403, The View Tower,<br /> Yashwant Niwas Road,<br /> Indore MP 452001
                           </p>
                         </div>
-                      </div>
+                      </div> */}
 
 
                       <div className="social-section">
                         <p>- Connect with us:</p>
                         <div className="social-icons">
 
-                          <a href="#" aria-label="Facebook">
+                          <a
+                            href="https://www.facebook.com/share/1HfgkXq5Hn/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook"
+                          >
                             <div className='socialdiv'>
                               <img src="/assets/facebook-contact.svg" alt='facebook' />
                             </div>
                           </a>
 
 
-                          <a href="#" aria-label="Twitter">
+                          <a
+                            href="https://www.linkedin.com/company/wappgo/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                          >
                             <div className='socialdiv'>
                               <img src="/assets/linkedin-contact.svg" alt='linkedin' />
                             </div>
                           </a>
 
-                          <a href="#" aria-label="LinkedIn">
-                            <div className='socialdiv'>
-                              <img src="/assets/x-contact.svg" alt='x' />
-                            </div>
-                          </a>
+
+                           <a href="https://www.instagram.com/wappgo/?igsh=Y3M2ZWR4NWNxNWFq"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Instagram">
+                          <div className='socialdiv'>
+                            <img src="/assets/instagram-contact.svg" alt='x' />
+                          </div>
+                        </a>
 
 
-                          <a href="#" aria-label="Instagram">
+                          {/* <a href="#" aria-label="Instagram">
                             <div className='socialdiv'>
                               <img src="/assets/instagram-contact.svg" alt='x' />
                             </div>
@@ -280,7 +275,7 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
                             <div className='socialdiv'>
                               <img src="/assets/driven-contact.svg" alt='x' />
                             </div>
-                          </a>
+                          </a> */}
                         </div>
 
                       </div>

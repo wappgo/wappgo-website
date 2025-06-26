@@ -1,7 +1,8 @@
 import React from "react";
 import "../public/styles/Footer.css";
-
+import { useRouter } from "next/navigation";
 const Footer = () => {
+  const router = useRouter()
   return (
     <div className="footer-container5">
       <video autoPlay loop muted className="footer-video5">
@@ -11,10 +12,10 @@ const Footer = () => {
         <div className="footer-content5">
           <div className="footer-left5">
             <div className="footer-logo5"><img src="/assets/logo.svg"/></div>
-            <p className="footer-address5">
+            {/* <p className="footer-address5">
             305 CORPORATE HOUSE 169 R.N.T MARG,
             INDORE 452001 , MADHYA PRADESH
-            </p>
+            </p> */}
             <p>
               +0731-4240330 &nbsp;&nbsp; info@wappoo.com
             </p>
@@ -24,8 +25,8 @@ const Footer = () => {
             <div className="footer-links5">
               <div>
                 <h4>Company</h4>
-                <p>About us</p>
-                <p>Contact us</p>
+                <p type="button" onClick={()=>router.push('/about')}>About us</p>
+                <p type="button" onClick={()=>router.push('/contact')}>Contact us</p>
                 <p>Features</p>
               </div>
               <div>
@@ -38,15 +39,15 @@ const Footer = () => {
               </div>
               <div>
                 <h4>Development</h4>
-                <p>Website Development</p>
-                <p>App Development</p>
+                <p type="button" onClick={()=>router.push('/web-development-services')}>Website Development</p>
+                <p type="button" onClick={()=>router.push('/app-development-services')}>App Development</p>
                 <p>Desktop Application</p>
                 <p>AI / ML</p>
-                <p>Chat Bots</p>
+                <p type="button" onClick={()=>router.push('/chatbot-development-services')}>Chat Bots</p>
               </div>
               <div>
                 <h4>Other Services</h4>
-                <p>UI/UX Design</p>
+                <p type="button" onClick={()=>router.push('/ui-ux-services')}>UI/UX Design</p>
                 <p>Graphics Design</p>
                 <p>Video Editing</p>
               </div>

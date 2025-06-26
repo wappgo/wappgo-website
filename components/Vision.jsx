@@ -1,12 +1,10 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import '../public/styles/Vision.css';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 
 const Vision = () => {
-  const [showInfo, setShowInfo] = useState(false); // State to manage when to show info
-  const [currentFeature, setCurrentFeature] = useState(''); // State to manage which feature's info to show
+  const [showInfo, setShowInfo] = useState(false);
+  const [currentFeature, setCurrentFeature] = useState(''); 
   const fadeRefs = useRef([]);
   const titleRef = useRef(null);
 
@@ -85,22 +83,6 @@ const Vision = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   if (showInfo) {
-  //     // GSAP animation timeline
-  //     const tl = gsap.timeline();
-
-  //     // Define animation for feature images
-  //     tl.from(".feature img", {
-  //       duration: 1.5,
-  //       opacity: 0.5,
-  //       rotate: 180,
-  //       x: -80,
-  //       stagger:3.5,
-  //       repeat:-1
-  //     });
-  //   }
-  // }, [showInfo]); 
   const [openIndex, setOpenIndex] = useState(0);
 
   const toggleAccordion = (index) => {
@@ -141,51 +123,8 @@ const Vision = () => {
                 isVisible ? "col-xl-6 second-animate" : ""
               }`}
             >
-            {/* <p className="sec-head">
-            {showInfo && (
-              <>
-                {currentFeature === 'Innovation' && (
-                  <>
-                    We have assisted a wide range of clients, from small,
-                    emerging startups to large enterprise organizations, in
-                    developing products by simplicity and user-friendliness.
-                  </>
-                )}
-                {currentFeature === 'Design' && (
-                  <>
-                   Design Another feature-specific information here...
-                  </>
-                )}
-                {currentFeature === 'Operations' && (
-                  <>
-                Operations    Another feature-specific information here...
-                  </>
-                )}
-                {currentFeature === 'Maintenance' && (
-                  <>
-                Maintenance    Another feature-specific information here...
-                  </>
-                )}
-              </>
-            )}
-          </p> */}
             <p className='sec-head mt-2'>We have assisted a wide range of clients, from small, emerging startups to large enterprise organizations, in developing products by simplicity and user-friendliness.</p>
-            {/* <div className="feature">
-            <h4>Innovation</h4>
-            <img src="/assets/arrow-down-right.svg" className='arrow' alt="Arrow" />
-          </div>
-          <div className="feature">
-            <h4>Design</h4>
-            <img src="/assets/arrow-down-right.svg" className='arrow' alt="Arrow" />
-          </div>
-          <div className="feature">
-            <h4>Operations</h4>
-            <img src="/assets/arrow-down-right.svg" className='arrow' alt="Arrow" />
-          </div>
-          <div className="feature">
-            <h4>Maintenance</h4>
-            <img src="/assets/arrow-down-right.svg" className='arrow' alt="Arrow" />
-          </div> */}
+            
             <div>
               {accordionData.map((item, index) => (
                 <div key={index} className="accordion-item2">
@@ -200,29 +139,13 @@ const Vision = () => {
                     />
                   </div>
 
-                  {/* Accordion Content (Only show when open) */}
                   {openIndex === index && (
                     <p className="text-white mt-2">{item.content}</p>
                   )}
                 </div>
               ))}
             </div>
-            {/* <div className={`feature ${showInfo && currentFeature === 'Innovation' ? 'scale-1-3' : ''}`}>
-            <h4>Innovation</h4>
-            <img src="/assets/arrow-down-right.svg" className='arrow' alt="Arrow" />
-          </div>
-          <div className={`feature ${showInfo && currentFeature === 'Design' ? 'scale-1-3' : ''}`}>
-            <h4>Design</h4>
-            <img src="/assets/arrow-down-right.svg" className='arrow' alt="Arrow" />
-          </div>
-          <div className={`feature ${showInfo && currentFeature === 'Operations' ? 'scale-1-3' : ''}`}>
-            <h4>Operations</h4>
-            <img src="/assets/arrow-down-right.svg" className='arrow' alt="Arrow" />
-          </div>
-          <div className={`feature ${showInfo && currentFeature === 'Maintenance' ? 'scale-1-3' : ''}`}>
-            <h4>Maintenance</h4>
-            <img src="/assets/arrow-down-right.svg" className='arrow' alt="Arrow" />
-          </div> */}
+            
           </div>
         </div>
       </div>

@@ -172,31 +172,7 @@ const Services = () => {
 
 export default Services;
 
-// export const AboutComponent = () => {
-//   return (
-//     <section className="about-container">
-//       <div className="row">
-//         <div className="col-xl-6">
-//           <img src="/assets/abtImg.svg" height="100%" width="100%" />
-//         </div>
-//         <div className="col-xl-1"></div>
-//         <div className="col-xl-5">
-//           <div className="pt-3 pl-3">
-//             <div className="about-texts">
-//               <p>
-//                 For over 05 years, we’ve provided vital IT support for our
-//                 clients
-//               </p>
-//               <div className="btn-container">
-//               <Button />
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
+
 
 export const Button = ({ text, btnStyle }) => {
   return (

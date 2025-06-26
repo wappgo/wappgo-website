@@ -2,14 +2,9 @@
 import React from "react";
 import Slider from "react-slick";
 import '../public/styles/IndustriesSlider.css';
+import { useRouter } from "next/navigation";
 
-// const industries = [
-//   { title: "eCommerce", image: "/assets/fashion.svg" },
-//   { title: "Luxury & Jewellery", image: "/assets/fashion.svg" },
-//   { title: "Fashion & Apparel", image: "/assets/fashion.svg" },
-//   { title: "Electronics & Gadgets", image: "/assets/fashion.svg"},
-//   { title: "Grocery & FMCG", image: "/assets/fashion.svg" }
-// ];
+
 const industries = [
   { 
     title: "Customer Support & CRM", 
@@ -94,6 +89,7 @@ const settings = {
 };
 
 const IndustriesSlider = () => {
+  const router = useRouter()
   return (
     <>
       <section className="industry-banner">
@@ -108,27 +104,12 @@ const IndustriesSlider = () => {
           <p>
           Every business has unique communication needs. At Wappgo, we design chat systems tailored to industry demands to streamline workflows, boost support efficiency, and increase customer satisfaction.
           </p>
-          <button className="industry-banner-button">
+          <button className="industry-banner-button"  onClick={()=>router.push('/contact')}>
             Get Consultation ⚡
           </button>
         </div>
       </section>
-      {/* <div className="industry-slider-container">
-        <Slider {...settings} className="industry-slider">
-          {industries.map((item, index) => (
-            <div className="industry-card" key={index}>
-              <div
-                className="industry-card-inner"
-                style={{ 
-                  backgroundImage: `url(${item.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              ></div>
-            </div>
-          ))}
-        </Slider>
-      </div> */}
+
        <div className="industry-slider-container">
         <Slider {...settings} className="industry-slider">
           {industries.map((item, index) => (

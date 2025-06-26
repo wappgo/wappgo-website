@@ -10,21 +10,7 @@
     position: relative;
   }
   
-  /* .image-wrapper {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 1s ease-in-out;
-    z-index: 1;
-    max-width: 600px;
-    width: 100%;
-  }
-  
-  .image-wrapper.to-right {
-    left: 70%;
-    transform: translate(-50%, -50%);
-  } */
+
   .image-wrapper {
     position: absolute;
     left: 50%;

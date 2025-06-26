@@ -68,11 +68,6 @@ const ContactForm = () => {
         </div>
         </div>
 
-        {/* <div className="inputs-container">
-        </div>
-        <div className="message-container">
-
-        </div> */}
       </div>
       <div>
         <Button text={"Get Started"} className="common-btn" />

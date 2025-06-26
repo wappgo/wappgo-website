@@ -8,7 +8,9 @@ import "swiper/css/pagination";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Autoplay } from "swiper/modules";
+import { useRouter } from 'next/navigation';
 const Chatsystem = () => {
+  const router = useRouter()
   useGSAP(() => {
     gsap.to(".marque", {
       transform: 'translateX(-200%)',
@@ -36,10 +38,10 @@ const Chatsystem = () => {
         We craft intelligent and scalable chat system solutions that transform how businesses interact with their customers. Whether it’s live chat, support automation, or internal communication tools, we design systems that ensure seamless messaging, enhance support, and foster stronger relationships.
         </p>
         <div className="indushero-buttons">
-          <button className="indusprimary-btn">
+          <button className="indusprimary-btn" onClick={()=>router.push('/contact')}>
             Get Consultation <span className="bolt">⚡</span>
           </button>
-          <button className="indussecondary-btn">View Case Studies</button>
+          <button className="indussecondary-btn"  onClick={()=>router.push('/case-study')}>View Case Studies</button>
         </div>
       </div>
     </div>

@@ -200,7 +200,7 @@ const handleMouseEnter = () => {
                       <h3 className="service-title">{section}</h3>
                       <div className="services-content">
                         {items.map((item, idx) => (
-                          <div key={idx} className="item-main"  onClick={() => item.url && router.push(item.url)}>
+                          <div key={idx} className="item-main service-hover"  onClick={() => item.url && router.push(item.url)}>
                             <img src={item.logo} alt={item.name} />
                             <h6 className="text-sm">{item.name}</h6>
                           </div>
