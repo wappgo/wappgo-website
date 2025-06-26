@@ -8,7 +8,9 @@ import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import devAnimation from '../public/assets/herosection.json';
 import Lottie from 'lottie-react';
+import { useRouter } from "next/navigation";
 const Hero = ({ HeroStyle, HeroTexts }) => {
+
   return (
     <div className="hero-container">
 
@@ -97,6 +99,7 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+    const router = useRouter()
   return (
     <>
       <div className="btn-icon-container zoom-in-once delay-3">
@@ -168,7 +171,7 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
           </a>
         </div>
         <div className="downloadbtndiv">
-          <button className="download-btn" onClick={handleShow}>
+          <button className="download-btn" onClick={()=>router.push('/contact')}>
             Download Wappgo Deck
             <img
               src="/assets/download-deck.svg"
