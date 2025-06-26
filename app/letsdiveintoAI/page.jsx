@@ -1,30 +1,16 @@
 "use client"
-import { useState } from "react";
-import Announcement from "@/components/Announcement";
-import Blogs from "@/components/Blogs";
 
-import GlobeImage from "@/components/GlobeImage";
-import Grow from "@/components/Grow";
-import Hero from "@/components/Hero";
 import NavbarAI from "@/components/NavbarAI";
-import Partners from "@/components/Partners";
-import Services from "@/components/Service";
 import Transform from "@/components/Transform";
 import CoreTechnologies from "@/components/Coretechnologies";
-import Testimonial from "@/components/Testimonial";
-import Testing, { Slider } from "@/components/Testing";
-import Vision from "@/components/Vision";
 import WhyChooseAI from "@/components/WhyChooseAI";
-import Image from "next/image";
 import AIhero from "@/components/AIhero";
 import AIservices from "@/components/AIservices";
 import TechAI from "@/components/TechAI";
 import Footer2 from "@/components/Footer2";
-import Loader from "@/components/Loader";
-import OfferServices from "@/components/OfferServices";
 import AIdevServices from "@/components/AIdevServices";
 import FaqSection2 from "@/components/FaqSection2";
-import { useEffect } from "react";
+
 
 export default function Home() {
 
@@ -117,7 +103,6 @@ export default function Home() {
       <CoreTechnologies />
       <AIservices />
       <WhyChooseAI />
-      {/* <OfferServices /> */}
       <AIdevServices />
       <TechAI />
       <FaqSection2 />

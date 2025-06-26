@@ -29,7 +29,7 @@ function QaProduct() {
                 </div>
             </div>
 
-            <div className='row'>
+            <div className='row p-1'>
                 <div className='col-md-6'>
                     <div className='product-accordion'>
                         <div className="row justify-content-center">
@@ -60,7 +60,7 @@ function QaProduct() {
                     </div>
                 </div>
 
-                <div className='col-md-6'>
+                <div className='col-md-6 quimage'>
                     <img
                         src="/assets/qaimage.svg"
                         alt="Qa"

@@ -57,10 +57,6 @@ const OverlapCards = () => {
                 </div>
             </div>
 
-            {/* <div className="card-layer card-layer--second">
-                <h2>Second Card</h2>
-                <p>This is the second card. It will overlap and cover the first one while scrolling.</p>
-            </div> */}
             <div className="card-layer card-layer--second">
                 <div className="second-card-content column-layout">
                     <div className="intro-text">

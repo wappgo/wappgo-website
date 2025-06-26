@@ -1,38 +1,12 @@
 "use client"
 
-import Announcement from "@/components/Announcement";
-import Blogs from "@/components/Blogs";
-
-import GlobeImage from "@/components/GlobeImage";
 import Grow from "@/components/Grow";
-import Hero from "@/components/Hero";
 import NavbarAI from "@/components/NavbarAI";
 import Partners from "@/components/Partners";
-import Services from "@/components/Service";
-import Transform from "@/components/Transform";
-import DevopsExpertise from "@/components/DevopsExpertise";
-import Testimonial from "@/components/Testimonial";
-import Testing, { Slider } from "@/components/Testing";
-import Vision from "@/components/Vision";
-import RealDevops from "@/components/RealDevops";
-import Image from "next/image";
 import CaseStudies from "@/components/CaseStudies";
-import DevopsRelated from "@/components/DevopsRelated";
-import DevopsService from "@/components/DevopsService"
-import DevopsSec from "@/components/DevopsSec";
-import WhyBrands from "@/components/WhyBrands";
-import Footer2 from "@/components/Footer2";
-import { useEffect } from "react";
-import RelatedServices from "@/components/RelatedServices";
-import ScaleDesign from "@/components/ScaleDesign";
 import Footer from "@/components/Footer";
 import FaqSection from "@/components/FaqSection";
-import TestingHero from "@/components/TestingHero";
-
-import QaProduct from "@/components/QaProduct";
-import ChatbotHero from "@/components/ChatbotHero";
 import WebExpertise from "@/components/AppExpertise";
-import ChatbotProduct from "@/components/ChatbotProduct";
 import DataHero from "@/components/DataHero";
 import OurDataServices from "@/components/OurDataServices";
 
@@ -45,10 +19,9 @@ export default function Home() {
             <Partners />
             <WebExpertise title={"Our Expertise in"} nexttitle={"Data Engineering"} />
             <CaseStudies />
-            {/* <ChatbotProduct /> */}
             <OurDataServices />
 
-        
+
             <div className="overlap-container">
                 <div className="card-layer card-layer--first"
                     style={{

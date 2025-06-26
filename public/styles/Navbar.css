@@ -14,6 +14,52 @@
   margin: 0 auto;
   /* max-width: 1450px; */
 }
+/* .item-main {
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-main:hover img {
+  transform: scale(0.6);
+  transition: transform 0.3s ease;
+} */
+
+
+.service-hover {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-hover img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.service-hover h6 {
+  margin-top: 8px;
+  transition: color 0.2s ease;
+}
+
+.service-hover:hover {
+  transform: scale(0.96);
+}
+
+.service-hover:hover img {
+  transform: scale(0.9);
+}
+
+.service-hover:hover h6 {
+  color: #2563eb; /* Tailwind's blue-600, or pick your brand color */
+}
+
 
 .navbar-container {
   background: #ffff;
@@ -126,6 +172,10 @@
 }
 .active-item:hover::after {
   transform: translateX(-50%) scaleX(1);
+}
+
+.mobile-submenu li {
+  font-size: 0.9rem !important;
 }
  
 

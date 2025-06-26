@@ -1,67 +1,8 @@
-// import React, { useState } from 'react';
-// import '../public/styles/DevopsRelated.css';
-// import { FiChevronDown } from 'react-icons/fi';
-
-// const accordionData = [
-//   "Ship Fast, Without the Fire Drills",
-//   "Smarter Infra, Fewer Surprises",
-//   "Automate the Chaos",
-//   "Secure by Default",
-//   "Downtime? Nah, We Don't Do That.",
-// ];
-
-// const WorkflowSection = () => {
-//   const [activeIndex, setActiveIndex] = useState(null);
-
-//   const toggleAccordion = (index) => {
-//     setActiveIndex(index === activeIndex ? null : index);
-//   };
-
-//   return (
-//     <div className="workflow-section">
-//       {/* Centered heading inside the black container */}
-//       <div className="workflow-header">
-//         <h2>How <span>We Supercharge</span> Your Workflow</h2>
-//         <p>From sluggish sprints to seamless shipping<br />
-//           we fine-tune every step of your delivery pipeline.
-//         </p>
-//       </div>
-
-//       <div className="workflow-content">
-//         <div className="workflow-left">
-//           <img src="/assets/workflow2.svg" alt="Workflow Graphic" />
-//         </div>
-//         <div className="workflow-right">
-//           <div className="workflow-accordion">
-//             {accordionData.map((item, index) => (
-//               <div
-//                 key={index}
-//                 className={`workflow-accordion-item ${activeIndex === index ? 'active' : ''}`}
-//                 onClick={() => toggleAccordion(index)}
-//               >
-//                 <div className="workflow-accordion-header">
-//                   <span>{item}</span>
-//                   <FiChevronDown className={`icon ${activeIndex === index ? 'rotate' : ''}`} />
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-
-//           <button className="consult-button">
-//             Get Consultation <span>⚡</span>
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default WorkflowSection;
-
+"use client"
 import React, { useState } from 'react';
 import '../public/styles/DevopsRelated.css';
 import { FiChevronDown } from 'react-icons/fi';
-
+import { useRouter } from 'next/navigation';
 const accordionData = [
   {
     title: "Ship Fast, Without the Fire Drills",
@@ -93,7 +34,7 @@ const accordionData = [
 const WorkflowSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [hoverIndex, setHoverIndex] = useState(null);
-
+  const router = useRouter()
   const toggleAccordion = (index) => {
     setActiveIndex(index === activeIndex ? null : index);
   };
@@ -112,7 +53,7 @@ const WorkflowSection = () => {
           <img src="/assets/workflow2.svg" alt="Workflow Graphic" />
         </div>
 
-        <div className="col-md-6 workflow-right">
+        <div className="col-md-6 workflow-right p-2">
           <div className="workflow-accordion">
             {accordionData.map((item, index) => (
               <div
@@ -153,7 +94,7 @@ const WorkflowSection = () => {
             ))}
           </div>
 
-          <button className="consult-button">
+          <button className="consult-button" type='button' onClick={()=>router.push('/contact')}>
             Get Consultation <span>⚡</span>
           </button>
         </div>

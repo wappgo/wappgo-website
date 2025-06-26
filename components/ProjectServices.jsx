@@ -1,45 +1,4 @@
-// import React from 'react';
-// import "../public/styles/IndustriesServices.css";
 
-// const ChatSystemServices = () => {
-//   return (
-//     <section className="ecom-services-section">
-//       <div className="ecom-services-container">
-
-//         <div className="ecom-heading">
-//           <h2>Our Chat System <br />Development Services</h2>
-//         </div>
-
-//         <div className="ecom-services-left">
-//           <ul className="service-list">
-//             <li><span>Custom Chat Platform Development</span> <span className="arrows3"><img src="/assets/arrow.png" alt="Arrow" /></span></li>
-//             <li><span>Real-Time Messaging Solutions</span> <span className="arrows3"><img src="/assets/arrow.png" alt="Arrow" /></span></li>
-//             <li><span>AI-Powered Chatbots & NLP</span> <span className="arrows3"><img src="/assets/arrow.png" alt="Arrow" /></span></li>
-//             {/* <li><span>AI-Powered Personalization</span> <span className="arrows3"><img src="/assets/arrow.png" alt="Arrow" /></span></li> */}
-//             <li><span>Multi-Platform Support (Web, Mobile, Desktop)</span> <span className="arrows3"><img src="/assets/arrow.png" alt="Arrow" /></span></li>
-//             <li><span>End-to-End Encryption & Compliance</span> <span className="arrows3"><img src="/assets/arrow.png" alt="Arrow" /></span></li>
-//           </ul>
-//         </div>
-
-//         <div className="ecom-services-right">
-//           <img src="/assets/commerce.svg" alt="ecommerce-icons" className="ecom-icon" />
-//           <p>
-//             We design and develop tailor-made eCommerce platforms that align perfectly with your business goals.
-//             Whether you need a B2B, B2C, or D2C solution, we ensure your platform is visually stunning, highly functional,
-//             and conversion-driven. From seamless navigation to interactive UI/UX, we craft an experience that keeps customers coming back.
-//           </p>
-//         </div>
-
-//         <video className="corner-video" autoPlay loop muted playsInline>
-//           <source src="/assets/offer-videos.mp4" type="video/mp4" />
-//         </video>
-        
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default ChatSystemServices;
 "use client";
 import React, { useState } from 'react';
 import "../public/styles/IndustriesServices.css";

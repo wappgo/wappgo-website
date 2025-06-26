@@ -20,7 +20,7 @@ function ProductDesign() {
 
     return (
         <div className='prodocutdesigndiv'>
-            <div className='row justify-content-center'>
+            <div className='row justify-content-center '>
                 <div className='col-md-6'>
                     <h6 className='section-title'>How We Design Products That Actually Matter</h6>
                     <p className='section-subtitle' style={{ fontSize: "18px" }}>
@@ -29,7 +29,7 @@ function ProductDesign() {
                 </div>
             </div>
 
-            <div className='row'>
+            <div className='row p-1'>
                 <div className='col-md-6'>
                     <div className='product-accordion'>
                         <div className="row justify-content-center">

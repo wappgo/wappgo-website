@@ -36,7 +36,7 @@ const AppDevelopment = () => {
         <p>
           We build mobile apps that aren’t just pretty — they perform, convert, and keep users coming back. Whether you’re launching your MVP or taking your app global, we’ve got the team, tech, and taste to make it happen.
         </p>
-        <div className="buttons">
+        <div className="mobile-hero-buttons">
           <button className="consult-btn" onClick={() => router.push('/contact')}>Get Consultation ⚡</button>
           {/* <span>or</span>
           <div className="icons">

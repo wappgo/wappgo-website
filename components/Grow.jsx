@@ -5,14 +5,6 @@ import "../public/styles/Grow.css";
 import { useEffect, useState } from "react";
 const Grow = () => {
   const [br, setBr] = useState(false);
-  // useEffect(() => {
-  //   const innerWidth = window.innerWidth;
-  //   if (innerWidth > 320) {
-  //     setBr(true);
-  //   } else {
-  //     setBr(false);
-  //   }
-  // }, [innerWidth]);
   const titleRef = useRef(null);
   const fadeRefs = useRef([]);
   

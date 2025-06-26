@@ -13,10 +13,6 @@ const IndiaMapSection = () => {
           width={527} // Set the desired width
           height={388} // Set the desired height
         />
-        {/* <div className="indore-marker">
-          <span className="marker-circle"></span>
-          <span className="marker-label">Indore, INDIA</span>
-        </div> */}
       </div>
 
       {/* Content Section */}

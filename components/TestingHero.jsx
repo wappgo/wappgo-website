@@ -36,29 +36,19 @@ const TestingHero = () => {
                     we don’t just find bugs we hunt them down, crush them, and make sure they never come back.
                     Our QA game is built for the modern digital world: fast, flexible, and totally relentless.
                 </p>
-                <div className="buttons">
-                       <button className="consult-btn" onClick={() => router.push('/contact')}>Get Consultation ⚡</button>
-                    {/* <button className="consult-btn">Get Consultation ⚡</button> */}
-                    {/* <span>or</span>
-          <div className="icons">
-            <button className="icon whatsapp">🟢</button>
-            <button className="icon email">✉️</button>
-            <button className="icon phone">📞</button>
-          </div> */}
+                <div className="home-hero-buttons">
+                    <button className="consult-btn" onClick={() => router.push('/contact')}>Get Consultation ⚡</button>
                     <span>or</span>
                     <div className="home-hero-icon-buttons">
-                        {/* <a href="#"><FaWhatsapp style={{ color: "green" }} /></a>
-                        <a href="#"><FaEnvelope /></a>
-                        <a href="#"><FaPhoneAlt /></a> */}
                         <a target="_blank" href="https://wa.me/917000581635?text=Hello%20Team%20Wappgo!">
-                 <FaWhatsapp style={{ color: "green" }} />
-                </a>
-                <a href="mailto:info@wappgo.com">
-                  <FaEnvelope />
-                </a>
-                <a href="tel:917000581635">
-                  <FaPhoneAlt />
-                </a>
+                            <FaWhatsapp style={{ color: "green" }} />
+                        </a>
+                        <a href="mailto:info@wappgo.com">
+                            <FaEnvelope />
+                        </a>
+                        <a href="tel:917000581635">
+                            <FaPhoneAlt />
+                        </a>
                     </div>
                 </div>
             </div>

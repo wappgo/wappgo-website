@@ -11,24 +11,7 @@ import Lottie from 'lottie-react';
 const Hero = ({ HeroStyle, HeroTexts }) => {
   return (
     <div className="hero-container">
-      {/* Video Background on the Right */}
-      {/* <div className="video-container video-container">
-        <video className="video2" autoPlay loop muted playsInline preload="auto">
-          <source src="/assets/hero-main-video.mp4" type="video/mp4" />
-        </video>
-        <div className="overlay"></div>
-        <div className="blurfixer">
-          <img src="/assets/bluer-fix.svg" />
-        </div>
-        <Lottie
-          animationData={devAnimation}
-          loop={true}
-        />
-      </div> */}
 
-
-
-      {/* Content on the Left */}
       <div className="content2">
         <article className="row hero-items-wrapper">
           <div className="col-lg-12 hero-items">
@@ -124,10 +107,6 @@ export const ButtonMedia = ({ HeroStyle, HeroTexts }) => {
           </button>
         </Link>
         <Link href="/letsdiveintoAI" style={{ textDecoration: "none" }}>
-          {/* <button className="btn-diveai btn-diveai-text gradient-text-btn front-btn-with btn-diveai-inner" >
-            {HeroTexts ? HeroTexts.btnText : "Wappgo For Your AI"}
-            <img src="/assets/divebtn.svg" className="mx-3" />
-          </button> */}
           <button className="btn-diveai front-btn-with">
             <div className="btn-diveai-inner gradient-text-btn"
               style={{

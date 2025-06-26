@@ -1,7 +1,6 @@
 import "../public/styles/WhyChooseAI.css";
 import React,{useEffect,useRef} from "react";
-// import Plane from '../assets/plane.mp4';
-// import OverlayImage from '../assets/Rocket-layer.svg'
+
 const WhyChooseAI = () => {
   const fadeRefs = useRef([]);
 
@@ -49,60 +48,11 @@ const WhyChooseAI = () => {
     };
   }, []);
   return (
-    // <div className="ai-section">
-    //   <div className="video-overlay"></div>
-    //   <div className="video-container">
-    //     <video autoPlay loop muted className="background-video">
-    //       <source src={Plane} type="video/mp4" />
-    //       Your browser does not support the video tag.
-    //     </video>
-    //   </div>
-    //   <div className="dev-content">
-    //     <h1 className="choose-ai">Why Choose Us as Your Artificial Intelligence Development Company?</h1>
-    //     <p className="domain">
-    //       We utilize our extensive domain expertise to push the boundaries of what is possible
-    //       for your business. Our AI software is designed to produce tangible results and unlock
-    //       the full potential of the technology for your business.
-    //     </p>
-    //     <div className="dev-cards">
-    //       <div className="dev-card">
-    //         <h3>Vendor Neutral</h3>
-    //         <p>
-    //           We are an independent AI development company that is not tied to any vendor.
-    //           Thus, our expertise ensures custom AI solutions based on business requirements
-    //           and goals.
-    //         </p>
-    //       </div>
-    //       <div className="dev-card">
-    //         <h3>Unmatched Technical Prowess</h3>
-    //         <p>
-    //           Our AI developers specialize in state-of-the-art AI and ML solutions,
-    //           using technologies like React Native, Angular, MongoDB, MySQL, Javascript,
-    //           Python, and Ruby.
-    //         </p>
-    //       </div>
-    //       <div className="dev-card">
-    //         <h3>Security-First Approach</h3>
-    //         <p>
-    //           Our AI solutions follow the latest security standards, ensuring robust
-    //           data analysis and cyber threat tracking.
-    //         </p>
-    //       </div>
-    //       <div className="dev-card">
-    //         <h3>Strong R&D Expertise</h3>
-    //         <p>
-    //           Our AI R&D expertise streamlines business processes, reducing costs
-    //           and enhancing productivity.
-    //         </p>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
     <div className="ai-section5">
       <div className="ai-section5-container">
         <div className="video-overlay6"></div>
         <div className="video-container6">
-          {/* 🎯 Image above video */}
+     
           <img src='/assets/Rocket-layer.svg' alt="Overlay" className="overlay-image6" />
 
           <video autoPlay loop muted className="background-video">
@@ -127,7 +77,9 @@ const WhyChooseAI = () => {
             </div>
 
           </div>
-          <div className="row mt-5">
+          <div className="row mt-5"
+          style={{rowGap:"15px"}}
+          >
             <div className="col-xl-3 col-lg-6 col-md-6 px-2">
               <div className="dev-card">
                 <h3>Vendor Neutral</h3>

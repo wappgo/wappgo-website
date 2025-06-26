@@ -304,9 +304,8 @@
     max-width: 60%;
   }
   .home-hero-title {
-    padding-left: 160px;
-    font-size: 40px;
-    line-height: 54px;
+    font-size: 32px;
+    line-height: 36px;
   }
   .home-hero-subtitle {
     font-size: 32px;
@@ -335,12 +334,12 @@
     text-align: center;
     margin-top: 40px;
   }
-  .home-hero-title {
+  /* .home-hero-title {
     padding-left: 0;
     font-size: 36px;
     line-height: 48px;
     margin-top: 120px;
-  }
+  } */
   .hero-service {
     flex-direction: column;
   }
@@ -367,11 +366,12 @@
 
 @media (max-width: 480px) {
   .home-hero-title {
+    text-align: center;
     font-size: 32px;
     line-height: 42px;
   }
   .home-hero-subtitle {
-    font-size: 24px;
+    font-size: 18px;
   }
   .home-hero-description {
     font-size: 15px;

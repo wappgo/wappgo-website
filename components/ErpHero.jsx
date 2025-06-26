@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Autoplay } from "swiper/modules";
-const Socialhero = () => {
+const Socialhero = ({indutries}) => {
   useGSAP(() => {
     gsap.to(".marque", {
       transform: 'translateX(-200%)',
@@ -18,6 +18,7 @@ const Socialhero = () => {
       ease: "none"
     })
   })
+  console.log("indutries",indutries)
   return (
     <>
     <section className="ecommerce-hero">

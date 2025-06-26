@@ -7,9 +7,9 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import "../public/styles/Navbar.css";
+// import "../public/styles/Navbar.css";
+import { useRouter } from "next/navigation";
 
-// Dynamic Imports
 const ServicesDropdown = dynamic(() => import('./ServicesDropdown'), {
   loading: () => <div className="services-container"></div>,
   ssr: false
@@ -29,6 +29,7 @@ const Navbar = () => {
     mobileMenu: false,
     navSlider: false
   });
+  const router = useRouter()
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const pathname = usePathname();
@@ -95,20 +96,23 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [closeAllDropdowns, dropdowns.mobileMenu]);
 
+  const handleNavigation = (path) => {
+    closeAllDropdowns();
+    router.push(path);
+  };
+
   return (
     <>
       <nav className="navbar">
         <div className="navbar-container navbar-container-border">
-          <div className="logo">
-            <Link href="/" prefetch>
-              <Image
-                src='/assets/wappgologo1.svg'
-                alt="Logo"
-                width={150}
-                height={50}
-                priority
-              />
-            </Link>
+          <div className="logo" type="button" onClick={() => router.push('/')}>
+            <Image
+              src='/assets/wappgologo1.svg'
+              alt="Logo"
+              width={150}
+              height={50}
+              priority
+            />
           </div>
 
           <div className="mobile-menu-btn" onClick={() => handleDropdown('mobileMenu', !dropdowns.mobileMenu)}>
@@ -117,8 +121,8 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <ul className={`nav-links ${dropdowns.mobileMenu ? 'mobile-menu-active d-none' : ''}`}>
-            <li className={pathname === "/" ? "activepath" : "active-item"}>
-              <Link href="/">Home</Link>
+            <li className={pathname === "/" ? "activepath" : "active-item"} type="button" onClick={() => router.push('/')}>
+              Home
             </li>
 
             <li
@@ -138,14 +142,12 @@ const Navbar = () => {
               Industries
             </li>
 
-            <li className="active-item">
-              <Link href="/letsdiveintoAI" className="active" prefetch>
-                <span className="gradient-text">Let's Dive Into AI</span>
-              </Link>
+            <li className="active-item" type="button" onClick={() => router.push('/letsdiveintoAI')}>
+              <span className="gradient-text">Let's Dive Into AI</span>
             </li>
 
-            <li className={pathname === "/case-study" ? "activepath" : "active-item"}>
-              <Link href="/case-study" prefetch>Case studies</Link>
+            <li className={pathname === "/case-study" ? "activepath" : "active-item"} type="button" onClick={() => router.push('/case-study')}>
+              Case studies
             </li>
 
             <li className="notexpose active-item">
@@ -159,19 +161,19 @@ const Navbar = () => {
               <span className="notexpose-text">NoExpose</span>
             </li>
 
-            <li className={pathname === "/about" ? "activepath" : "active-item"}>
-              <Link href="/about" prefetch>About us</Link>
+            <li className={pathname === "/about" ? "activepath" : "active-item"} type="button" onClick={() => router.push('/about')}>
+              About us
             </li>
 
-            <li className={pathname === "/career" ? "activepath" : "active-item"}>
-              <Link href="/career" prefetch>Careers</Link>
+            <li className={pathname === "/career" ? "activepath" : "active-item"} type="button" onClick={() => router.push('/career')}>
+              Careers
             </li>
           </ul>
 
           {!dropdowns.mobileMenu && (
-            <Link href="/contact" className="desktop-contact-btn start-btn " onClick={closeAllDropdowns} prefetch>
+            <span type="button" onClick={() => { router.push('/contact'), closeAllDropdowns }} className="desktop-contact-btn start-btn" >
               Contact Us
-            </Link>
+            </span>
           )}
         </div>
       </nav>
@@ -180,8 +182,8 @@ const Navbar = () => {
       <div ref={containerRef}>
         {/* Mobile Menu Items */}
         {dropdowns.mobileMenu && (
-          <ul className="nav-links mobile-menu-active">
-            <li onClick={closeAllDropdowns}><Link href="/">Home</Link></li>
+          <ul className="nav-links mobile-submenu mobile-menu-active">
+            <li onClick={() => handleNavigation("/")}>Home</li>
 
             {/* Services */}
             <li
@@ -198,13 +200,13 @@ const Navbar = () => {
             </li>
             {mobileServicesOpen && (
               <ul className="mobile-submenu p-0 m-0">
-                <li onClick={closeAllDropdowns}><Link href="/web-development-services">Web Development</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/ui-ux-services">UI/UX Design</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/devops-services">DevOps Services</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/qa-testing-services">QA / Testing</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/chatbot-development-services">Chatbot Services</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/data-engineering-services">Data Engineering</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/app-development-services">App Development</Link></li>
+                <li onClick={() => handleNavigation("/web-development-services")}>Web Development</li>
+                <li onClick={() => handleNavigation("/ui-ux-services")}>UI/UX Design</li>
+                <li onClick={() => handleNavigation("/devops-services")}>DevOps Services</li>
+                <li onClick={() => handleNavigation("/qa-testing-services")}>QA / Testing</li>
+                <li onClick={() => handleNavigation("/chatbot-development-services")}>Chatbot Services</li>
+                <li onClick={() => handleNavigation("/data-engineering-services")}>Data Engineering</li>
+                <li onClick={() => handleNavigation("/app-development-services")}>App Development</li>
               </ul>
             )}
 
@@ -224,12 +226,12 @@ const Navbar = () => {
             {mobileIndustriesOpen && (
               <ul className="mobile-submenu p-0 m-0">
                 <li onClick={closeAllDropdowns}><Link href="/chatsystem">Chatsystem</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/ecommerce">E-Commerce</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/industries">E-Commerce</Link></li>
                 <li onClick={closeAllDropdowns}><Link href="/projectmanagement">Project Management</Link></li>
                 <li onClick={closeAllDropdowns}><Link href="/social-media">Social Media</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/erp-crm">ERP / CRM</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/healthcare">Healthcare</Link></li>
-                <li onClick={closeAllDropdowns}><Link href="/logistics">Logistics</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/ERP">ERP / CRM</Link></li>
+                {/* <li onClick={closeAllDropdowns}><Link href="/healthcare">Healthcare</Link></li>
+                <li onClick={closeAllDropdowns}><Link href="/logistics">Logistics</Link></li> */}
               </ul>
             )}
 

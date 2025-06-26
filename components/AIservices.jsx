@@ -350,64 +350,7 @@ const AIServiceSection = () => {
 
   return (
     <>
-      {/* <div className="">
-        <div ref={(el) => (fadeRefs.current[0] = el)} className="video-background-container3 fadeInUp-animation">
-          <div className="video-background3">
-            <video autoPlay loop muted playsInline>
-              <source src="/assets/ai-dev-video.webm" type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div className="video-overlay3"><img
-            src="/assets/Services_video_layer.svg"
-            alt="Decorative overlay"
-            className="overlay-image"
-          /></div>
-        </div>
-        <h1 ref={(el) => (fadeRefs.current[2] = el)} className="aidev fadeInUp-animation">
-          <span className="highlight2">Artificial Intelligence</span> Development
-        </h1>
-        <h2 className="we-offer2">Services We Offer</h2>
-        <p className="description2">
-          Our AI development services are known to unlock the potential of vast
-          amounts of data for driving tangible business results. Being a renowned
-          AI solutions company, we specialize in leveraging the power of AI to
-          transform raw data into actionable insights, paving the way for
-          operational efficiency and enhanced decision-making.
-        </p>
 
-        <div ref={(el) => (fadeRefs.current[1] = el)} className="ai-content2 fadeInUp-animation">
-          <div className="sidebar2">
-            {services.map((service) => (
-              <div
-                key={service}
-                className={`service-item2 ${selectedService === service ? "active" : ""}`}
-                onClick={() => setSelectedService(service)}
-              >
-                {service}
-                <span className="arrow2">
-                  <img src="/assets/arrow.png" alt="Arrow" />
-                </span>
-              </div>
-            ))}
-          </div>
-          <div className="service-details2">
-            <h3>{selectedService}</h3>
-            <p ref={(el) => (fadeRefs.current[3] = el)} className="fadeInUp-animation">
-              As one of the top-rated AI software development companies, we have
-              extensive experience in developing {selectedService} solutions with
-              advanced capabilities such as GPT-4, GPT-3.5, Midjourney, and
-              DALL-E.
-            </p>
-            <div className="subscribe-box2">
-              <input type="email" placeholder="Enter Your Email Here" className="email-input" />
-              <button className="talk-button2">Let's Talk</button>
-            </div>
-
-            <p className="note2">Submit your email and get back a call from our experts</p>
-          </div>
-        </div>
-      </div> */}
       <section className="ai-services-section2">
         <div ref={(el) => (fadeRefs.current[0] = el)} className="video-background-container3 fadeInUp-animation">
           <div className="video-background3">
@@ -461,26 +404,6 @@ const AIServiceSection = () => {
               <div className="col-lg-7 col-md-6">
                 <div className="service-details2">
                   <div className="cards-container">
-                    {/* <div className="row"
-                      style={{ rowGap: "8px" }}
-                    >
-                      {selectedCategory.cards.map((card, index) => (
-                        <div className="col-md-6">
-                          <div key={index} className="service-card2">
-                            <img src={card.image} alt={card.title} />
-                            <h4 className="service-card-title mt-2 mb-2"
-                              style={{ fontSize: "20px" }}
-                            >{card.title}</h4>
-                            {card.bullets.map((point, i) => (
-                              <h6 key={i}
-                                style={{ fontSize: "16x" }}
-                                className="service-card-title card-content-text"
-                              ><img src="/assets/cartserialicon.svg" alt="serial No" />{point}</h6>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div> */}
                     <div className="overflow-hidden showinmobile">
                       <Slider {...settings} className="custom-slick-slider">
                         {selectedCategory.cards.map((card, index) => (
@@ -505,17 +428,6 @@ const AIServiceSection = () => {
                         ))}
                       </Slider>
                     </div>
-                    {/* <div className="overflow-hidden">
-                      <Slider {...settings}>
-                        {items.map(item => (
-                          <div key={item.id} className="p-4">
-                            <div className="bg-blue-500 text-white text-center p-10 rounded shadow">
-                              {item.content}
-                            </div>
-                          </div>
-                        ))}
-                      </Slider>
-                    </div> */}
                   </div>
                 </div>
               </div>
