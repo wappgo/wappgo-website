@@ -10,6 +10,7 @@ import DevopsRelated from "@/components/DevopsRelated";
 import DevopsService from "@/components/DevopsService";
 import Footer from "@/components/Footer";
 import FaqSection from "@/components/FaqSection";
+import OtherRelatedSevices from "@/components/OtherRelatedSevices";
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
       <DevopsRelated />
       <CaseStudies />
       <RealDevops />
-      <div className="overlap-container">
+      {/* <div className="overlap-container">
         <div className="card-layer card-layer--first"
           style={{
             boxShadow: "none",
@@ -73,7 +74,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <OtherRelatedSevices />
       <FaqSection />
       <Grow />
       <Footer />
