@@ -1,0 +1,19 @@
+services:
+  api:
+    build:
+      context: . # THELAL-AI directory
+      dockerfile: Dockerfile
+    container_name: wappgowebsite-code
+    ports:
+      - "4001:4001"
+    volumes:
+       - ./:/app
+    networks:
+      - wappgoweb_net
+    # depends_on:
+    #   db:
+    #     condition: service_healthy
+
+networks:
+  wappgoweb_net:
+    driver: bridge
