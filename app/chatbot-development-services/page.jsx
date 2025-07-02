@@ -9,6 +9,7 @@ import FaqSection from "@/components/FaqSection";
 import ChatbotHero from "@/components/ChatbotHero";
 import WebExpertise from "@/components/AppExpertise";
 import ChatbotProduct from "@/components/ChatbotProduct";
+import OtherRelatedSevices from "@/components/OtherRelatedSevices";
 
 
 export default function Home() {
@@ -73,7 +74,7 @@ export default function Home() {
                 </div>
 
             </div>
-            <div className="overlap-container">
+            {/* <div className="overlap-container">
                 <div className="card-layer card-layer--first"
                     style={{
                         boxShadow: "none",
@@ -124,7 +125,8 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
+            <OtherRelatedSevices />
             <FaqSection />
             <Grow />
             <Footer />
