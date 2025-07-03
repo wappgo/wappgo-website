@@ -6,8 +6,6 @@ services:
     container_name: wappgowebsite-code
     ports:
       - "4001:4001"
-    volumes:
-       - ./:/app
     networks:
       - wappgoweb_net
     # depends_on:
